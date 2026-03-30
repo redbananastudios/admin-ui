@@ -103,10 +103,13 @@ These are already restyled and should be reused:
 - `src/components/ui/calendar.tsx`
 - `src/components/ui/chart.tsx`
 - `src/components/ui/date-picker.tsx`
+- `src/components/ui/date-range-picker.tsx`
 - `src/components/ui/dialog.tsx`
+- `src/components/ui/alert-dialog.tsx`
 - `src/components/ui/dropdown-menu.tsx`
 - `src/components/ui/tabs.tsx`
 - `src/components/ui/badge.tsx`
+- `src/components/theme/app-toaster.tsx`
 
 ### Admin composition layer
 
@@ -144,8 +147,10 @@ When creating a new admin page:
 6. Use `DataTableShell` for tables
 7. Use `StatusBadge` for status chips
 8. Use `FilterBar` for search/filter rows
-9. Use shadcn form primitives only through the restyled local components in `src/components/ui`
-10. Compare visually against `/` and `/style-guide`
+9. Use `DatePicker` and `DateRangePicker` instead of native browser date inputs
+10. Use `AlertDialog` for destructive confirmations and `toast` via `AppToaster` for mutation feedback
+11. Use shadcn form primitives only through the restyled local components in `src/components/ui`
+12. Compare visually against `/` and `/style-guide`
 
 ## Page Composition Blueprint
 
@@ -251,6 +256,8 @@ Important rules:
 - Keep the current red primary accent and transport-operations feel.
 - Start from `ResourceFormPage` for create/edit workflows instead of inventing a new form layout.
 - Use `PageHeader`, `SectionCard`, `AppCard`, `StatCard`, `DataTableShell`, `FilterBar`, and `StatusBadge` where appropriate.
+- Use `AlertDialog` for destructive confirms and `toast` through `AppToaster` for success/error feedback.
+- Use `DateRangePicker` for range filters instead of pairing raw date inputs.
 - Do not hardcode random colors.
 - Do not introduce a new design system.
 

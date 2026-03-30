@@ -1,6 +1,7 @@
 "use client";
 
-import { Boxes, CircleOff, Filter, Search, SlidersHorizontal } from "lucide-react";
+import { Boxes, CircleOff, Filter, Search, SlidersHorizontal, Trash2 } from "lucide-react";
+import { toast } from "sonner";
 import { EmptyState } from "@/components/admin/empty-state";
 import { FilterBar } from "@/components/admin/filter-bar";
 import { PageHeader } from "@/components/admin/page-header";
@@ -9,6 +10,18 @@ import { DataTableShell } from "@/components/admin/data-table-shell";
 import { StatCard } from "@/components/admin/stat-card";
 import { StatusBadge } from "@/components/admin/status-badge";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+  AlertDialogWarning,
+} from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
@@ -21,6 +34,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { DatePicker } from "@/components/ui/date-picker";
+import { DateRangePicker } from "@/components/ui/date-range-picker";
 import {
   Popover,
   PopoverContent,
@@ -146,7 +160,12 @@ export function StyleGuideShowcase() {
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
               <DatePicker defaultValue={new Date(2026, 2, 30)} />
-              <DatePicker defaultValue={new Date(2026, 3, 4)} />
+              <DateRangePicker
+                defaultValue={{
+                  from: new Date(2026, 2, 23),
+                  to: new Date(2026, 2, 30),
+                }}
+              />
             </div>
             <Textarea placeholder="Incident note, shift handover, or trip escalation summary..." />
             <div className="flex flex-wrap items-center gap-6">
@@ -162,7 +181,7 @@ export function StyleGuideShowcase() {
           </div>
         </SectionCard>
 
-        <SectionCard title="Overlay surfaces" description="Dialogs, sheets, and popovers share the same panel language.">
+        <SectionCard title="Overlay surfaces" description="Dialogs, confirms, sheets, and popovers share the same panel language.">
           <div className="flex flex-wrap gap-3">
             <Dialog>
               <DialogTrigger asChild>
@@ -181,6 +200,28 @@ export function StyleGuideShowcase() {
                 </DialogFooter>
               </DialogContent>
             </Dialog>
+
+            <AlertDialog>
+              <AlertDialogTrigger asChild>
+                <Button variant="destructive">
+                  <Trash2 className="size-4" />
+                  Open alert dialog
+                </Button>
+              </AlertDialogTrigger>
+              <AlertDialogContent>
+                <AlertDialogHeader>
+                  <AlertDialogTitle>Delete vehicle profile</AlertDialogTitle>
+                  <AlertDialogDescription>
+                    Use the Red Taxi alert dialog for destructive confirms and other irreversible actions.
+                  </AlertDialogDescription>
+                </AlertDialogHeader>
+                <AlertDialogWarning />
+                <AlertDialogFooter>
+                  <AlertDialogCancel>Keep profile</AlertDialogCancel>
+                  <AlertDialogAction>Delete vehicle</AlertDialogAction>
+                </AlertDialogFooter>
+              </AlertDialogContent>
+            </AlertDialog>
 
             <Sheet>
               <SheetTrigger asChild>
@@ -209,6 +250,34 @@ export function StyleGuideShowcase() {
                 </PopoverHeader>
               </PopoverContent>
             </Popover>
+
+            <Button
+              variant="outline"
+              onClick={() =>
+                toast.success("Vehicle updated", {
+                  description:
+                    "The latest profile changes are ready for tonight's publish window.",
+                  action: {
+                    label: "Undo",
+                    onClick: () => {},
+                  },
+                })
+              }
+            >
+              Show success toast
+            </Button>
+
+            <Button
+              variant="ghost"
+              onClick={() =>
+                toast.error("Update failed", {
+                  description:
+                    "Insurance renewal could not be saved because the compliance API timed out.",
+                })
+              }
+            >
+              Show error toast
+            </Button>
           </div>
         </SectionCard>
       </section>

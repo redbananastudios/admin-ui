@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono, Manrope } from "next/font/google";
+import { AppToaster } from "@/components/theme/app-toaster";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import "./globals.css";
@@ -41,7 +42,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <TooltipProvider delayDuration={150}>{children}</TooltipProvider>
+          <TooltipProvider delayDuration={150}>
+            {children}
+            <AppToaster />
+          </TooltipProvider>
         </ThemeProvider>
       </body>
     </html>

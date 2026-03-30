@@ -99,6 +99,7 @@ Restyled primitives include:
 - `Select`
 - `Dropdown Menu`
 - `Dialog`
+- `AlertDialog`
 - `Sheet`
 - `Popover`
 - `Card`
@@ -141,7 +142,9 @@ Key styling decisions:
 - `FilterBar`
 - `EmptyState`
 - `src/components/ui/chart.tsx` for real chart rendering
-- `src/components/ui/calendar.tsx` and `src/components/ui/date-picker.tsx` for themed date selection
+- `src/components/ui/calendar.tsx`, `src/components/ui/date-picker.tsx`, and `src/components/ui/date-range-picker.tsx` for themed date selection
+- `src/components/ui/alert-dialog.tsx` for destructive confirmations
+- `src/components/theme/app-toaster.tsx` for Red Taxi-styled toast feedback
 
 These wrappers are intentionally thin and should stay thin. They compose shadcn components and theme tokens rather than replacing the base UI model.
 
@@ -165,6 +168,8 @@ These are reusable page-shape starters for API-driven admin screens. They should
 - prefer `DataTableShell` for admin tables
 - use `PageHeader` for page intro structure
 - prefer the registry page patterns for API-backed list, detail, form, and KPI screens before inventing a new layout
+- prefer `DateRangePicker` for reporting and booking date filters instead of native range workarounds
+- use `AlertDialog` for destructive actions and `toast` through `AppToaster` for mutation feedback
 - keep pages thin by moving repeated patterns into wrapper components
 - keep shell chrome consistent across all future admin routes
 

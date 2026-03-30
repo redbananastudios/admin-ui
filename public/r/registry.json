@@ -12,6 +12,7 @@
       "dependencies": [
         "lucide-react",
         "next-themes",
+        "sonner",
         "shadcn",
         "tw-animate-css"
       ],
@@ -30,6 +31,11 @@
           "path": "registry/redtaxi/redtaxi-theme/src/components/theme/theme-provider.tsx",
           "type": "registry:file",
           "target": "src/components/theme/theme-provider.tsx"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-theme/src/components/theme/app-toaster.tsx",
+          "type": "registry:file",
+          "target": "src/components/theme/app-toaster.tsx"
         },
         {
           "path": "registry/redtaxi/redtaxi-theme/src/components/theme/theme-toggle.tsx",
@@ -86,6 +92,11 @@
           "target": "src/components/ui/badge.tsx"
         },
         {
+          "path": "registry/redtaxi/redtaxi-ui/src/components/ui/alert-dialog.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/alert-dialog.tsx"
+        },
+        {
           "path": "registry/redtaxi/redtaxi-ui/src/components/ui/button.tsx",
           "type": "registry:file",
           "target": "src/components/ui/button.tsx"
@@ -114,6 +125,11 @@
           "path": "registry/redtaxi/redtaxi-ui/src/components/ui/date-picker.tsx",
           "type": "registry:file",
           "target": "src/components/ui/date-picker.tsx"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-ui/src/components/ui/date-range-picker.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/date-range-picker.tsx"
         },
         {
           "path": "registry/redtaxi/redtaxi-ui/src/components/ui/dialog.tsx",
@@ -544,6 +560,10 @@
       ],
       "dependencies": [
         "lucide-react"
+      ],
+      "dependencies": [
+        "lucide-react",
+        "sonner"
       ],
       "files": [
         {

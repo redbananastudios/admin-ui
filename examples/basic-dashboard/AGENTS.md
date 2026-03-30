@@ -25,6 +25,8 @@ Treat it as a proof that the Red Taxi registry installs cleanly into another pro
 
 - Reuse the components already installed in `src/components/ui` and `src/components/admin`.
 - Keep the same red theme and shell treatment.
+- Use `AlertDialog` for destructive confirms and `toast` with `AppToaster` for mutation feedback.
+- Use `DateRangePicker` for range filters instead of native browser date inputs.
 - Prefer the installed pattern routes for new API-backed screens:
   - `/patterns/resource-list`
   - `/patterns/resource-detail`

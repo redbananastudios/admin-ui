@@ -46,6 +46,9 @@ The reusable page patterns are:
 - `src/components/admin/resource-form-page.tsx`
 - `src/components/admin/kpi-overview-page.tsx`
 - `src/components/admin/filter-toolbar-presets.tsx`
+- `src/components/ui/alert-dialog.tsx`
+- `src/components/ui/date-range-picker.tsx`
+- `src/components/theme/app-toaster.tsx`
 
 ## Styling Guardrails
 
@@ -56,6 +59,9 @@ The reusable page patterns are:
 - Do not replace the shell layout, surface hierarchy, or panel rhythm casually.
 - Keep dark mode and light mode feeling like the same product.
 - Prefer semantic tokens and existing wrappers over ad hoc styling.
+- Use `AlertDialog` for destructive actions instead of improvised modals.
+- Use `DateRangePicker` instead of native date-range controls.
+- Use `toast` with the installed `AppToaster` for mutation feedback.
 
 ## Preferred Build Flow
 

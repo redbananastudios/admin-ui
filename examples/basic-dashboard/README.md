@@ -28,6 +28,12 @@ The API-ready pattern routes in this example were then added from:
 npx shadcn@latest add @redtaxi/redtaxi-resource-list-page @redtaxi/redtaxi-resource-detail-page @redtaxi/redtaxi-resource-form-page @redtaxi/redtaxi-kpi-overview-page -y -o
 ```
 
+This example also includes the current Red Taxi utility primitives for:
+
+- destructive confirmations via `AlertDialog`
+- mutation feedback via `AppToaster` and `sonner`
+- booking/report filters via `DateRangePicker`
+
 ## Routes
 
 - `/` redirects to `/dashboard`
