@@ -100,7 +100,9 @@ These are already restyled and should be reused:
 - `src/components/ui/select.tsx`
 - `src/components/ui/table.tsx`
 - `src/components/ui/card.tsx`
+- `src/components/ui/calendar.tsx`
 - `src/components/ui/chart.tsx`
+- `src/components/ui/date-picker.tsx`
 - `src/components/ui/dialog.tsx`
 - `src/components/ui/dropdown-menu.tsx`
 - `src/components/ui/tabs.tsx`

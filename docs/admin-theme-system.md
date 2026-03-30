@@ -141,6 +141,7 @@ Key styling decisions:
 - `FilterBar`
 - `EmptyState`
 - `src/components/ui/chart.tsx` for real chart rendering
+- `src/components/ui/calendar.tsx` and `src/components/ui/date-picker.tsx` for themed date selection
 
 These wrappers are intentionally thin and should stay thin. They compose shadcn components and theme tokens rather than replacing the base UI model.
 

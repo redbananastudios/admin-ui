@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { FilterBar } from "@/components/admin/filter-bar";
 import { Button } from "@/components/ui/button";
+import { DatePicker } from "@/components/ui/date-picker";
 import { Input } from "@/components/ui/input";
 import {
   Select,
@@ -143,8 +144,16 @@ export function SearchDateRangeToolbar({
         placeholder="Period"
         options={periodOptions}
       />
-      <Input className="min-w-[168px]" type="date" defaultValue="2026-03-23" />
-      <Input className="min-w-[168px]" type="date" defaultValue="2026-03-30" />
+      <DatePicker
+        className="min-w-[168px] sm:w-[168px]"
+        defaultValue={new Date(2026, 2, 23)}
+        placeholder="Start date"
+      />
+      <DatePicker
+        className="min-w-[168px] sm:w-[168px]"
+        defaultValue={new Date(2026, 2, 30)}
+        placeholder="End date"
+      />
       <div className="flex w-full flex-wrap items-center gap-2 sm:ml-auto sm:w-auto sm:justify-end">
         <Button size="sm" variant="outline">
           <CalendarRange className="size-4" />

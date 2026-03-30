@@ -13,8 +13,15 @@ import { SectionCard } from "@/components/admin/section-card";
 import { StatusBadge } from "@/components/admin/status-badge";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
+import { DatePicker } from "@/components/ui/date-picker";
 import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Separator } from "@/components/ui/separator";
 import { Switch } from "@/components/ui/switch";
 import { Textarea } from "@/components/ui/textarea";
@@ -96,7 +103,7 @@ export function ResourceFormPage() {
     <div className="space-y-6">
       <PageHeader
         eyebrow="Resource form"
-        title={`${resourceFormRecord.id} · ${resourceFormRecord.model}`}
+        title={`${resourceFormRecord.id} - ${resourceFormRecord.model}`}
         description={resourceFormRecord.summary}
         actions={
           <>
@@ -210,7 +217,12 @@ export function ResourceFormPage() {
               </FormField>
 
               <FormField id="insurance-renewal" label="Insurance renewal">
-                <Input id="insurance-renewal" type="date" defaultValue="2026-09-14" />
+                <DatePicker
+                  id="insurance-renewal"
+                  name="insurance-renewal"
+                  defaultValue={new Date(2026, 8, 14)}
+                  placeholder="Insurance renewal"
+                />
               </FormField>
 
               <FormField
@@ -328,7 +340,12 @@ export function ResourceFormPage() {
               </FormField>
 
               <FormField id="airport-pass" label="Airport pass renewal">
-                <Input id="airport-pass" type="date" defaultValue="2026-04-04" />
+                <DatePicker
+                  id="airport-pass"
+                  name="airport-pass"
+                  defaultValue={new Date(2026, 3, 4)}
+                  placeholder="Airport pass renewal"
+                />
               </FormField>
 
               <FormField id="pricing-band" label="Pricing band">

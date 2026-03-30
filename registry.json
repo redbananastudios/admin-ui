@@ -57,8 +57,10 @@
       "dependencies": [
         "class-variance-authority",
         "clsx",
+        "date-fns",
         "lucide-react",
         "radix-ui",
+        "react-day-picker",
         "recharts",
         "tailwind-merge"
       ],
@@ -102,6 +104,16 @@
           "path": "registry/redtaxi/redtaxi-ui/src/components/ui/chart.tsx",
           "type": "registry:file",
           "target": "src/components/ui/chart.tsx"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-ui/src/components/ui/calendar.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/calendar.tsx"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-ui/src/components/ui/date-picker.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/date-picker.tsx"
         },
         {
           "path": "registry/redtaxi/redtaxi-ui/src/components/ui/dialog.tsx",

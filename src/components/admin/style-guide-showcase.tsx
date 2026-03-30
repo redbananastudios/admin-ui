@@ -20,6 +20,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { DatePicker } from "@/components/ui/date-picker";
 import {
   Popover,
   PopoverContent,
@@ -29,7 +30,13 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import {
   Sheet,
   SheetContent,
@@ -136,6 +143,10 @@ export function StyleGuideShowcase() {
                   <SelectItem value="billing">Billing ops</SelectItem>
                 </SelectContent>
               </Select>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <DatePicker defaultValue={new Date(2026, 2, 30)} />
+              <DatePicker defaultValue={new Date(2026, 3, 4)} />
             </div>
             <Textarea placeholder="Incident note, shift handover, or trip escalation summary..." />
             <div className="flex flex-wrap items-center gap-6">

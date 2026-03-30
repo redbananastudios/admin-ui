@@ -8,6 +8,7 @@ This repository contains:
 - a reusable admin shell with sidebar and top header
 - restyled shadcn/ui primitives for a premium operations dashboard feel
 - real chart support via shadcn charts and Recharts
+- themed calendar and date picker support for form and filter workflows
 - thin wrapper components for common admin patterns
 - a GitHub-hosted shadcn registry for reusable Red Taxi installs
 - a style guide route for visual QA
@@ -91,6 +92,7 @@ Available higher-level registry blocks:
 - `@redtaxi/redtaxi-kpi-overview-page`
 
 Chart support is included through `src/components/ui/chart.tsx` and the `recharts` dependency.
+Calendar support is included through `src/components/ui/calendar.tsx`, `src/components/ui/date-picker.tsx`, and the `react-day-picker` dependency.
 
 Use semantic tokens instead of hardcoded colors, and compose new pages from the existing shell and wrapper components.
 

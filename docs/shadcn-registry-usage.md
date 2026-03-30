@@ -41,7 +41,7 @@ That URL works with:
 - `@redtaxi/redtaxi-resource-form-page`
 - `@redtaxi/redtaxi-kpi-overview-page`
 
-`@redtaxi/redtaxi-ui` now includes real chart support through shadcn charts and `recharts`.
+`@redtaxi/redtaxi-ui` now includes real chart support through shadcn charts and `recharts`, plus a themed calendar/date-picker layer through `react-day-picker`.
 
 ## Install Into A New App
 
