@@ -11,6 +11,7 @@ This repository contains:
 - a GitHub-hosted shadcn registry for reusable Red Taxi installs
 - a style guide route for visual QA
 - a mock dashboard route for layout and theme validation
+- higher-level page patterns for list, detail, and KPI reporting screens
 - a separate sample consumer app in `examples/basic-dashboard`
 
 ## Stack
@@ -27,6 +28,9 @@ This repository contains:
 
 - `/` mock dashboard
 - `/style-guide` visual QA page
+- `/patterns/resource-list` API collection pattern
+- `/patterns/resource-detail` API detail pattern
+- `/patterns/kpi-overview` KPI reporting pattern
 
 ## Getting Started
 
@@ -68,6 +72,13 @@ https://raw.githubusercontent.com/redbananastudios/admin-ui/main/public/r/{name}
 ```
 
 See `docs/shadcn-registry-usage.md` for install commands and MCP setup.
+
+Available higher-level registry blocks:
+
+- `@redtaxi/redtaxi-filter-toolbar-presets`
+- `@redtaxi/redtaxi-resource-list-page`
+- `@redtaxi/redtaxi-resource-detail-page`
+- `@redtaxi/redtaxi-kpi-overview-page`
 
 Use semantic tokens instead of hardcoded colors, and compose new pages from the existing shell and wrapper components.
 

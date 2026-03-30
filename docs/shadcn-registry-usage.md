@@ -23,8 +23,12 @@ That URL works with:
 - `@redtaxi/redtaxi-theme`
 - `@redtaxi/redtaxi-ui`
 - `@redtaxi/redtaxi-admin-shell`
+- `@redtaxi/redtaxi-filter-toolbar-presets`
 - `@redtaxi/redtaxi-dashboard-starter`
 - `@redtaxi/redtaxi-style-guide`
+- `@redtaxi/redtaxi-resource-list-page`
+- `@redtaxi/redtaxi-resource-detail-page`
+- `@redtaxi/redtaxi-kpi-overview-page`
 
 ## Install Into A New App
 
@@ -49,21 +53,40 @@ Then install:
 npx shadcn@latest add @redtaxi/redtaxi-dashboard-starter @redtaxi/redtaxi-style-guide -y -o
 ```
 
+To add the higher-level API-ready page patterns:
+
+```bash
+npx shadcn@latest add @redtaxi/redtaxi-resource-list-page @redtaxi/redtaxi-resource-detail-page @redtaxi/redtaxi-kpi-overview-page -y -o
+```
+
 ## Recommended Agent Workflow
 
 For a new admin project:
 
 1. install `@redtaxi/redtaxi-dashboard-starter`
 2. install `@redtaxi/redtaxi-style-guide`
-3. keep the style guide route as the visual QA source of truth
-4. replace mock data with API-backed data
-5. extend pages by composing the existing admin wrappers
+3. install the page pattern blocks that match your API surface
+4. keep the style guide route as the visual QA source of truth
+5. replace mock data with API-backed data
+6. extend pages by composing the existing admin wrappers
 
 The starter sets up:
 
 - `/` as a redirect to `/dashboard`
 - `/dashboard` as the main starter dashboard
 - `/style-guide` as the visual QA route
+
+The reusable page-pattern installs add:
+
+- `/patterns/resource-list`
+- `/patterns/resource-detail`
+- `/patterns/kpi-overview`
+
+Use those patterns as the starting point for:
+
+- `GET /vehicles`, `GET /drivers`, `GET /bookings` -> `@redtaxi/redtaxi-resource-list-page`
+- `GET /vehicles/:id`, `GET /drivers/:id`, `GET /bookings/:id` -> `@redtaxi/redtaxi-resource-detail-page`
+- KPI or reporting endpoints -> `@redtaxi/redtaxi-kpi-overview-page`
 
 ## MCP Setup
 

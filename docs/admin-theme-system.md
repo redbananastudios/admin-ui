@@ -142,6 +142,17 @@ Key styling decisions:
 
 These wrappers are intentionally thin and should stay thin. They compose shadcn components and theme tokens rather than replacing the base UI model.
 
+### Higher-level page patterns
+
+- `ResourceListPage`
+- `ResourceDetailPage`
+- `KpiOverviewPage`
+- `SearchStatusToolbar`
+- `SearchDateRangeToolbar`
+- `BulkActionToolbar`
+
+These are reusable page-shape starters for API-driven admin screens. They should be used as starting points, then adapted to real schemas without changing the surrounding Red Taxi shell language.
+
 ## Usage Rules
 
 - use semantic tokens, not random hardcoded colors
@@ -149,6 +160,7 @@ These wrappers are intentionally thin and should stay thin. They compose shadcn 
 - prefer `StatusBadge` for operational status chips
 - prefer `DataTableShell` for admin tables
 - use `PageHeader` for page intro structure
+- prefer the registry page patterns for API-backed list, detail, and KPI screens before inventing a new layout
 - keep pages thin by moving repeated patterns into wrapper components
 - keep shell chrome consistent across all future admin routes
 

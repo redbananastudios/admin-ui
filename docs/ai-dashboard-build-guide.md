@@ -6,6 +6,14 @@ This is not a greenfield UI project.
 
 The job is to extend the existing admin system without drifting away from the established shell, palette, spacing, and component language.
 
+When working from the published shadcn registry instead of this source repo, prefer these installable blocks:
+
+- `@redtaxi/redtaxi-dashboard-starter`
+- `@redtaxi/redtaxi-style-guide`
+- `@redtaxi/redtaxi-resource-list-page`
+- `@redtaxi/redtaxi-resource-detail-page`
+- `@redtaxi/redtaxi-kpi-overview-page`
+
 ## Primary Rule
 
 Do not redesign the dashboard from scratch.
@@ -114,6 +122,12 @@ These define the admin look and page rhythm:
 - `src/components/admin/empty-state.tsx`
 
 ## How To Build A New Dashboard Page
+
+If the work matches one of these shapes, start from the existing pattern instead of inventing layout:
+
+- collection endpoint or list screen -> `ResourceListPage`
+- single-record screen -> `ResourceDetailPage`
+- reporting or summary screen -> `KpiOverviewPage`
 
 When creating a new admin page:
 

@@ -22,11 +22,20 @@ This example was created with shadcn and then populated from the registry with:
 npx shadcn@latest add @redtaxi/redtaxi-dashboard-starter @redtaxi/redtaxi-style-guide -y -o
 ```
 
+The API-ready pattern routes in this example were then added from:
+
+```bash
+npx shadcn@latest add @redtaxi/redtaxi-resource-list-page @redtaxi/redtaxi-resource-detail-page @redtaxi/redtaxi-kpi-overview-page -y -o
+```
+
 ## Routes
 
 - `/` redirects to `/dashboard`
 - `/dashboard` basic Red Taxi dashboard
 - `/style-guide` visual QA page
+- `/patterns/resource-list` reusable collection page
+- `/patterns/resource-detail` reusable detail page
+- `/patterns/kpi-overview` reusable KPI reporting page
 
 ## Run Locally
 

@@ -281,6 +281,156 @@
       }
     },
     {
+      "name": "redtaxi-filter-toolbar-presets",
+      "type": "registry:block",
+      "title": "Red Taxi Filter Toolbar Presets",
+      "description": "Reusable Red Taxi filter and bulk-action rows for API-driven admin pages.",
+      "author": "Red Banana Studios",
+      "registryDependencies": [
+        "@redtaxi/redtaxi-admin-shell"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/admin/filter-toolbar-presets.tsx",
+          "type": "registry:file",
+          "target": "src/components/admin/filter-toolbar-presets.tsx"
+        }
+      ],
+      "docs": "Install this item when you want search, status, date-range, or bulk-action toolbars that already match the Red Taxi panel language.",
+      "categories": [
+        "admin",
+        "filters",
+        "toolbar"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "pattern"
+      }
+    },
+    {
+      "name": "redtaxi-resource-list-page",
+      "type": "registry:block",
+      "title": "Red Taxi Resource List Page",
+      "description": "API-ready Red Taxi collection page pattern with stats, filters, table, and right-rail operational context.",
+      "author": "Red Banana Studios",
+      "registryDependencies": [
+        "@redtaxi/redtaxi-filter-toolbar-presets"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/admin/resource-list-page.tsx",
+          "type": "registry:file",
+          "target": "src/components/admin/resource-list-page.tsx"
+        },
+        {
+          "path": "src/lib/mock-resource-list.ts",
+          "type": "registry:file",
+          "target": "src/lib/mock-resource-list.ts"
+        },
+        {
+          "path": "src/app/(dashboard)/patterns/resource-list/page.tsx",
+          "type": "registry:page",
+          "target": "src/app/(dashboard)/patterns/resource-list/page.tsx"
+        }
+      ],
+      "docs": "Use this as the starting point for vehicles, drivers, bookings, customers, or any other resource collection backed by an API. Replace the mock rows, keep the shell and page rhythm.",
+      "categories": [
+        "admin",
+        "pattern",
+        "resource"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "page-pattern"
+      }
+    },
+    {
+      "name": "redtaxi-resource-detail-page",
+      "type": "registry:block",
+      "title": "Red Taxi Resource Detail Page",
+      "description": "API-ready Red Taxi single-record layout with tabs, summary rail, alerts, and related history.",
+      "author": "Red Banana Studios",
+      "registryDependencies": [
+        "@redtaxi/redtaxi-admin-shell"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/admin/resource-detail-page.tsx",
+          "type": "registry:file",
+          "target": "src/components/admin/resource-detail-page.tsx"
+        },
+        {
+          "path": "src/lib/mock-resource-detail.ts",
+          "type": "registry:file",
+          "target": "src/lib/mock-resource-detail.ts"
+        },
+        {
+          "path": "src/app/(dashboard)/patterns/resource-detail/page.tsx",
+          "type": "registry:page",
+          "target": "src/app/(dashboard)/patterns/resource-detail/page.tsx"
+        }
+      ],
+      "docs": "Use this block for vehicle, driver, booking, or infrastructure detail screens. Keep the right-rail summary and tabs, then map your API fields into the existing layout.",
+      "categories": [
+        "admin",
+        "pattern",
+        "detail"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "page-pattern"
+      }
+    },
+    {
+      "name": "redtaxi-kpi-overview-page",
+      "type": "registry:block",
+      "title": "Red Taxi KPI Overview Page",
+      "description": "API-ready Red Taxi management reporting surface with KPI cards, chart placeholder, incidents, and route performance.",
+      "author": "Red Banana Studios",
+      "registryDependencies": [
+        "@redtaxi/redtaxi-filter-toolbar-presets"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/admin/kpi-overview-page.tsx",
+          "type": "registry:file",
+          "target": "src/components/admin/kpi-overview-page.tsx"
+        },
+        {
+          "path": "src/lib/mock-kpi-overview.ts",
+          "type": "registry:file",
+          "target": "src/lib/mock-kpi-overview.ts"
+        },
+        {
+          "path": "src/app/(dashboard)/patterns/kpi-overview/page.tsx",
+          "type": "registry:page",
+          "target": "src/app/(dashboard)/patterns/kpi-overview/page.tsx"
+        }
+      ],
+      "docs": "Use this block for weekly or monthly management boards, route performance, corridor summaries, or any KPI-first operations page.",
+      "categories": [
+        "admin",
+        "pattern",
+        "analytics"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "page-pattern"
+      }
+    },
+    {
       "name": "redtaxi-dashboard-starter",
       "type": "registry:block",
       "title": "Red Taxi Dashboard Starter",

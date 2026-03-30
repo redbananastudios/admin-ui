@@ -1,7 +1,10 @@
 import type { LucideIcon } from "lucide-react";
 import {
+  Blocks,
+  ChartColumnBig,
   CarFront,
   CreditCard,
+  FileSearch2,
   LayoutDashboard,
   MapPinned,
   RadioTower,
@@ -85,6 +88,29 @@ export const APP_NAV_SECTIONS: NavSection[] = [
       },
     ],
   },
+  {
+    title: "Patterns",
+    items: [
+      {
+        title: "Resource List",
+        href: "/patterns/resource-list",
+        icon: Blocks,
+        description: "API collection page pattern",
+      },
+      {
+        title: "Resource Detail",
+        href: "/patterns/resource-detail",
+        icon: FileSearch2,
+        description: "Single record detail layout",
+      },
+      {
+        title: "KPI Overview",
+        href: "/patterns/kpi-overview",
+        icon: ChartColumnBig,
+        description: "Management summary reporting",
+      },
+    ],
+  },
 ];
 
 export const PAGE_META: Record<
@@ -102,6 +128,24 @@ export const PAGE_META: Record<
     subtitle:
       "QA surface for the Red Taxi admin design system, wrappers, and interaction states.",
     eyebrow: "Design system",
+  },
+  "/patterns/resource-list": {
+    title: "Resource List Pattern",
+    subtitle:
+      "Reusable Red Taxi collection view for vehicles, drivers, bookings, and other API-backed resources.",
+    eyebrow: "Reusable block",
+  },
+  "/patterns/resource-detail": {
+    title: "Resource Detail Pattern",
+    subtitle:
+      "Single-record detail layout with tabs, metadata rail, alerts, and related history.",
+    eyebrow: "Reusable block",
+  },
+  "/patterns/kpi-overview": {
+    title: "KPI Overview Pattern",
+    subtitle:
+      "Management reporting layout for operational metrics, incidents, and route performance.",
+    eyebrow: "Reusable block",
   },
 };
 

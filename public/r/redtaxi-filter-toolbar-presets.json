@@ -1,0 +1,32 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "redtaxi-filter-toolbar-presets",
+  "title": "Red Taxi Filter Toolbar Presets",
+  "author": "Red Banana Studios",
+  "description": "Reusable Red Taxi filter and bulk-action rows for API-driven admin pages.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@redtaxi/redtaxi-admin-shell"
+  ],
+  "files": [
+    {
+      "path": "src/components/admin/filter-toolbar-presets.tsx",
+      "content": "import type { ReactNode } from \"react\";\nimport {\n  CalendarRange,\n  Download,\n  Plus,\n  RefreshCw,\n  Search,\n  SlidersHorizontal,\n} from \"lucide-react\";\nimport { FilterBar } from \"@/components/admin/filter-bar\";\nimport { Button } from \"@/components/ui/button\";\nimport { Input } from \"@/components/ui/input\";\nimport {\n  Select,\n  SelectContent,\n  SelectItem,\n  SelectTrigger,\n  SelectValue,\n} from \"@/components/ui/select\";\nimport { cn } from \"@/lib/utils\";\n\ntype FilterOption = {\n  label: string;\n  value: string;\n};\n\ntype SearchStatusToolbarProps = {\n  searchPlaceholder?: string;\n  statusOptions: FilterOption[];\n  segmentOptions?: FilterOption[];\n  primaryActionLabel?: string;\n  leadingAction?: ReactNode;\n  className?: string;\n};\n\ntype SearchDateRangeToolbarProps = {\n  searchPlaceholder?: string;\n  periodOptions: FilterOption[];\n  primaryActionLabel?: string;\n  className?: string;\n};\n\ntype BulkActionToolbarProps = {\n  selectionLabel: string;\n  className?: string;\n};\n\nfunction ToolbarSearchInput({\n  placeholder,\n  className,\n}: {\n  placeholder: string;\n  className?: string;\n}) {\n  return (\n    <div className={cn(\"relative min-w-[240px] flex-1\", className)}>\n      <Search className=\"pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-muted-foreground\" />\n      <Input className=\"pl-11\" placeholder={placeholder} />\n    </div>\n  );\n}\n\nfunction ToolbarSelect({\n  defaultValue,\n  placeholder,\n  options,\n  className,\n}: {\n  defaultValue: string;\n  placeholder: string;\n  options: FilterOption[];\n  className?: string;\n}) {\n  return (\n    <Select defaultValue={defaultValue}>\n      <SelectTrigger className={cn(\"min-w-[160px]\", className)}>\n        <SelectValue placeholder={placeholder} />\n      </SelectTrigger>\n      <SelectContent>\n        {options.map((option) => (\n          <SelectItem key={option.value} value={option.value}>\n            {option.label}\n          </SelectItem>\n        ))}\n      </SelectContent>\n    </Select>\n  );\n}\n\nexport function SearchStatusToolbar({\n  searchPlaceholder = \"Search vehicles, drivers, or registrations\",\n  statusOptions,\n  segmentOptions = [],\n  primaryActionLabel = \"Add record\",\n  leadingAction,\n  className,\n}: SearchStatusToolbarProps) {\n  return (\n    <FilterBar className={cn(\"gap-3\", className)}>\n      <ToolbarSearchInput placeholder={searchPlaceholder} />\n      <ToolbarSelect\n        defaultValue={statusOptions[0]?.value ?? \"all\"}\n        placeholder=\"Status\"\n        options={statusOptions}\n      />\n      {segmentOptions.length ? (\n        <ToolbarSelect\n          defaultValue={segmentOptions[0]?.value ?? \"all\"}\n          placeholder=\"Segment\"\n          options={segmentOptions}\n        />\n      ) : null}\n      <div className=\"flex w-full flex-wrap items-center gap-2 sm:ml-auto sm:w-auto sm:justify-end\">\n        {leadingAction}\n        <Button size=\"sm\" variant=\"outline\">\n          <SlidersHorizontal className=\"size-4\" />\n          Advanced filters\n        </Button>\n        <Button size=\"sm\" variant=\"outline\">\n          <Download className=\"size-4\" />\n          Export\n        </Button>\n        <Button size=\"sm\">\n          <Plus className=\"size-4\" />\n          {primaryActionLabel}\n        </Button>\n      </div>\n    </FilterBar>\n  );\n}\n\nexport function SearchDateRangeToolbar({\n  searchPlaceholder = \"Search routes, corridors, or KPI groups\",\n  periodOptions,\n  primaryActionLabel = \"Export weekly pack\",\n  className,\n}: SearchDateRangeToolbarProps) {\n  return (\n    <FilterBar className={cn(\"gap-3\", className)}>\n      <ToolbarSearchInput placeholder={searchPlaceholder} />\n      <ToolbarSelect\n        defaultValue={periodOptions[0]?.value ?? \"7d\"}\n        placeholder=\"Period\"\n        options={periodOptions}\n      />\n      <Input className=\"min-w-[168px]\" type=\"date\" defaultValue=\"2026-03-23\" />\n      <Input className=\"min-w-[168px]\" type=\"date\" defaultValue=\"2026-03-30\" />\n      <div className=\"flex w-full flex-wrap items-center gap-2 sm:ml-auto sm:w-auto sm:justify-end\">\n        <Button size=\"sm\" variant=\"outline\">\n          <CalendarRange className=\"size-4\" />\n          Compare period\n        </Button>\n        <Button size=\"sm\" variant=\"outline\">\n          <RefreshCw className=\"size-4\" />\n          Refresh\n        </Button>\n        <Button size=\"sm\">\n          <Download className=\"size-4\" />\n          {primaryActionLabel}\n        </Button>\n      </div>\n    </FilterBar>\n  );\n}\n\nexport function BulkActionToolbar({\n  selectionLabel,\n  className,\n}: BulkActionToolbarProps) {\n  return (\n    <FilterBar className={cn(\"items-center justify-between gap-3\", className)}>\n      <div>\n        <p className=\"text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground\">\n          Batch operations\n        </p>\n        <p className=\"mt-1 text-sm font-medium text-foreground\">{selectionLabel}</p>\n      </div>\n      <div className=\"flex flex-wrap items-center gap-2\">\n        <Button size=\"sm\" variant=\"outline\">\n          Assign driver\n        </Button>\n        <Button size=\"sm\" variant=\"outline\">\n          Change status\n        </Button>\n        <Button size=\"sm\">Create dispatch batch</Button>\n      </div>\n    </FilterBar>\n  );\n}\n",
+      "type": "registry:file",
+      "target": "src/components/admin/filter-toolbar-presets.tsx"
+    }
+  ],
+  "meta": {
+    "brand": "redtaxi",
+    "scope": "pattern"
+  },
+  "docs": "Install this item when you want search, status, date-range, or bulk-action toolbars that already match the Red Taxi panel language.",
+  "categories": [
+    "admin",
+    "filters",
+    "toolbar"
+  ],
+  "type": "registry:block"
+}
