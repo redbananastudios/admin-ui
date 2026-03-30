@@ -5,6 +5,7 @@ import { toast } from "sonner";
 import { EmptyState } from "@/components/admin/empty-state";
 import { FilterBar } from "@/components/admin/filter-bar";
 import { PageHeader } from "@/components/admin/page-header";
+import { RowDetailTable, type RowDetailTableColumn } from "@/components/admin/row-detail-table";
 import { SectionCard } from "@/components/admin/section-card";
 import { DataTableShell } from "@/components/admin/data-table-shell";
 import { StatCard } from "@/components/admin/stat-card";
@@ -69,16 +70,12 @@ import {
   ChartTooltipContent,
   type ChartConfig,
 } from "@/components/ui/chart";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
+import {
+  rowDetailRows,
+  type RowDetailRecord,
+} from "@/lib/mock-row-detail-table";
 import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
 
 const chartPreviewData = [
@@ -101,7 +98,93 @@ const chartPreviewConfig = {
   },
 } satisfies ChartConfig;
 
+const rowDetailPreviewColumns: RowDetailTableColumn<RowDetailRecord>[] = [
+  {
+    id: "asset",
+    header: "Asset",
+    cell: (row) => (
+      <div className="space-y-1">
+        <p className="font-semibold text-foreground">{row.id}</p>
+        <p className="text-sm text-muted-foreground">{row.asset}</p>
+      </div>
+    ),
+  },
+  {
+    id: "driver",
+    header: "Driver",
+    cell: (row) => row.driver,
+  },
+  {
+    id: "status",
+    header: "Status",
+    cell: (row) => <StatusBadge status={row.status}>{row.status}</StatusBadge>,
+  },
+  {
+    id: "eta",
+    header: "ETA",
+    cell: (row) => row.eta,
+  },
+];
+
+function renderRowDetailPreview(row: RowDetailRecord) {
+  return (
+    <div className="grid gap-4 lg:grid-cols-[minmax(0,1.2fr)_minmax(220px,0.8fr)]">
+      <div className="space-y-3">
+        <div className="rounded-2xl border border-border/60 bg-surface-2 px-4 py-3">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+            Current journey
+          </p>
+          <p className="mt-2 text-sm font-semibold text-foreground">
+            {row.currentJourney}
+          </p>
+          <p className="mt-2 text-sm leading-6 text-muted-foreground">
+            {row.notes}
+          </p>
+        </div>
+
+        <div className="grid gap-3 sm:grid-cols-2">
+          <div className="rounded-2xl border border-border/60 bg-surface-2 px-4 py-3">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+              Lane
+            </p>
+            <p className="mt-2 text-sm font-semibold text-foreground">{row.lane}</p>
+          </div>
+          <div className="rounded-2xl border border-border/60 bg-surface-2 px-4 py-3">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+              Telemetry
+            </p>
+            <p className="mt-2 text-sm text-foreground">{row.telemetry}</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="space-y-3">
+        {row.checkpoints.map((checkpoint) => (
+          <div
+            key={checkpoint.label}
+            className="rounded-2xl border border-border/60 bg-surface-2 px-4 py-3"
+          >
+            <div className="flex items-start justify-between gap-3">
+              <div className="space-y-1">
+                <p className="text-sm font-semibold text-foreground">
+                  {checkpoint.label}
+                </p>
+                <p className="text-sm leading-6 text-muted-foreground">
+                  {checkpoint.value}
+                </p>
+              </div>
+              <StatusBadge status={checkpoint.tone}>{checkpoint.tone}</StatusBadge>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export function StyleGuideShowcase() {
+  const defaultExpandedIds = rowDetailRows[0] ? [rowDetailRows[0].id] : [];
+
   return (
     <div className="space-y-6">
       <PageHeader
@@ -395,40 +478,16 @@ export function StyleGuideShowcase() {
       </section>
 
       <DataTableShell
-        title="Table example"
-        description="Dispatch-critical tables should feel grounded, precise, and legible."
+        title="Row detail view"
+        description="Expandable rows are the Red Taxi answer when operators need more context without leaving the table."
       >
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHead>Trip</TableHead>
-              <TableHead>Route</TableHead>
-              <TableHead>Status</TableHead>
-              <TableHead>ETA</TableHead>
-              <TableHead className="text-right">Value</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            <TableRow>
-              <TableCell className="font-semibold">BK-5102</TableCell>
-              <TableCell>City Airport -&gt; Shoreditch</TableCell>
-              <TableCell>
-                <StatusBadge status="en-route">en-route</StatusBadge>
-              </TableCell>
-              <TableCell>06 min</TableCell>
-              <TableCell className="text-right font-semibold">GBP 41.20</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell className="font-semibold">BK-5107</TableCell>
-              <TableCell>Paddington -&gt; Heathrow</TableCell>
-              <TableCell>
-                <StatusBadge status="scheduled">scheduled</StatusBadge>
-              </TableCell>
-              <TableCell>14 min</TableCell>
-              <TableCell className="text-right font-semibold">GBP 58.80</TableCell>
-            </TableRow>
-          </TableBody>
-        </Table>
+        <RowDetailTable
+          columns={rowDetailPreviewColumns}
+          rows={rowDetailRows.slice(0, 3)}
+          getRowId={(row) => row.id}
+          renderDetail={renderRowDetailPreview}
+          defaultExpandedIds={defaultExpandedIds}
+        />
       </DataTableShell>
 
       <EmptyState

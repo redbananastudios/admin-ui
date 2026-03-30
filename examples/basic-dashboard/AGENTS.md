@@ -32,6 +32,7 @@ Treat it as a proof that the Red Taxi registry installs cleanly into another pro
   - `/patterns/resource-detail`
   - `/patterns/resource-form`
   - `/patterns/kpi-overview`
+  - `/patterns/row-detail`
 
 ## Validation
 

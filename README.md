@@ -35,6 +35,7 @@ This repository contains:
 - `/patterns/resource-detail` API detail pattern
 - `/patterns/resource-form` API create/edit pattern
 - `/patterns/kpi-overview` KPI reporting pattern
+- `/patterns/row-detail` expandable row-detail grid pattern
 
 ## Getting Started
 
@@ -91,6 +92,7 @@ Available higher-level registry blocks:
 - `@redtaxi/redtaxi-resource-detail-page`
 - `@redtaxi/redtaxi-resource-form-page`
 - `@redtaxi/redtaxi-kpi-overview-page`
+- `@redtaxi/redtaxi-row-detail-table`
 
 Chart support is included through `src/components/ui/chart.tsx` and the `recharts` dependency.
 Calendar support is included through `src/components/ui/calendar.tsx`, `src/components/ui/date-picker.tsx`, and the `react-day-picker` dependency.

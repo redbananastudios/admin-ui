@@ -25,7 +25,7 @@ npx shadcn@latest add @redtaxi/redtaxi-dashboard-starter @redtaxi/redtaxi-style-
 The API-ready pattern routes in this example were then added from:
 
 ```bash
-npx shadcn@latest add @redtaxi/redtaxi-resource-list-page @redtaxi/redtaxi-resource-detail-page @redtaxi/redtaxi-resource-form-page @redtaxi/redtaxi-kpi-overview-page -y -o
+npx shadcn@latest add @redtaxi/redtaxi-resource-list-page @redtaxi/redtaxi-resource-detail-page @redtaxi/redtaxi-resource-form-page @redtaxi/redtaxi-kpi-overview-page @redtaxi/redtaxi-row-detail-table -y -o
 ```
 
 This example also includes the current Red Taxi utility primitives for:
@@ -43,6 +43,7 @@ This example also includes the current Red Taxi utility primitives for:
 - `/patterns/resource-detail` reusable detail page
 - `/patterns/resource-form` reusable create/edit page
 - `/patterns/kpi-overview` reusable KPI reporting page
+- `/patterns/row-detail` reusable expandable table pattern
 
 ## Run Locally
 

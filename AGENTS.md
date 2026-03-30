@@ -46,6 +46,7 @@ The reusable page patterns are:
 - `src/components/admin/resource-form-page.tsx`
 - `src/components/admin/kpi-overview-page.tsx`
 - `src/components/admin/filter-toolbar-presets.tsx`
+- `src/components/admin/row-detail-table.tsx`
 - `src/components/ui/alert-dialog.tsx`
 - `src/components/ui/date-range-picker.tsx`
 - `src/components/theme/app-toaster.tsx`
@@ -79,6 +80,7 @@ API-to-page mapping:
 - single-record endpoint -> `ResourceDetailPage`
 - create/edit endpoint -> `ResourceFormPage`
 - metrics/reporting endpoint -> `KpiOverviewPage`
+- list endpoint with inline context -> `RowDetailTable`
 
 ## Registry Guidance
 

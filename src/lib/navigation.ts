@@ -4,6 +4,7 @@ import {
   ChartColumnBig,
   CarFront,
   CreditCard,
+  PanelsTopLeft,
   FilePenLine,
   FileSearch2,
   LayoutDashboard,
@@ -116,6 +117,12 @@ export const APP_NAV_SECTIONS: NavSection[] = [
         icon: ChartColumnBig,
         description: "Management summary reporting",
       },
+      {
+        title: "Row Detail Table",
+        href: "/patterns/row-detail",
+        icon: PanelsTopLeft,
+        description: "Expandable grid with inline drilldown panels",
+      },
     ],
   },
 ];
@@ -158,6 +165,12 @@ export const PAGE_META: Record<
     title: "KPI Overview Pattern",
     subtitle:
       "Management reporting layout for operational metrics, incidents, and route performance.",
+    eyebrow: "Reusable block",
+  },
+  "/patterns/row-detail": {
+    title: "Row Detail Table Pattern",
+    subtitle:
+      "Expandable grid pattern for inline operational context, checklists, and quick actions.",
     eyebrow: "Reusable block",
   },
 };

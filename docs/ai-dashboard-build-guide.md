@@ -14,6 +14,7 @@ When working from the published shadcn registry instead of this source repo, pre
 - `@redtaxi/redtaxi-resource-detail-page`
 - `@redtaxi/redtaxi-resource-form-page`
 - `@redtaxi/redtaxi-kpi-overview-page`
+- `@redtaxi/redtaxi-row-detail-table`
 
 ## Primary Rule
 
@@ -127,6 +128,7 @@ These define the admin look and page rhythm:
 - `src/components/admin/data-table-shell.tsx`
 - `src/components/admin/filter-bar.tsx`
 - `src/components/admin/empty-state.tsx`
+- `src/components/admin/row-detail-table.tsx`
 
 ## How To Build A New Dashboard Page
 
@@ -136,6 +138,7 @@ If the work matches one of these shapes, start from the existing pattern instead
 - single-record screen -> `ResourceDetailPage`
 - create or edit workflow -> `ResourceFormPage`
 - reporting or summary screen -> `KpiOverviewPage`
+- list screen with inline drilldown -> `RowDetailTable`
 
 When creating a new admin page:
 

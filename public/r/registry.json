@@ -465,13 +465,59 @@
       }
     },
     {
+      "name": "redtaxi-row-detail-table",
+      "type": "registry:block",
+      "title": "Red Taxi Row Detail Table",
+      "description": "Expandable row-detail grid pattern for list screens that need inline context below each record.",
+      "author": "Red Banana Studios",
+      "registryDependencies": [
+        "@redtaxi/redtaxi-admin-shell"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/admin/row-detail-table.tsx",
+          "type": "registry:file",
+          "target": "src/components/admin/row-detail-table.tsx"
+        },
+        {
+          "path": "src/components/admin/row-detail-pattern-page.tsx",
+          "type": "registry:file",
+          "target": "src/components/admin/row-detail-pattern-page.tsx"
+        },
+        {
+          "path": "src/lib/mock-row-detail-table.ts",
+          "type": "registry:file",
+          "target": "src/lib/mock-row-detail-table.ts"
+        },
+        {
+          "path": "src/app/(dashboard)/patterns/row-detail/page.tsx",
+          "type": "registry:page",
+          "target": "src/app/(dashboard)/patterns/row-detail/page.tsx"
+        }
+      ],
+      "docs": "Use this block for bookings, fleet, or dispatch queues where each row needs extra context, readiness checks, or quick actions without forcing a route change.",
+      "categories": [
+        "admin",
+        "pattern",
+        "table"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "page-pattern"
+      }
+    },
+    {
       "name": "redtaxi-resource-form-page",
       "type": "registry:block",
       "title": "Red Taxi Resource Form Page",
       "description": "API-ready Red Taxi create/edit layout with dense form sections, operational toggles, and a release checklist rail.",
       "author": "Red Banana Studios",
       "registryDependencies": [
-        "@redtaxi/redtaxi-admin-shell"
+        "@redtaxi/redtaxi-admin-shell",
+        "@redtaxi/redtaxi-row-detail-table"
       ],
       "dependencies": [
         "lucide-react"

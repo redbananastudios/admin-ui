@@ -8,7 +8,8 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "@redtaxi/redtaxi-admin-shell"
+    "@redtaxi/redtaxi-admin-shell",
+    "@redtaxi/redtaxi-row-detail-table"
   ],
   "files": [
     {

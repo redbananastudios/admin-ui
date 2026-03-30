@@ -40,6 +40,7 @@ That URL works with:
 - `@redtaxi/redtaxi-resource-detail-page`
 - `@redtaxi/redtaxi-resource-form-page`
 - `@redtaxi/redtaxi-kpi-overview-page`
+- `@redtaxi/redtaxi-row-detail-table`
 
 `@redtaxi/redtaxi-ui` now includes real chart support through shadcn charts and `recharts`, plus a themed calendar/date-picker layer through `react-day-picker`.
 
@@ -69,7 +70,7 @@ npx shadcn@latest add @redtaxi/redtaxi-dashboard-starter @redtaxi/redtaxi-style-
 To add the higher-level API-ready page patterns:
 
 ```bash
-npx shadcn@latest add @redtaxi/redtaxi-resource-list-page @redtaxi/redtaxi-resource-detail-page @redtaxi/redtaxi-resource-form-page @redtaxi/redtaxi-kpi-overview-page -y -o
+npx shadcn@latest add @redtaxi/redtaxi-resource-list-page @redtaxi/redtaxi-resource-detail-page @redtaxi/redtaxi-resource-form-page @redtaxi/redtaxi-kpi-overview-page @redtaxi/redtaxi-row-detail-table -y -o
 ```
 
 ## Recommended Agent Workflow
@@ -95,6 +96,7 @@ The reusable page-pattern installs add:
 - `/patterns/resource-detail`
 - `/patterns/resource-form`
 - `/patterns/kpi-overview`
+- `/patterns/row-detail`
 
 Use those patterns as the starting point for:
 
@@ -102,6 +104,7 @@ Use those patterns as the starting point for:
 - `GET /vehicles/:id`, `GET /drivers/:id`, `GET /bookings/:id` -> `@redtaxi/redtaxi-resource-detail-page`
 - `POST /vehicles`, `PUT /vehicles/:id`, `POST /drivers`, `PUT /drivers/:id` -> `@redtaxi/redtaxi-resource-form-page`
 - KPI or reporting endpoints -> `@redtaxi/redtaxi-kpi-overview-page`
+- API list screens with inline drilldown -> `@redtaxi/redtaxi-row-detail-table`
 
 ## MCP Setup
 

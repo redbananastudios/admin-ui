@@ -141,6 +141,7 @@ Key styling decisions:
 - `DataTableShell`
 - `FilterBar`
 - `EmptyState`
+- `RowDetailTable`
 - `src/components/ui/chart.tsx` for real chart rendering
 - `src/components/ui/calendar.tsx`, `src/components/ui/date-picker.tsx`, and `src/components/ui/date-range-picker.tsx` for themed date selection
 - `src/components/ui/alert-dialog.tsx` for destructive confirmations
@@ -154,6 +155,7 @@ These wrappers are intentionally thin and should stay thin. They compose shadcn 
 - `ResourceDetailPage`
 - `ResourceFormPage`
 - `KpiOverviewPage`
+- `RowDetailPatternPage`
 - `SearchStatusToolbar`
 - `SearchDateRangeToolbar`
 - `BulkActionToolbar`
