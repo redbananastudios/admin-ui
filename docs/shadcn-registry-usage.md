@@ -1,0 +1,91 @@
+# Red Taxi shadcn Registry Usage
+
+This repo now exposes a GitHub-hosted shadcn registry for the Red Taxi admin system.
+
+## Important
+
+Use a GitHub-hosted JSON endpoint, not the normal repository HTML page.
+
+Recommended registry URL:
+
+```text
+https://raw.githubusercontent.com/redbananastudios/admin-ui/main/public/r/{name}.json
+```
+
+That URL works with:
+
+- shadcn CLI
+- shadcn MCP
+- AI agents such as Codex or Claude that are using the shadcn MCP server
+
+## Available Registry Items
+
+- `@redtaxi/redtaxi-theme`
+- `@redtaxi/redtaxi-ui`
+- `@redtaxi/redtaxi-admin-shell`
+- `@redtaxi/redtaxi-dashboard-starter`
+- `@redtaxi/redtaxi-style-guide`
+
+## Install Into A New App
+
+1. Create a new Next.js app
+2. Run `npx shadcn@latest init -d`
+3. Add the registry to `components.json`
+4. Install the starter items
+
+Example:
+
+```json
+{
+  "registries": {
+    "@redtaxi": "https://raw.githubusercontent.com/redbananastudios/admin-ui/main/public/r/{name}.json"
+  }
+}
+```
+
+Then install:
+
+```bash
+npx shadcn@latest add @redtaxi/redtaxi-dashboard-starter @redtaxi/redtaxi-style-guide -y -o
+```
+
+## Recommended Agent Workflow
+
+For a new admin project:
+
+1. install `@redtaxi/redtaxi-dashboard-starter`
+2. install `@redtaxi/redtaxi-style-guide`
+3. keep the style guide route as the visual QA source of truth
+4. replace mock data with API-backed data
+5. extend pages by composing the existing admin wrappers
+
+The starter sets up:
+
+- `/` as a redirect to `/dashboard`
+- `/dashboard` as the main starter dashboard
+- `/style-guide` as the visual QA route
+
+## MCP Setup
+
+Use the official shadcn MCP server:
+
+```toml
+[mcp_servers.shadcn]
+command = "npx"
+args = ["shadcn@latest", "mcp"]
+```
+
+With that in place, an AI agent can be told:
+
+- "Use the Red Taxi registry and install the dashboard starter"
+- "Build a Drivers page using the existing Red Taxi shell and wrappers"
+- "Keep the exact same Red Taxi style as the dashboard starter and style guide"
+
+## Rules For AI Agents
+
+- do not redesign the system
+- do not swap the red primary accent
+- do not add random colors
+- do not rebuild shadcn primitives from scratch
+- use the installed Red Taxi wrappers first
+- compare all new pages visually against `/` and `/style-guide`

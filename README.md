@@ -8,8 +8,10 @@ This repository contains:
 - a reusable admin shell with sidebar and top header
 - restyled shadcn/ui primitives for a premium operations dashboard feel
 - thin wrapper components for common admin patterns
+- a GitHub-hosted shadcn registry for reusable Red Taxi installs
 - a style guide route for visual QA
 - a mock dashboard route for layout and theme validation
+- a separate sample consumer app in `examples/basic-dashboard`
 
 ## Stack
 
@@ -47,6 +49,25 @@ The core reusable pieces live in:
 - `src/components/theme`
 - `src/lib/navigation.ts`
 - `docs/admin-theme-system.md`
+- `docs/shadcn-registry-usage.md`
+
+## shadcn Registry
+
+The reusable registry endpoint is built from `registry.json` into `public/r`.
+
+Build the registry files with:
+
+```bash
+npm run registry:build
+```
+
+Registry URL template:
+
+```text
+https://raw.githubusercontent.com/redbananastudios/admin-ui/main/public/r/{name}.json
+```
+
+See `docs/shadcn-registry-usage.md` for install commands and MCP setup.
 
 Use semantic tokens instead of hardcoded colors, and compose new pages from the existing shell and wrapper components.
 

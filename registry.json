@@ -1,0 +1,364 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "redtaxi",
+  "homepage": "https://github.com/redbananastudios/admin-ui",
+  "items": [
+    {
+      "name": "redtaxi-theme",
+      "type": "registry:theme",
+      "title": "Red Taxi Theme",
+      "description": "Dark-first Red Taxi semantic tokens, root layout, and theme helpers for the premium transport admin look.",
+      "author": "Red Banana Studios",
+      "dependencies": [
+        "lucide-react",
+        "next-themes",
+        "shadcn",
+        "tw-animate-css"
+      ],
+      "files": [
+        {
+          "path": "registry/redtaxi/redtaxi-theme/src/app/globals.css",
+          "type": "registry:file",
+          "target": "src/app/globals.css"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-theme/src/app/layout.tsx",
+          "type": "registry:file",
+          "target": "src/app/layout.tsx"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-theme/src/components/theme/theme-provider.tsx",
+          "type": "registry:file",
+          "target": "src/components/theme/theme-provider.tsx"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-theme/src/components/theme/theme-toggle.tsx",
+          "type": "registry:file",
+          "target": "src/components/theme/theme-toggle.tsx"
+        }
+      ],
+      "docs": "This item installs the Red Taxi root layout, semantic token system, and theme helpers. If your app already has custom providers in src/app/layout.tsx, merge them carefully instead of overwriting blindly.",
+      "categories": [
+        "theme",
+        "admin",
+        "dashboard"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "foundation"
+      }
+    },
+    {
+      "name": "redtaxi-ui",
+      "type": "registry:block",
+      "title": "Red Taxi UI",
+      "description": "Restyled shadcn primitives and supporting utils/hooks required for the exact Red Taxi admin look.",
+      "author": "Red Banana Studios",
+      "dependencies": [
+        "class-variance-authority",
+        "clsx",
+        "lucide-react",
+        "radix-ui",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "registry/redtaxi/redtaxi-ui/src/lib/utils.ts",
+          "type": "registry:file",
+          "target": "src/lib/utils.ts"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-ui/src/hooks/use-mobile.ts",
+          "type": "registry:file",
+          "target": "src/hooks/use-mobile.ts"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-ui/src/components/ui/avatar.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/avatar.tsx"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-ui/src/components/ui/badge.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/badge.tsx"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-ui/src/components/ui/button.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/button.tsx"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-ui/src/components/ui/card.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/card.tsx"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-ui/src/components/ui/checkbox.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/checkbox.tsx"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-ui/src/components/ui/dialog.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/dialog.tsx"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-ui/src/components/ui/dropdown-menu.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/dropdown-menu.tsx"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-ui/src/components/ui/input.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/input.tsx"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-ui/src/components/ui/popover.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/popover.tsx"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-ui/src/components/ui/select.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/select.tsx"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-ui/src/components/ui/separator.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/separator.tsx"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-ui/src/components/ui/sheet.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/sheet.tsx"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-ui/src/components/ui/sidebar.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/sidebar.tsx"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-ui/src/components/ui/skeleton.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/skeleton.tsx"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-ui/src/components/ui/switch.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/switch.tsx"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-ui/src/components/ui/table.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/table.tsx"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-ui/src/components/ui/tabs.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/tabs.tsx"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-ui/src/components/ui/textarea.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/textarea.tsx"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-ui/src/components/ui/tooltip.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/tooltip.tsx"
+        }
+      ],
+      "docs": "This item intentionally overwrites local src/components/ui files so the exact Red Taxi visual language is preserved. Install it into a dedicated admin app or review the diff carefully in an existing project.",
+      "categories": [
+        "ui",
+        "admin",
+        "dashboard"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "ui"
+      }
+    },
+    {
+      "name": "redtaxi-admin-shell",
+      "type": "registry:block",
+      "title": "Red Taxi Admin Shell",
+      "description": "Reusable shell, page chrome, and shared admin wrappers for Red Taxi-style transport dashboards.",
+      "author": "Red Banana Studios",
+      "registryDependencies": [
+        "@redtaxi/redtaxi-theme",
+        "@redtaxi/redtaxi-ui"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/redtaxi/redtaxi-admin-shell/src/components/admin/app-card.tsx",
+          "type": "registry:file",
+          "target": "src/components/admin/app-card.tsx"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-admin-shell/src/components/admin/app-header.tsx",
+          "type": "registry:file",
+          "target": "src/components/admin/app-header.tsx"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-admin-shell/src/components/admin/app-shell.tsx",
+          "type": "registry:file",
+          "target": "src/components/admin/app-shell.tsx"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-admin-shell/src/components/admin/app-sidebar.tsx",
+          "type": "registry:file",
+          "target": "src/components/admin/app-sidebar.tsx"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-admin-shell/src/components/admin/data-table-shell.tsx",
+          "type": "registry:file",
+          "target": "src/components/admin/data-table-shell.tsx"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-admin-shell/src/components/admin/empty-state.tsx",
+          "type": "registry:file",
+          "target": "src/components/admin/empty-state.tsx"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-admin-shell/src/components/admin/filter-bar.tsx",
+          "type": "registry:file",
+          "target": "src/components/admin/filter-bar.tsx"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-admin-shell/src/components/admin/page-container.tsx",
+          "type": "registry:file",
+          "target": "src/components/admin/page-container.tsx"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-admin-shell/src/components/admin/page-header.tsx",
+          "type": "registry:file",
+          "target": "src/components/admin/page-header.tsx"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-admin-shell/src/components/admin/section-card.tsx",
+          "type": "registry:file",
+          "target": "src/components/admin/section-card.tsx"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-admin-shell/src/components/admin/sidebar-nav-item.tsx",
+          "type": "registry:file",
+          "target": "src/components/admin/sidebar-nav-item.tsx"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-admin-shell/src/components/admin/stat-card.tsx",
+          "type": "registry:file",
+          "target": "src/components/admin/stat-card.tsx"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-admin-shell/src/components/admin/status-badge.tsx",
+          "type": "registry:file",
+          "target": "src/components/admin/status-badge.tsx"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-admin-shell/src/lib/navigation.ts",
+          "type": "registry:file",
+          "target": "src/lib/navigation.ts"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-admin-shell/src/app/(dashboard)/layout.tsx",
+          "type": "registry:file",
+          "target": "src/app/(dashboard)/layout.tsx"
+        }
+      ],
+      "docs": "This item installs the reusable Red Taxi shell and wrapper layer. Add real routes by extending src/lib/navigation.ts and placing pages under src/app/(dashboard)/.",
+      "categories": [
+        "admin",
+        "shell",
+        "dashboard"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "shell"
+      }
+    },
+    {
+      "name": "redtaxi-dashboard-starter",
+      "type": "registry:block",
+      "title": "Red Taxi Dashboard Starter",
+      "description": "A basic Red Taxi dashboard implementation with stats, activity, table, and driver status panels.",
+      "author": "Red Banana Studios",
+      "registryDependencies": [
+        "@redtaxi/redtaxi-admin-shell"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/redtaxi/redtaxi-dashboard-starter/src/components/admin/dashboard-overview.tsx",
+          "type": "registry:file",
+          "target": "src/components/admin/dashboard-overview.tsx"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-dashboard-starter/src/lib/mock-dashboard.ts",
+          "type": "registry:file",
+          "target": "src/lib/mock-dashboard.ts"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-dashboard-starter/src/app/page.tsx",
+          "type": "registry:page",
+          "target": "src/app/page.tsx"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-dashboard-starter/src/app/(dashboard)/dashboard/page.tsx",
+          "type": "registry:page",
+          "target": "src/app/(dashboard)/dashboard/page.tsx"
+        }
+      ],
+      "docs": "This starter installs a root redirect from / to /dashboard and the demo dashboard page at src/app/(dashboard)/dashboard/page.tsx. Replace the mock data in src/lib/mock-dashboard.ts with your API data once your backend contracts are ready.",
+      "categories": [
+        "dashboard",
+        "starter",
+        "admin"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "starter"
+      }
+    },
+    {
+      "name": "redtaxi-style-guide",
+      "type": "registry:block",
+      "title": "Red Taxi Style Guide",
+      "description": "The visual QA page used to verify the Red Taxi dashboard system in dark and light mode.",
+      "author": "Red Banana Studios",
+      "registryDependencies": [
+        "@redtaxi/redtaxi-admin-shell"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/redtaxi/redtaxi-style-guide/src/components/admin/style-guide-showcase.tsx",
+          "type": "registry:file",
+          "target": "src/components/admin/style-guide-showcase.tsx"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-style-guide/src/app/(dashboard)/style-guide/page.tsx",
+          "type": "registry:page",
+          "target": "src/app/(dashboard)/style-guide/page.tsx"
+        }
+      ],
+      "docs": "Use this page as the visual source of truth. If a new page does not look native beside / and /style-guide, it has drifted from the Red Taxi system.",
+      "categories": [
+        "style-guide",
+        "dashboard",
+        "admin"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "quality"
+      }
+    }
+  ]
+}

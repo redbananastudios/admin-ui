@@ -12,9 +12,6 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
-    // Nested apps and generated registry output are validated separately.
-    "examples/**",
-    "public/r/**",
   ]),
 ]);
 
