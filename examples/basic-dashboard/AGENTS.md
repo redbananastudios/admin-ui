@@ -28,6 +28,7 @@ Treat it as a proof that the Red Taxi registry installs cleanly into another pro
 - Prefer the installed pattern routes for new API-backed screens:
   - `/patterns/resource-list`
   - `/patterns/resource-detail`
+  - `/patterns/resource-form`
   - `/patterns/kpi-overview`
 
 ## Validation

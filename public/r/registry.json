@@ -437,6 +437,46 @@
       }
     },
     {
+      "name": "redtaxi-resource-form-page",
+      "type": "registry:block",
+      "title": "Red Taxi Resource Form Page",
+      "description": "API-ready Red Taxi create/edit layout with dense form sections, operational toggles, and a release checklist rail.",
+      "author": "Red Banana Studios",
+      "registryDependencies": [
+        "@redtaxi/redtaxi-admin-shell"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/admin/resource-form-page.tsx",
+          "type": "registry:file",
+          "target": "src/components/admin/resource-form-page.tsx"
+        },
+        {
+          "path": "src/lib/mock-resource-form.ts",
+          "type": "registry:file",
+          "target": "src/lib/mock-resource-form.ts"
+        },
+        {
+          "path": "src/app/(dashboard)/patterns/resource-form/page.tsx",
+          "type": "registry:page",
+          "target": "src/app/(dashboard)/patterns/resource-form/page.tsx"
+        }
+      ],
+      "docs": "Use this block for vehicle, driver, booking, or infrastructure create/edit flows. Replace the mock values with your API schema, then keep the same left-form and right-validation composition.",
+      "categories": [
+        "admin",
+        "pattern",
+        "form"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "page-pattern"
+      }
+    },
+    {
       "name": "redtaxi-dashboard-starter",
       "type": "registry:block",
       "title": "Red Taxi Dashboard Starter",

@@ -12,6 +12,7 @@ When working from the published shadcn registry instead of this source repo, pre
 - `@redtaxi/redtaxi-style-guide`
 - `@redtaxi/redtaxi-resource-list-page`
 - `@redtaxi/redtaxi-resource-detail-page`
+- `@redtaxi/redtaxi-resource-form-page`
 - `@redtaxi/redtaxi-kpi-overview-page`
 
 ## Primary Rule
@@ -128,6 +129,7 @@ If the work matches one of these shapes, start from the existing pattern instead
 
 - collection endpoint or list screen -> `ResourceListPage`
 - single-record screen -> `ResourceDetailPage`
+- create or edit workflow -> `ResourceFormPage`
 - reporting or summary screen -> `KpiOverviewPage`
 
 When creating a new admin page:
@@ -189,6 +191,7 @@ Use these as the visual source of truth:
 
 - `/` implemented in `src/components/admin/dashboard-overview.tsx`
 - `/style-guide` implemented in `src/components/admin/style-guide-showcase.tsx`
+- `/patterns/resource-form` implemented in `src/components/admin/resource-form-page.tsx`
 
 If unsure how a surface should look, copy the existing pattern from those files rather than inventing a new one.
 
@@ -244,6 +247,7 @@ Important rules:
 - Reuse the existing components in `src/components/ui` and `src/components/admin`.
 - Match the same visual language as `/` and `/style-guide`.
 - Keep the current red primary accent and transport-operations feel.
+- Start from `ResourceFormPage` for create/edit workflows instead of inventing a new form layout.
 - Use `PageHeader`, `SectionCard`, `AppCard`, `StatCard`, `DataTableShell`, `FilterBar`, and `StatusBadge` where appropriate.
 - Do not hardcode random colors.
 - Do not introduce a new design system.

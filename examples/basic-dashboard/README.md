@@ -25,7 +25,7 @@ npx shadcn@latest add @redtaxi/redtaxi-dashboard-starter @redtaxi/redtaxi-style-
 The API-ready pattern routes in this example were then added from:
 
 ```bash
-npx shadcn@latest add @redtaxi/redtaxi-resource-list-page @redtaxi/redtaxi-resource-detail-page @redtaxi/redtaxi-kpi-overview-page -y -o
+npx shadcn@latest add @redtaxi/redtaxi-resource-list-page @redtaxi/redtaxi-resource-detail-page @redtaxi/redtaxi-resource-form-page @redtaxi/redtaxi-kpi-overview-page -y -o
 ```
 
 ## Routes
@@ -35,6 +35,7 @@ npx shadcn@latest add @redtaxi/redtaxi-resource-list-page @redtaxi/redtaxi-resou
 - `/style-guide` visual QA page
 - `/patterns/resource-list` reusable collection page
 - `/patterns/resource-detail` reusable detail page
+- `/patterns/resource-form` reusable create/edit page
 - `/patterns/kpi-overview` reusable KPI reporting page
 
 ## Run Locally

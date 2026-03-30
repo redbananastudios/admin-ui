@@ -12,7 +12,7 @@ This repository contains:
 - a GitHub-hosted shadcn registry for reusable Red Taxi installs
 - a style guide route for visual QA
 - a mock dashboard route for layout and theme validation
-- higher-level page patterns for list, detail, and KPI reporting screens
+- higher-level page patterns for list, detail, form, and KPI reporting screens
 - a separate sample consumer app in `examples/basic-dashboard`
 
 ## Stack
@@ -31,6 +31,7 @@ This repository contains:
 - `/style-guide` visual QA page
 - `/patterns/resource-list` API collection pattern
 - `/patterns/resource-detail` API detail pattern
+- `/patterns/resource-form` API create/edit pattern
 - `/patterns/kpi-overview` KPI reporting pattern
 
 ## Getting Started
@@ -86,6 +87,7 @@ Available higher-level registry blocks:
 - `@redtaxi/redtaxi-filter-toolbar-presets`
 - `@redtaxi/redtaxi-resource-list-page`
 - `@redtaxi/redtaxi-resource-detail-page`
+- `@redtaxi/redtaxi-resource-form-page`
 - `@redtaxi/redtaxi-kpi-overview-page`
 
 Chart support is included through `src/components/ui/chart.tsx` and the `recharts` dependency.

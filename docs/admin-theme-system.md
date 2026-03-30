@@ -148,6 +148,7 @@ These wrappers are intentionally thin and should stay thin. They compose shadcn 
 
 - `ResourceListPage`
 - `ResourceDetailPage`
+- `ResourceFormPage`
 - `KpiOverviewPage`
 - `SearchStatusToolbar`
 - `SearchDateRangeToolbar`
@@ -162,7 +163,7 @@ These are reusable page-shape starters for API-driven admin screens. They should
 - prefer `StatusBadge` for operational status chips
 - prefer `DataTableShell` for admin tables
 - use `PageHeader` for page intro structure
-- prefer the registry page patterns for API-backed list, detail, and KPI screens before inventing a new layout
+- prefer the registry page patterns for API-backed list, detail, form, and KPI screens before inventing a new layout
 - keep pages thin by moving repeated patterns into wrapper components
 - keep shell chrome consistent across all future admin routes
 

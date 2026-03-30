@@ -43,6 +43,7 @@ The reusable page patterns are:
 
 - `src/components/admin/resource-list-page.tsx`
 - `src/components/admin/resource-detail-page.tsx`
+- `src/components/admin/resource-form-page.tsx`
 - `src/components/admin/kpi-overview-page.tsx`
 - `src/components/admin/filter-toolbar-presets.tsx`
 
@@ -70,6 +71,7 @@ API-to-page mapping:
 
 - collection endpoint -> `ResourceListPage`
 - single-record endpoint -> `ResourceDetailPage`
+- create/edit endpoint -> `ResourceFormPage`
 - metrics/reporting endpoint -> `KpiOverviewPage`
 
 ## Registry Guidance
@@ -100,7 +102,7 @@ If the task is to build a new admin using this system in another repo:
 
 - install the Red Taxi registry blocks instead of copying random files manually
 - use `@redtaxi/redtaxi-dashboard-starter` and `@redtaxi/redtaxi-style-guide` first
-- add `@redtaxi/redtaxi-resource-list-page`, `@redtaxi/redtaxi-resource-detail-page`, and `@redtaxi/redtaxi-kpi-overview-page` as needed
+- add `@redtaxi/redtaxi-resource-list-page`, `@redtaxi/redtaxi-resource-detail-page`, `@redtaxi/redtaxi-resource-form-page`, and `@redtaxi/redtaxi-kpi-overview-page` as needed
 - preserve the Red Taxi shell and theme instead of restyling it
 
 ## What To Avoid

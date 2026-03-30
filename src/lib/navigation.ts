@@ -4,6 +4,7 @@ import {
   ChartColumnBig,
   CarFront,
   CreditCard,
+  FilePenLine,
   FileSearch2,
   LayoutDashboard,
   MapPinned,
@@ -104,6 +105,12 @@ export const APP_NAV_SECTIONS: NavSection[] = [
         description: "Single record detail layout",
       },
       {
+        title: "Resource Form",
+        href: "/patterns/resource-form",
+        icon: FilePenLine,
+        description: "Create and edit workflow pattern",
+      },
+      {
         title: "KPI Overview",
         href: "/patterns/kpi-overview",
         icon: ChartColumnBig,
@@ -139,6 +146,12 @@ export const PAGE_META: Record<
     title: "Resource Detail Pattern",
     subtitle:
       "Single-record detail layout with tabs, metadata rail, alerts, and related history.",
+    eyebrow: "Reusable block",
+  },
+  "/patterns/resource-form": {
+    title: "Resource Form Pattern",
+    subtitle:
+      "Create and edit workflow layout with dense form sections, release checks, and operational defaults.",
     eyebrow: "Reusable block",
   },
   "/patterns/kpi-overview": {

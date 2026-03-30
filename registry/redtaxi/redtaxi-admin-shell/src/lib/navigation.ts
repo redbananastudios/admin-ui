@@ -1,7 +1,11 @@
 import type { LucideIcon } from "lucide-react";
 import {
+  Blocks,
+  ChartColumnBig,
   CarFront,
   CreditCard,
+  FilePenLine,
+  FileSearch2,
   LayoutDashboard,
   MapPinned,
   RadioTower,
@@ -30,7 +34,7 @@ export const APP_NAV_SECTIONS: NavSection[] = [
     items: [
       {
         title: "Dashboard",
-        href: "/dashboard",
+        href: "/",
         icon: LayoutDashboard,
         description: "Executive operations overview",
       },
@@ -85,13 +89,42 @@ export const APP_NAV_SECTIONS: NavSection[] = [
       },
     ],
   },
+  {
+    title: "Patterns",
+    items: [
+      {
+        title: "Resource List",
+        href: "/patterns/resource-list",
+        icon: Blocks,
+        description: "API collection page pattern",
+      },
+      {
+        title: "Resource Detail",
+        href: "/patterns/resource-detail",
+        icon: FileSearch2,
+        description: "Single record detail layout",
+      },
+      {
+        title: "Resource Form",
+        href: "/patterns/resource-form",
+        icon: FilePenLine,
+        description: "Create and edit workflow pattern",
+      },
+      {
+        title: "KPI Overview",
+        href: "/patterns/kpi-overview",
+        icon: ChartColumnBig,
+        description: "Management summary reporting",
+      },
+    ],
+  },
 ];
 
 export const PAGE_META: Record<
   string,
   { title: string; subtitle: string; eyebrow: string }
 > = {
-  "/dashboard": {
+  "/": {
     title: "Operations Dashboard",
     subtitle:
       "Keep dispatch, bookings, and fleet performance aligned from one transport control surface.",
@@ -102,6 +135,30 @@ export const PAGE_META: Record<
     subtitle:
       "QA surface for the Red Taxi admin design system, wrappers, and interaction states.",
     eyebrow: "Design system",
+  },
+  "/patterns/resource-list": {
+    title: "Resource List Pattern",
+    subtitle:
+      "Reusable Red Taxi collection view for vehicles, drivers, bookings, and other API-backed resources.",
+    eyebrow: "Reusable block",
+  },
+  "/patterns/resource-detail": {
+    title: "Resource Detail Pattern",
+    subtitle:
+      "Single-record detail layout with tabs, metadata rail, alerts, and related history.",
+    eyebrow: "Reusable block",
+  },
+  "/patterns/resource-form": {
+    title: "Resource Form Pattern",
+    subtitle:
+      "Create and edit workflow layout with dense form sections, release checks, and operational defaults.",
+    eyebrow: "Reusable block",
+  },
+  "/patterns/kpi-overview": {
+    title: "KPI Overview Pattern",
+    subtitle:
+      "Management reporting layout for operational metrics, incidents, and route performance.",
+    eyebrow: "Reusable block",
   },
 };
 
