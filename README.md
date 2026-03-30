@@ -7,6 +7,7 @@ This repository contains:
 - a dark-first semantic token system with polished light mode
 - a reusable admin shell with sidebar and top header
 - restyled shadcn/ui primitives for a premium operations dashboard feel
+- real chart support via shadcn charts and Recharts
 - thin wrapper components for common admin patterns
 - a GitHub-hosted shadcn registry for reusable Red Taxi installs
 - a style guide route for visual QA
@@ -86,6 +87,8 @@ Available higher-level registry blocks:
 - `@redtaxi/redtaxi-resource-list-page`
 - `@redtaxi/redtaxi-resource-detail-page`
 - `@redtaxi/redtaxi-kpi-overview-page`
+
+Chart support is included through `src/components/ui/chart.tsx` and the `recharts` dependency.
 
 Use semantic tokens instead of hardcoded colors, and compose new pages from the existing shell and wrapper components.
 

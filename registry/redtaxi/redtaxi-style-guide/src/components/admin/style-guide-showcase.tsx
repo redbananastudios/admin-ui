@@ -41,6 +41,14 @@ import {
 import { Skeleton } from "@/components/ui/skeleton";
 import { Switch } from "@/components/ui/switch";
 import {
+  ChartContainer,
+  ChartLegend,
+  ChartLegendContent,
+  ChartTooltip,
+  ChartTooltipContent,
+  type ChartConfig,
+} from "@/components/ui/chart";
+import {
   Table,
   TableBody,
   TableCell,
@@ -50,6 +58,27 @@ import {
 } from "@/components/ui/table";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
+import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
+
+const chartPreviewData = [
+  { day: "Mon", bookings: 118, capacity: 104 },
+  { day: "Tue", bookings: 132, capacity: 115 },
+  { day: "Wed", bookings: 148, capacity: 124 },
+  { day: "Thu", bookings: 141, capacity: 121 },
+  { day: "Fri", bookings: 162, capacity: 136 },
+  { day: "Sat", bookings: 154, capacity: 130 },
+];
+
+const chartPreviewConfig = {
+  bookings: {
+    label: "Bookings",
+    color: "var(--color-chart-1)",
+  },
+  capacity: {
+    label: "Capacity",
+    color: "var(--color-chart-3)",
+  },
+} satisfies ChartConfig;
 
 export function StyleGuideShowcase() {
   return (
@@ -201,6 +230,47 @@ export function StyleGuideShowcase() {
           </div>
         </SectionCard>
       </section>
+
+      <SectionCard
+        title="Charts"
+        description="Real chart support via the shadcn chart component and Recharts, styled to match the Red Taxi surfaces."
+      >
+        <ChartContainer
+          config={chartPreviewConfig}
+          className="min-h-[16rem] w-full"
+        >
+          <AreaChart accessibilityLayer data={chartPreviewData}>
+            <CartesianGrid vertical={false} strokeDasharray="3 3" />
+            <XAxis
+              dataKey="day"
+              tickLine={false}
+              axisLine={false}
+              tickMargin={10}
+            />
+            <ChartTooltip content={<ChartTooltipContent indicator="line" />} />
+            <ChartLegend
+              verticalAlign="top"
+              content={<ChartLegendContent className="justify-start gap-5 pb-4 pt-0" />}
+            />
+            <Area
+              type="monotone"
+              dataKey="capacity"
+              stroke="var(--color-capacity)"
+              fill="var(--color-capacity)"
+              fillOpacity={0.12}
+              strokeWidth={1.75}
+            />
+            <Area
+              type="monotone"
+              dataKey="bookings"
+              stroke="var(--color-bookings)"
+              fill="var(--color-bookings)"
+              fillOpacity={0.16}
+              strokeWidth={2.1}
+            />
+          </AreaChart>
+        </ChartContainer>
+      </SectionCard>
 
       <section className="grid gap-4 xl:grid-cols-2">
         <div className="grid gap-4 md:grid-cols-2">

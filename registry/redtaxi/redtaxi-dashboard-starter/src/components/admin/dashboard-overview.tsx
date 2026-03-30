@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Activity,
   ArrowUpRight,
@@ -15,6 +17,14 @@ import { StatusBadge } from "@/components/admin/status-badge";
 import { DataTableShell } from "@/components/admin/data-table-shell";
 import { Button } from "@/components/ui/button";
 import {
+  type ChartConfig,
+  ChartContainer,
+  ChartLegend,
+  ChartLegendContent,
+  ChartTooltip,
+  ChartTooltipContent,
+} from "@/components/ui/chart";
+import {
   Table,
   TableBody,
   TableCell,
@@ -29,8 +39,25 @@ import {
   dashboardStats,
   driverStatuses,
 } from "@/lib/mock-dashboard";
+import {
+  Bar,
+  BarChart,
+  CartesianGrid,
+  XAxis,
+  YAxis,
+} from "recharts";
 
 const statIcons = [Route, ShieldCheck, CarFront, Clock3];
+const demandChartConfig = {
+  requests: {
+    label: "Requests",
+    color: "var(--color-chart-1)",
+  },
+  capacity: {
+    label: "Fleet capacity",
+    color: "var(--color-chart-3)",
+  },
+} satisfies ChartConfig;
 
 export function DashboardOverview() {
   return (
@@ -74,7 +101,7 @@ export function DashboardOverview() {
       <section className="grid gap-4 xl:grid-cols-[minmax(0,1.7fr)_minmax(320px,0.95fr)]">
         <SectionCard
           title="Demand pulse"
-          description="Mock chart placeholder showing request load, trip flow, and route pressure across the current shift."
+          description="Live request load, trip flow, and route pressure across the current shift."
           action={
             <div className="flex items-center gap-2">
               <StatusBadge status="en-route">Live telemetry</StatusBadge>
@@ -123,40 +150,45 @@ export function DashboardOverview() {
                     Requests by interval
                   </p>
                   <p className="mt-1 text-sm text-muted-foreground">
-                    Synthetic placeholder data for layout and tone validation
+                    Real chart component with Red Taxi chart tokens and shared tooltip styling
                   </p>
-                </div>
-                <div className="flex items-center gap-4 text-xs text-muted-foreground">
-                  <span className="inline-flex items-center gap-2">
-                    <span className="h-2.5 w-2.5 rounded-full bg-primary" />
-                    Requests
-                  </span>
-                  <span className="inline-flex items-center gap-2">
-                    <span className="h-2.5 w-2.5 rounded-full bg-info" />
-                    Fleet capacity
-                  </span>
                 </div>
               </div>
 
-              <div className="flex h-64 items-end gap-2">
-                {chartSeries.map((value, index) => (
-                  <div key={index} className="flex flex-1 flex-col items-center gap-3">
-                    <div className="relative flex h-full w-full items-end justify-center">
-                      <div
-                        className="w-full rounded-t-2xl bg-linear-to-t from-primary/80 via-primary to-primary shadow-soft"
-                        style={{ height: `${value}%` }}
-                      />
-                      <div
-                        className="absolute bottom-0 w-[42%] rounded-t-2xl bg-info/25"
-                        style={{ height: `${Math.max(value - 18, 22)}%` }}
-                      />
-                    </div>
-                    <span className="text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
-                      {`${index + 8}:00`}
-                    </span>
-                  </div>
-                ))}
-              </div>
+              <ChartContainer
+                config={demandChartConfig}
+                className="min-h-[18rem] w-full"
+              >
+                <BarChart accessibilityLayer data={chartSeries} barGap={10}>
+                  <CartesianGrid vertical={false} strokeDasharray="3 3" />
+                  <XAxis
+                    dataKey="interval"
+                    tickLine={false}
+                    axisLine={false}
+                    tickMargin={10}
+                    minTickGap={24}
+                  />
+                  <YAxis hide domain={[0, 100]} />
+                  <ChartTooltip content={<ChartTooltipContent indicator="line" />} />
+                  <ChartLegend
+                    verticalAlign="top"
+                    content={<ChartLegendContent className="justify-start gap-5 pb-4 pt-0" />}
+                  />
+                  <Bar
+                    dataKey="requests"
+                    fill="var(--color-requests)"
+                    radius={[10, 10, 0, 0]}
+                    maxBarSize={20}
+                  />
+                  <Bar
+                    dataKey="capacity"
+                    fill="var(--color-capacity)"
+                    fillOpacity={0.75}
+                    radius={[10, 10, 0, 0]}
+                    maxBarSize={20}
+                  />
+                </BarChart>
+              </ChartContainer>
             </div>
           </div>
         </SectionCard>

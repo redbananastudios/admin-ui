@@ -37,6 +37,12 @@ export type ActivityItem = {
   tone: "info" | "success" | "warning";
 };
 
+export type DemandPoint = {
+  interval: string;
+  requests: number;
+  capacity: number;
+};
+
 export const dashboardStats: DashboardStat[] = [
   {
     label: "Active Trips",
@@ -168,6 +174,17 @@ export const activityFeed: ActivityItem[] = [
   },
 ];
 
-export const chartSeries = [
-  44, 58, 62, 56, 70, 83, 76, 88, 94, 79, 72, 84,
+export const chartSeries: DemandPoint[] = [
+  { interval: "08:00", requests: 44, capacity: 26 },
+  { interval: "09:00", requests: 58, capacity: 34 },
+  { interval: "10:00", requests: 62, capacity: 39 },
+  { interval: "11:00", requests: 56, capacity: 31 },
+  { interval: "12:00", requests: 70, capacity: 45 },
+  { interval: "13:00", requests: 83, capacity: 59 },
+  { interval: "14:00", requests: 76, capacity: 51 },
+  { interval: "15:00", requests: 88, capacity: 66 },
+  { interval: "16:00", requests: 94, capacity: 71 },
+  { interval: "17:00", requests: 79, capacity: 56 },
+  { interval: "18:00", requests: 72, capacity: 48 },
+  { interval: "19:00", requests: 84, capacity: 62 },
 ];

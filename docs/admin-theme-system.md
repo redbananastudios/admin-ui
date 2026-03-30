@@ -102,6 +102,7 @@ Restyled primitives include:
 - `Sheet`
 - `Popover`
 - `Card`
+- `Chart`
 - `Table`
 - `Badge`
 - `Tabs`
@@ -139,6 +140,7 @@ Key styling decisions:
 - `DataTableShell`
 - `FilterBar`
 - `EmptyState`
+- `src/components/ui/chart.tsx` for real chart rendering
 
 These wrappers are intentionally thin and should stay thin. They compose shadcn components and theme tokens rather than replacing the base UI model.
 

@@ -59,6 +59,7 @@
         "clsx",
         "lucide-react",
         "radix-ui",
+        "recharts",
         "tailwind-merge"
       ],
       "files": [
@@ -96,6 +97,11 @@
           "path": "registry/redtaxi/redtaxi-ui/src/components/ui/checkbox.tsx",
           "type": "registry:file",
           "target": "src/components/ui/checkbox.tsx"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-ui/src/components/ui/chart.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/chart.tsx"
         },
         {
           "path": "registry/redtaxi/redtaxi-ui/src/components/ui/dialog.tsx",

@@ -21,6 +21,12 @@ export type IncidentItem = {
   tone: "scheduled" | "completed" | "delayed";
 };
 
+export type DemandCurvePoint = {
+  week: string;
+  trips: number;
+  capacity: number;
+};
+
 export const kpiMetrics: KpiMetric[] = [
   {
     label: "Completed trips",
@@ -58,7 +64,20 @@ export const kpiPeriodOptions = [
   { label: "Current quarter", value: "quarter" },
 ];
 
-export const kpiDemandCurve = [42, 51, 64, 58, 72, 79, 74, 88, 94, 85, 76, 82];
+export const kpiDemandCurve: DemandCurvePoint[] = [
+  { week: "W1", trips: 42, capacity: 35 },
+  { week: "W2", trips: 51, capacity: 41 },
+  { week: "W3", trips: 64, capacity: 46 },
+  { week: "W4", trips: 58, capacity: 43 },
+  { week: "W5", trips: 72, capacity: 57 },
+  { week: "W6", trips: 79, capacity: 62 },
+  { week: "W7", trips: 74, capacity: 60 },
+  { week: "W8", trips: 88, capacity: 71 },
+  { week: "W9", trips: 94, capacity: 79 },
+  { week: "W10", trips: 85, capacity: 70 },
+  { week: "W11", trips: 76, capacity: 64 },
+  { week: "W12", trips: 82, capacity: 68 },
+];
 
 export const corridorPerformance: CorridorRow[] = [
   {

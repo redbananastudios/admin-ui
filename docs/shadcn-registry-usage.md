@@ -40,6 +40,8 @@ That URL works with:
 - `@redtaxi/redtaxi-resource-detail-page`
 - `@redtaxi/redtaxi-kpi-overview-page`
 
+`@redtaxi/redtaxi-ui` now includes real chart support through shadcn charts and `recharts`.
+
 ## Install Into A New App
 
 1. Create a new Next.js app

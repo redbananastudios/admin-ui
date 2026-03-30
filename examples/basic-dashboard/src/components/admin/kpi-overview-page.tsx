@@ -1,3 +1,5 @@
+"use client";
+
 import { Activity, ArrowUpRight, Gauge, ShieldCheck, TrendingUp } from "lucide-react";
 import { DataTableShell } from "@/components/admin/data-table-shell";
 import { SearchDateRangeToolbar } from "@/components/admin/filter-toolbar-presets";
@@ -6,6 +8,14 @@ import { SectionCard } from "@/components/admin/section-card";
 import { StatCard } from "@/components/admin/stat-card";
 import { StatusBadge } from "@/components/admin/status-badge";
 import { Button } from "@/components/ui/button";
+import {
+  type ChartConfig,
+  ChartContainer,
+  ChartLegend,
+  ChartLegendContent,
+  ChartTooltip,
+  ChartTooltipContent,
+} from "@/components/ui/chart";
 import {
   Table,
   TableBody,
@@ -22,8 +32,26 @@ import {
   kpiPeriodOptions,
   operationalIncidents,
 } from "@/lib/mock-kpi-overview";
+import {
+  Area,
+  CartesianGrid,
+  ComposedChart,
+  Line,
+  XAxis,
+  YAxis,
+} from "recharts";
 
 const statIcons = [TrendingUp, ShieldCheck, Gauge, Activity];
+const performanceChartConfig = {
+  trips: {
+    label: "Trips",
+    color: "var(--color-chart-1)",
+  },
+  capacity: {
+    label: "Capacity",
+    color: "var(--color-chart-3)",
+  },
+} satisfies ChartConfig;
 
 export function KpiOverviewPage() {
   return (
@@ -69,7 +97,7 @@ export function KpiOverviewPage() {
       <section className="grid gap-4 xl:grid-cols-[minmax(0,1.65fr)_minmax(320px,0.85fr)]">
         <SectionCard
           title="Demand and capacity curve"
-          description="Chart placeholder pattern for route volume, capacity, or operational throughput."
+          description="Reusable Red Taxi chart surface for route volume, capacity, or operational throughput."
           action={<StatusBadge status="scheduled">Weekly view</StatusBadge>}
         >
           <div className="space-y-5">
@@ -114,40 +142,52 @@ export function KpiOverviewPage() {
                     Completed trip volume
                   </p>
                   <p className="mt-1 text-sm text-muted-foreground">
-                    Mocked weekly performance data for layout and reporting rhythm
+                    Shared Red Taxi chart component using Recharts under the hood
                   </p>
-                </div>
-                <div className="flex items-center gap-4 text-xs text-muted-foreground">
-                  <span className="inline-flex items-center gap-2">
-                    <span className="h-2.5 w-2.5 rounded-full bg-primary" />
-                    Trips
-                  </span>
-                  <span className="inline-flex items-center gap-2">
-                    <span className="h-2.5 w-2.5 rounded-full bg-info" />
-                    Capacity
-                  </span>
                 </div>
               </div>
 
-              <div className="flex h-64 items-end gap-2">
-                {kpiDemandCurve.map((value, index) => (
-                  <div key={index} className="flex flex-1 flex-col items-center gap-3">
-                    <div className="relative flex h-full w-full items-end justify-center">
-                      <div
-                        className="w-full rounded-t-2xl bg-linear-to-t from-primary/85 via-primary to-primary shadow-soft"
-                        style={{ height: `${value}%` }}
-                      />
-                      <div
-                        className="absolute bottom-0 w-[42%] rounded-t-2xl bg-info/25"
-                        style={{ height: `${Math.max(value - 16, 22)}%` }}
-                      />
-                    </div>
-                    <span className="text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
-                      {`W${index + 1}`}
-                    </span>
-                  </div>
-                ))}
-              </div>
+              <ChartContainer
+                config={performanceChartConfig}
+                className="min-h-[18rem] w-full"
+              >
+                <ComposedChart accessibilityLayer data={kpiDemandCurve}>
+                  <CartesianGrid vertical={false} strokeDasharray="3 3" />
+                  <XAxis
+                    dataKey="week"
+                    tickLine={false}
+                    axisLine={false}
+                    tickMargin={10}
+                  />
+                  <YAxis hide domain={[0, 100]} />
+                  <ChartTooltip content={<ChartTooltipContent indicator="line" />} />
+                  <ChartLegend
+                    verticalAlign="top"
+                    content={<ChartLegendContent className="justify-start gap-5 pb-4 pt-0" />}
+                  />
+                  <Area
+                    type="monotone"
+                    dataKey="capacity"
+                    fill="var(--color-capacity)"
+                    fillOpacity={0.14}
+                    stroke="var(--color-capacity)"
+                    strokeWidth={1.5}
+                  />
+                  <Line
+                    type="monotone"
+                    dataKey="trips"
+                    stroke="var(--color-trips)"
+                    strokeWidth={2.75}
+                    dot={false}
+                    activeDot={{
+                      r: 5,
+                      fill: "var(--color-trips)",
+                      stroke: "hsl(var(--panel-background))",
+                      strokeWidth: 2,
+                    }}
+                  />
+                </ComposedChart>
+              </ChartContainer>
             </div>
           </div>
         </SectionCard>
