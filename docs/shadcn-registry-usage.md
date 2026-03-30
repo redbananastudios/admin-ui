@@ -12,6 +12,16 @@ Recommended registry URL:
 https://raw.githubusercontent.com/redbananastudios/admin-ui/main/public/r/{name}.json
 ```
 
+`{name}` is a placeholder used by shadcn. If you paste that exact string into a browser, it will 404.
+
+Concrete working examples:
+
+```text
+https://raw.githubusercontent.com/redbananastudios/admin-ui/main/public/r/registry.json
+https://raw.githubusercontent.com/redbananastudios/admin-ui/main/public/r/redtaxi-dashboard-starter.json
+https://raw.githubusercontent.com/redbananastudios/admin-ui/main/public/r/redtaxi-resource-list-page.json
+```
+
 That URL works with:
 
 - shadcn CLI

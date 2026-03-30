@@ -71,6 +71,13 @@ Registry URL template:
 https://raw.githubusercontent.com/redbananastudios/admin-ui/main/public/r/{name}.json
 ```
 
+`{name}` is a shadcn placeholder. Use that exact form inside `components.json`, but use a concrete file name when opening the registry in a browser, for example:
+
+```text
+https://raw.githubusercontent.com/redbananastudios/admin-ui/main/public/r/registry.json
+https://raw.githubusercontent.com/redbananastudios/admin-ui/main/public/r/redtaxi-dashboard-starter.json
+```
+
 See `docs/shadcn-registry-usage.md` for install commands and MCP setup.
 
 Available higher-level registry blocks:
