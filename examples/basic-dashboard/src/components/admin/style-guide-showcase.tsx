@@ -1,15 +1,31 @@
 "use client";
 
-import { Boxes, CircleOff, Filter, Search, SlidersHorizontal, Trash2 } from "lucide-react";
+import * as React from "react";
+import {
+  Boxes,
+  ChevronDown,
+  CircleOff,
+  Filter,
+  Search,
+  SlidersHorizontal,
+  Trash2,
+} from "lucide-react";
 import { toast } from "sonner";
+import { ConfirmDialog } from "@/components/admin/confirm-dialog";
+import { DiffBadge } from "@/components/admin/diff-badge";
 import { EmptyState } from "@/components/admin/empty-state";
 import { FilterBar } from "@/components/admin/filter-bar";
 import { PageHeader } from "@/components/admin/page-header";
 import { RowDetailTable, type RowDetailTableColumn } from "@/components/admin/row-detail-table";
 import { SectionCard } from "@/components/admin/section-card";
+import {
+  SortableTableHead,
+  type SortState,
+} from "@/components/admin/sortable-table-head";
 import { DataTableShell } from "@/components/admin/data-table-shell";
 import { StatCard } from "@/components/admin/stat-card";
 import { StatusBadge } from "@/components/admin/status-badge";
+import { TablePagination } from "@/components/admin/table-pagination";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
 import {
   AlertDialog,
@@ -25,6 +41,11 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
 import {
   Dialog,
   DialogContent,
@@ -45,6 +66,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import {
   Select,
   SelectContent,
@@ -52,6 +74,11 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import {
+  ShimmerBlock,
+  ShimmerCircle,
+  ShimmerLines,
+} from "@/components/ui/shimmer";
 import {
   Sheet,
   SheetContent,
@@ -70,6 +97,14 @@ import {
   ChartTooltipContent,
   type ChartConfig,
 } from "@/components/ui/chart";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
 import {
@@ -97,6 +132,59 @@ const chartPreviewConfig = {
     color: "var(--color-chart-3)",
   },
 } satisfies ChartConfig;
+
+type TableControlRow = {
+  item: string;
+  owner: string;
+  updated: string;
+  changeTone: "added" | "removed";
+  changeLabel: string;
+};
+
+const tableControlRows: TableControlRow[] = [
+  {
+    item: "Vehicle document pack",
+    owner: "Fleet Ops",
+    updated: "02 min ago",
+    changeTone: "added",
+    changeLabel: "+3 docs",
+  },
+  {
+    item: "Airport corridor rule",
+    owner: "Dispatch Lead",
+    updated: "08 min ago",
+    changeTone: "removed",
+    changeLabel: "-1 lane",
+  },
+  {
+    item: "Pricing override",
+    owner: "Revenue Ops",
+    updated: "16 min ago",
+    changeTone: "added",
+    changeLabel: "+2 bands",
+  },
+  {
+    item: "Night shift fallback",
+    owner: "Control Room",
+    updated: "24 min ago",
+    changeTone: "removed",
+    changeLabel: "-4 slots",
+  },
+  {
+    item: "Driver briefing deck",
+    owner: "People Ops",
+    updated: "41 min ago",
+    changeTone: "added",
+    changeLabel: "+1 pack",
+  },
+  {
+    item: "Zone geofence revision",
+    owner: "Platform Ops",
+    updated: "55 min ago",
+    changeTone: "removed",
+    changeLabel: "-2 borders",
+  },
+];
 
 const rowDetailPreviewColumns: RowDetailTableColumn<RowDetailRecord>[] = [
   {
@@ -184,6 +272,31 @@ function renderRowDetailPreview(row: RowDetailRecord) {
 
 export function StyleGuideShowcase() {
   const defaultExpandedIds = rowDetailRows[0] ? [rowDetailRows[0].id] : [];
+  const [tableSort, setTableSort] = React.useState<SortState>({
+    column: "item",
+    direction: "asc",
+  });
+  const [tablePage, setTablePage] = React.useState(1);
+  const [tablePageSize, setTablePageSize] = React.useState(3);
+
+  const sortedTableControlRows = tableControlRows.toSorted((left, right) => {
+    const direction = tableSort?.direction === "desc" ? -1 : 1;
+    const activeColumn = tableSort?.column ?? "item";
+
+    switch (activeColumn) {
+      case "owner":
+        return left.owner.localeCompare(right.owner) * direction;
+      case "updated":
+        return left.updated.localeCompare(right.updated) * direction;
+      default:
+        return left.item.localeCompare(right.item) * direction;
+    }
+  });
+
+  const paginatedTableControlRows = sortedTableControlRows.slice(
+    (tablePage - 1) * tablePageSize,
+    tablePage * tablePageSize,
+  );
 
   return (
     <div className="space-y-6">
@@ -221,6 +334,8 @@ export function StyleGuideShowcase() {
             <StatusBadge status="completed">completed</StatusBadge>
             <StatusBadge status="delayed">delayed</StatusBadge>
             <StatusBadge status="cancelled">cancelled</StatusBadge>
+            <DiffBadge tone="added">+4 docs</DiffBadge>
+            <DiffBadge tone="removed">-2 lanes</DiffBadge>
           </div>
         </SectionCard>
       </section>
@@ -229,17 +344,26 @@ export function StyleGuideShowcase() {
         <SectionCard title="Form controls" description="Dense inputs that still feel premium and calm under load.">
           <div className="grid gap-4">
             <div className="grid gap-4 sm:grid-cols-2">
-              <Input placeholder="Search drivers or bookings" />
-              <Select defaultValue="dispatch">
-                <SelectTrigger>
-                  <SelectValue placeholder="Select view" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="dispatch">Dispatch queue</SelectItem>
-                  <SelectItem value="fleet">Fleet board</SelectItem>
-                  <SelectItem value="billing">Billing ops</SelectItem>
-                </SelectContent>
-              </Select>
+              <div className="grid gap-2">
+                <Label htmlFor="style-guide-search">Search workspace</Label>
+                <Input
+                  id="style-guide-search"
+                  placeholder="Search drivers or bookings"
+                />
+              </div>
+              <div className="grid gap-2">
+                <Label htmlFor="style-guide-view">View preset</Label>
+                <Select defaultValue="dispatch">
+                  <SelectTrigger id="style-guide-view">
+                    <SelectValue placeholder="Select view" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="dispatch">Dispatch queue</SelectItem>
+                    <SelectItem value="fleet">Fleet board</SelectItem>
+                    <SelectItem value="billing">Billing ops</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
               <DatePicker defaultValue={new Date(2026, 2, 30)} />
@@ -261,6 +385,48 @@ export function StyleGuideShowcase() {
                 Enable surge watch
               </label>
             </div>
+
+            <Collapsible
+              defaultOpen
+              className="rounded-[calc(var(--radius)*1.02)] border border-border/60 bg-surface-2/90 shadow-soft"
+            >
+              <div className="flex items-center justify-between gap-3 px-4 py-3">
+                <div className="space-y-1">
+                  <p className="text-sm font-semibold text-foreground">
+                    Shift handover notes
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    Collapsible blocks keep dense forms readable without leaving the page.
+                  </p>
+                </div>
+                <CollapsibleTrigger asChild>
+                  <Button type="button" variant="ghost" size="sm">
+                    Toggle detail
+                    <ChevronDown className="size-4" />
+                  </Button>
+                </CollapsibleTrigger>
+              </div>
+              <CollapsibleContent className="border-t border-border/60 px-4 py-4">
+                <div className="grid gap-3 sm:grid-cols-2">
+                  <div className="rounded-2xl border border-border/60 bg-background/65 px-4 py-3">
+                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+                      Handover owner
+                    </p>
+                    <p className="mt-2 text-sm font-semibold text-foreground">
+                      Evening dispatch lead
+                    </p>
+                  </div>
+                  <div className="rounded-2xl border border-border/60 bg-background/65 px-4 py-3">
+                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+                      Review window
+                    </p>
+                    <p className="mt-2 text-sm font-semibold text-foreground">
+                      Next 30 minutes
+                    </p>
+                  </div>
+                </div>
+              </CollapsibleContent>
+            </Collapsible>
           </div>
         </SectionCard>
 
@@ -305,6 +471,19 @@ export function StyleGuideShowcase() {
                 </AlertDialogFooter>
               </AlertDialogContent>
             </AlertDialog>
+
+            <ConfirmDialog
+              title="Archive selected incidents"
+              description="Use the reusable confirm wrapper when you need title, description, and loading state without rebuilding the dialog footer each time."
+              confirmLabel="Archive batch"
+              loadingLabel="Archiving..."
+              trigger={<Button variant="outline">Open confirm dialog</Button>}
+              onConfirm={() => new Promise((resolve) => setTimeout(resolve, 900))}
+            >
+              <div className="rounded-2xl border border-border/60 bg-surface-2 px-4 py-3 text-sm leading-6 text-muted-foreground">
+                12 incident records will be moved to the archive queue and removed from the live watchlist.
+              </div>
+            </ConfirmDialog>
 
             <Sheet>
               <SheetTrigger asChild>
@@ -385,11 +564,21 @@ export function StyleGuideShowcase() {
           </Tabs>
         </SectionCard>
 
-        <SectionCard title="Loading states" description="Skeletons should feel like part of the surface, not generic placeholders.">
-          <div className="space-y-3">
+        <SectionCard title="Loading states" description="Use skeletons for simple placeholders and shimmer blocks when a richer loading scaffold reads better.">
+          <div className="space-y-4">
             <Skeleton className="h-5 w-32" />
             <Skeleton className="h-11 w-full" />
             <Skeleton className="h-28 w-full" />
+            <div className="grid gap-3 rounded-[calc(var(--radius)*1.02)] border border-border/60 bg-surface-2/90 p-4 shadow-soft">
+              <div className="flex items-center gap-3">
+                <ShimmerCircle />
+                <div className="flex-1 space-y-2">
+                  <ShimmerBlock className="h-4 w-1/3" />
+                  <ShimmerBlock className="h-3.5 w-2/5" />
+                </div>
+              </div>
+              <ShimmerLines lines={3} />
+            </div>
           </div>
         </SectionCard>
       </section>
@@ -476,6 +665,77 @@ export function StyleGuideShowcase() {
           </FilterBar>
         </SectionCard>
       </section>
+
+      <DataTableShell
+        title="Table controls"
+        description="Sortable headers, pagination, and diff badges for list screens that need more than a static table."
+      >
+        <div className="space-y-4">
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <SortableTableHead
+                  column="item"
+                  sort={tableSort}
+                  onSortChange={(nextSort) => {
+                    setTableSort(nextSort);
+                    setTablePage(1);
+                  }}
+                >
+                  Item
+                </SortableTableHead>
+                <SortableTableHead
+                  column="owner"
+                  sort={tableSort}
+                  onSortChange={(nextSort) => {
+                    setTableSort(nextSort);
+                    setTablePage(1);
+                  }}
+                >
+                  Owner
+                </SortableTableHead>
+                <TableHead>Diff</TableHead>
+                <SortableTableHead
+                  column="updated"
+                  sort={tableSort}
+                  onSortChange={(nextSort) => {
+                    setTableSort(nextSort);
+                    setTablePage(1);
+                  }}
+                  align="right"
+                >
+                  Updated
+                </SortableTableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {paginatedTableControlRows.map((row) => (
+                <TableRow key={row.item}>
+                  <TableCell className="font-semibold">{row.item}</TableCell>
+                  <TableCell>{row.owner}</TableCell>
+                  <TableCell>
+                    <DiffBadge tone={row.changeTone}>{row.changeLabel}</DiffBadge>
+                  </TableCell>
+                  <TableCell className="text-right">{row.updated}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+
+          <TablePagination
+            totalItems={tableControlRows.length}
+            page={tablePage}
+            pageSize={tablePageSize}
+            onPageChange={setTablePage}
+            onPageSizeChange={(nextPageSize) => {
+              setTablePageSize(nextPageSize);
+              setTablePage(1);
+            }}
+            pageSizeOptions={[3, 4, 6]}
+            itemLabel="controls"
+          />
+        </div>
+      </DataTableShell>
 
       <DataTableShell
         title="Row detail view"

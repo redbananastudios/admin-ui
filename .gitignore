@@ -25,6 +25,7 @@
 *.pem
 .codex/
 CLAUDE.md
+output/
 
 # debug
 npm-debug.log*

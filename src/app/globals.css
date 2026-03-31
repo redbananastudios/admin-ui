@@ -65,6 +65,12 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
 :root {
   --background: 24 24% 97%;
   --foreground: 234 22% 14%;

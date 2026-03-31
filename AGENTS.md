@@ -47,6 +47,13 @@ The reusable page patterns are:
 - `src/components/admin/kpi-overview-page.tsx`
 - `src/components/admin/filter-toolbar-presets.tsx`
 - `src/components/admin/row-detail-table.tsx`
+- `src/components/admin/sortable-table-head.tsx`
+- `src/components/admin/table-pagination.tsx`
+- `src/components/admin/confirm-dialog.tsx`
+- `src/components/admin/diff-badge.tsx`
+- `src/components/ui/label.tsx`
+- `src/components/ui/collapsible.tsx`
+- `src/components/ui/shimmer.tsx`
 - `src/components/ui/alert-dialog.tsx`
 - `src/components/ui/date-range-picker.tsx`
 - `src/components/theme/app-toaster.tsx`

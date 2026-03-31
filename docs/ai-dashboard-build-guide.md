@@ -125,10 +125,14 @@ These define the admin look and page rhythm:
 - `src/components/admin/app-card.tsx`
 - `src/components/admin/stat-card.tsx`
 - `src/components/admin/status-badge.tsx`
+- `src/components/admin/diff-badge.tsx`
 - `src/components/admin/data-table-shell.tsx`
 - `src/components/admin/filter-bar.tsx`
 - `src/components/admin/empty-state.tsx`
 - `src/components/admin/row-detail-table.tsx`
+- `src/components/admin/sortable-table-head.tsx`
+- `src/components/admin/table-pagination.tsx`
+- `src/components/admin/confirm-dialog.tsx`
 
 ## How To Build A New Dashboard Page
 

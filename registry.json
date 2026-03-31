@@ -87,6 +87,11 @@
           "target": "src/components/ui/avatar.tsx"
         },
         {
+          "path": "registry/redtaxi/redtaxi-ui/src/components/ui/collapsible.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/collapsible.tsx"
+        },
+        {
           "path": "registry/redtaxi/redtaxi-ui/src/components/ui/badge.tsx",
           "type": "registry:file",
           "target": "src/components/ui/badge.tsx"
@@ -147,6 +152,11 @@
           "target": "src/components/ui/input.tsx"
         },
         {
+          "path": "registry/redtaxi/redtaxi-ui/src/components/ui/label.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/label.tsx"
+        },
+        {
           "path": "registry/redtaxi/redtaxi-ui/src/components/ui/popover.tsx",
           "type": "registry:file",
           "target": "src/components/ui/popover.tsx"
@@ -175,6 +185,11 @@
           "path": "registry/redtaxi/redtaxi-ui/src/components/ui/skeleton.tsx",
           "type": "registry:file",
           "target": "src/components/ui/skeleton.tsx"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-ui/src/components/ui/shimmer.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/shimmer.tsx"
         },
         {
           "path": "registry/redtaxi/redtaxi-ui/src/components/ui/switch.tsx",
@@ -238,6 +253,11 @@
           "target": "src/components/admin/app-header.tsx"
         },
         {
+          "path": "registry/redtaxi/redtaxi-admin-shell/src/components/admin/confirm-dialog.tsx",
+          "type": "registry:file",
+          "target": "src/components/admin/confirm-dialog.tsx"
+        },
+        {
           "path": "registry/redtaxi/redtaxi-admin-shell/src/components/admin/app-shell.tsx",
           "type": "registry:file",
           "target": "src/components/admin/app-shell.tsx"
@@ -256,6 +276,11 @@
           "path": "registry/redtaxi/redtaxi-admin-shell/src/components/admin/empty-state.tsx",
           "type": "registry:file",
           "target": "src/components/admin/empty-state.tsx"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-admin-shell/src/components/admin/diff-badge.tsx",
+          "type": "registry:file",
+          "target": "src/components/admin/diff-badge.tsx"
         },
         {
           "path": "registry/redtaxi/redtaxi-admin-shell/src/components/admin/filter-bar.tsx",
@@ -278,6 +303,11 @@
           "target": "src/components/admin/section-card.tsx"
         },
         {
+          "path": "registry/redtaxi/redtaxi-admin-shell/src/components/admin/sortable-table-head.tsx",
+          "type": "registry:file",
+          "target": "src/components/admin/sortable-table-head.tsx"
+        },
+        {
           "path": "registry/redtaxi/redtaxi-admin-shell/src/components/admin/sidebar-nav-item.tsx",
           "type": "registry:file",
           "target": "src/components/admin/sidebar-nav-item.tsx"
@@ -291,6 +321,11 @@
           "path": "registry/redtaxi/redtaxi-admin-shell/src/components/admin/status-badge.tsx",
           "type": "registry:file",
           "target": "src/components/admin/status-badge.tsx"
+        },
+        {
+          "path": "registry/redtaxi/redtaxi-admin-shell/src/components/admin/table-pagination.tsx",
+          "type": "registry:file",
+          "target": "src/components/admin/table-pagination.tsx"
         },
         {
           "path": "registry/redtaxi/redtaxi-admin-shell/src/lib/navigation.ts",

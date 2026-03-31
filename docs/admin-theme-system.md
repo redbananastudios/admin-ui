@@ -95,8 +95,10 @@ Restyled primitives include:
 
 - `Button`
 - `Input`
+- `Label`
 - `Textarea`
 - `Select`
+- `Collapsible`
 - `Dropdown Menu`
 - `Dialog`
 - `AlertDialog`
@@ -138,14 +140,19 @@ Key styling decisions:
 - `AppCard`
 - `StatCard`
 - `StatusBadge`
+- `DiffBadge`
 - `DataTableShell`
 - `FilterBar`
 - `EmptyState`
 - `RowDetailTable`
+- `SortableTableHead`
+- `TablePagination`
+- `ConfirmDialog`
 - `src/components/ui/chart.tsx` for real chart rendering
 - `src/components/ui/calendar.tsx`, `src/components/ui/date-picker.tsx`, and `src/components/ui/date-range-picker.tsx` for themed date selection
 - `src/components/ui/alert-dialog.tsx` for destructive confirmations
 - `src/components/theme/app-toaster.tsx` for Red Taxi-styled toast feedback
+- `src/components/ui/shimmer.tsx` for richer loading scaffolds
 
 These wrappers are intentionally thin and should stay thin. They compose shadcn components and theme tokens rather than replacing the base UI model.
 

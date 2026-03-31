@@ -10,6 +10,7 @@ This repository contains:
 - real chart support via shadcn charts and Recharts
 - themed calendar and date picker support for form and filter workflows
 - Red Taxi-themed alert dialogs, toast feedback, and date range picking
+- labels, collapsibles, pagination, sortable table heads, diff badges, confirm dialogs, and shimmer loading blocks
 - thin wrapper components for common admin patterns
 - a GitHub-hosted shadcn registry for reusable Red Taxi installs
 - a style guide route for visual QA
