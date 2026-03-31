@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "redtaxi-theme-provider",
+  "title": "Red Taxi Theme Provider",
+  "author": "Red Banana Studios",
+  "description": "Standalone Red Taxi theme provider theme helper.",
+  "dependencies": [
+    "next-themes"
+  ],
+  "files": [
+    {
+      "path": "src/components/theme/theme-provider.tsx",
+      "content": "\"use client\";\n\nimport type { ThemeProviderProps } from \"next-themes\";\nimport { ThemeProvider as NextThemesProvider } from \"next-themes\";\n\nexport function ThemeProvider({ children, ...props }: ThemeProviderProps) {\n  return <NextThemesProvider {...props}>{children}</NextThemesProvider>;\n}\n",
+      "type": "registry:file",
+      "target": "src/components/theme/theme-provider.tsx"
+    }
+  ],
+  "meta": {
+    "brand": "redtaxi",
+    "scope": "standalone-theme"
+  },
+  "docs": "Install this item when you need the Theme Provider theme helper without pulling in the full Red Taxi theme bundle.",
+  "categories": [
+    "theme",
+    "standalone",
+    "admin"
+  ],
+  "type": "registry:block"
+}

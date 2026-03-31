@@ -1,0 +1,38 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "redtaxi-section-card",
+  "title": "Red Taxi Section Card",
+  "author": "Red Banana Studios",
+  "description": "Standalone Red Taxi section card admin component.",
+  "dependencies": [
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "@redtaxi/redtaxi-card"
+  ],
+  "files": [
+    {
+      "path": "src/lib/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\"\nimport { twMerge } from \"tailwind-merge\"\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
+      "type": "registry:file",
+      "target": "src/lib/utils.ts"
+    },
+    {
+      "path": "src/components/admin/section-card.tsx",
+      "content": "import type { ReactNode } from \"react\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\nimport {\n  Card,\n  CardAction,\n  CardContent,\n  CardDescription,\n  CardHeader,\n  CardTitle,\n} from \"@/components/ui/card\";\nimport { cn } from \"@/lib/utils\";\n\nconst sectionCardVariants = cva(\"shadow-panel\", {\n  variants: {\n    tone: {\n      default: \"bg-panel-background text-panel-foreground\",\n      muted: \"bg-surface-2 text-panel-foreground\",\n      transparent: \"bg-panel-background/90 text-panel-foreground backdrop-blur-sm\",\n    },\n  },\n  defaultVariants: {\n    tone: \"default\",\n  },\n});\n\ntype SectionCardProps = VariantProps<typeof sectionCardVariants> & {\n  title?: string;\n  description?: string;\n  action?: ReactNode;\n  children: ReactNode;\n  className?: string;\n  contentClassName?: string;\n};\n\nexport function SectionCard({\n  title,\n  description,\n  action,\n  children,\n  className,\n  contentClassName,\n  tone,\n}: SectionCardProps) {\n  return (\n    <Card\n      className={cn(\n        \"border border-border/70 bg-panel-background/95 shadow-panel\",\n        sectionCardVariants({ tone }),\n        className,\n      )}\n    >\n      {title || description || action ? (\n        <CardHeader className=\"border-b border-border/60 pb-4\">\n          <div className=\"space-y-1\">\n            {title ? <CardTitle>{title}</CardTitle> : null}\n            {description ? <CardDescription>{description}</CardDescription> : null}\n          </div>\n          {action ? <CardAction>{action}</CardAction> : null}\n        </CardHeader>\n      ) : null}\n      <CardContent className={cn(\"pt-5\", contentClassName)}>{children}</CardContent>\n    </Card>\n  );\n}\n",
+      "type": "registry:file",
+      "target": "src/components/admin/section-card.tsx"
+    }
+  ],
+  "meta": {
+    "brand": "redtaxi",
+    "scope": "standalone-admin"
+  },
+  "docs": "Install this item when you need the Section Card component without pulling in the full Red Taxi admin bundle.",
+  "categories": [
+    "admin",
+    "standalone",
+    "component"
+  ],
+  "type": "registry:block"
+}

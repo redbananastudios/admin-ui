@@ -1,0 +1,41 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "redtaxi-date-picker",
+  "title": "Red Taxi Date Picker",
+  "author": "Red Banana Studios",
+  "description": "Standalone Red Taxi date picker primitive.",
+  "dependencies": [
+    "date-fns",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@redtaxi/redtaxi-button",
+    "@redtaxi/redtaxi-calendar",
+    "@redtaxi/redtaxi-popover"
+  ],
+  "files": [
+    {
+      "path": "src/lib/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\"\nimport { twMerge } from \"tailwind-merge\"\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
+      "type": "registry:file",
+      "target": "src/lib/utils.ts"
+    },
+    {
+      "path": "src/components/ui/date-picker.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { format } from \"date-fns\"\nimport { CalendarIcon } from \"lucide-react\"\nimport { Button } from \"@/components/ui/button\"\nimport { Calendar } from \"@/components/ui/calendar\"\nimport { Popover, PopoverContent, PopoverTrigger } from \"@/components/ui/popover\"\nimport { cn } from \"@/lib/utils\"\n\ntype DatePickerProps = Omit<\n  React.ComponentProps<typeof Calendar>,\n  \"mode\" | \"selected\" | \"onSelect\"\n> & {\n  id?: string\n  name?: string\n  value?: Date\n  defaultValue?: Date\n  onChange?: (date?: Date) => void\n  placeholder?: string\n  className?: string\n  align?: \"start\" | \"center\" | \"end\"\n}\n\nexport function DatePicker({\n  id,\n  name,\n  value,\n  defaultValue,\n  onChange,\n  placeholder = \"Select date\",\n  className,\n  align = \"start\",\n  ...props\n}: DatePickerProps) {\n  const [open, setOpen] = React.useState(false)\n  const [internalDate, setInternalDate] = React.useState<Date | undefined>(\n    defaultValue,\n  )\n\n  const isControlled = value !== undefined\n  const selectedDate = isControlled ? value : internalDate\n\n  function handleSelect(date?: Date) {\n    if (!isControlled) {\n      setInternalDate(date)\n    }\n\n    onChange?.(date)\n    setOpen(false)\n  }\n\n  return (\n    <Popover open={open} onOpenChange={setOpen}>\n      <PopoverTrigger asChild>\n        <Button\n          id={id}\n          type=\"button\"\n          variant=\"outline\"\n          className={cn(\n            \"h-11 w-full justify-between rounded-2xl border-input/90 bg-surface-2 px-4 py-2 text-left text-sm font-medium text-foreground shadow-soft hover:bg-surface-2 hover:text-foreground focus-visible:bg-background\",\n            !selectedDate && \"text-muted-foreground\",\n            className,\n          )}\n        >\n          <span className=\"truncate\">\n            {selectedDate ? format(selectedDate, \"dd MMM yyyy\") : placeholder}\n          </span>\n          <CalendarIcon className=\"size-4 text-muted-foreground\" />\n        </Button>\n      </PopoverTrigger>\n      <PopoverContent align={align} className=\"w-auto p-0\">\n        <Calendar\n          mode=\"single\"\n          selected={selectedDate}\n          onSelect={handleSelect}\n          className=\"bg-popover/98\"\n          initialFocus\n          {...props}\n        />\n      </PopoverContent>\n      {name ? (\n        <input\n          type=\"hidden\"\n          name={name}\n          value={selectedDate ? format(selectedDate, \"yyyy-MM-dd\") : \"\"}\n        />\n      ) : null}\n    </Popover>\n  )\n}\n",
+      "type": "registry:file",
+      "target": "src/components/ui/date-picker.tsx"
+    }
+  ],
+  "meta": {
+    "brand": "redtaxi",
+    "scope": "standalone-ui"
+  },
+  "docs": "Install this item when you need the Date Picker primitive without pulling in the full Red Taxi UI bundle.",
+  "categories": [
+    "ui",
+    "standalone",
+    "admin"
+  ],
+  "type": "registry:ui"
+}

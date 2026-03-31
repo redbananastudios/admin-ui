@@ -1,0 +1,39 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "redtaxi-sortable-table-head",
+  "title": "Red Taxi Sortable Table Head",
+  "author": "Red Banana Studios",
+  "description": "Standalone Red Taxi sortable table head admin component.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@redtaxi/redtaxi-button",
+    "@redtaxi/redtaxi-table"
+  ],
+  "files": [
+    {
+      "path": "src/lib/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\"\nimport { twMerge } from \"tailwind-merge\"\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
+      "type": "registry:file",
+      "target": "src/lib/utils.ts"
+    },
+    {
+      "path": "src/components/admin/sortable-table-head.tsx",
+      "content": "\"use client\";\n\nimport type { ReactNode } from \"react\";\nimport {\n  ArrowDown,\n  ArrowUp,\n  ArrowUpDown,\n} from \"lucide-react\";\nimport { Button } from \"@/components/ui/button\";\nimport { TableHead } from \"@/components/ui/table\";\nimport { cn } from \"@/lib/utils\";\n\nexport type SortDirection = \"asc\" | \"desc\";\n\nexport type SortState = {\n  column: string;\n  direction: SortDirection;\n} | null;\n\ntype SortableTableHeadProps = {\n  column: string;\n  children: ReactNode;\n  sort: SortState;\n  onSortChange: (nextSort: SortState) => void;\n  className?: string;\n  buttonClassName?: string;\n  align?: \"left\" | \"right\";\n};\n\nexport function SortableTableHead({\n  column,\n  children,\n  sort,\n  onSortChange,\n  className,\n  buttonClassName,\n  align = \"left\",\n}: SortableTableHeadProps) {\n  const isActive = sort?.column === column;\n  const direction = isActive ? sort.direction : null;\n\n  function handleSort() {\n    onSortChange({\n      column,\n      direction:\n        direction === \"asc\" ? \"desc\" : \"asc\",\n    });\n  }\n\n  return (\n    <TableHead\n      className={cn(align === \"right\" && \"text-right\", className)}\n    >\n      <Button\n        type=\"button\"\n        variant=\"ghost\"\n        size=\"sm\"\n        className={cn(\n          \"-ml-3 h-8 gap-1.5 rounded-xl px-3 text-[0.72rem] uppercase tracking-[0.16em] text-muted-foreground hover:bg-surface-3 hover:text-foreground\",\n          align === \"right\" && \"ml-auto\",\n          buttonClassName,\n        )}\n        onClick={handleSort}\n      >\n        <span>{children}</span>\n        {direction === \"asc\" ? (\n          <ArrowUp className=\"size-3.5\" />\n        ) : direction === \"desc\" ? (\n          <ArrowDown className=\"size-3.5\" />\n        ) : (\n          <ArrowUpDown className=\"size-3.5\" />\n        )}\n      </Button>\n    </TableHead>\n  );\n}\n",
+      "type": "registry:file",
+      "target": "src/components/admin/sortable-table-head.tsx"
+    }
+  ],
+  "meta": {
+    "brand": "redtaxi",
+    "scope": "standalone-admin"
+  },
+  "docs": "Install this item when you need the Sortable Table Head component without pulling in the full Red Taxi admin bundle.",
+  "categories": [
+    "admin",
+    "standalone",
+    "component"
+  ],
+  "type": "registry:block"
+}

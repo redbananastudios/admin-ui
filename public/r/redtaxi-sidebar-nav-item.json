@@ -1,0 +1,41 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "redtaxi-sidebar-nav-item",
+  "title": "Red Taxi Sidebar Nav Item",
+  "author": "Red Banana Studios",
+  "description": "Standalone Red Taxi sidebar nav item admin component.",
+  "registryDependencies": [
+    "@redtaxi/redtaxi-sidebar"
+  ],
+  "files": [
+    {
+      "path": "src/lib/navigation.ts",
+      "content": "import type { LucideIcon } from \"lucide-react\";\nimport {\n  Blocks,\n  ChartColumnBig,\n  CarFront,\n  CreditCard,\n  PanelsTopLeft,\n  FilePenLine,\n  FileSearch2,\n  LayoutDashboard,\n  MapPinned,\n  RadioTower,\n  Settings2,\n  ShieldCheck,\n  Waypoints,\n} from \"lucide-react\";\n\nexport type NavItem = {\n  title: string;\n  href?: string;\n  icon: LucideIcon;\n  badge?: string;\n  disabled?: boolean;\n  description?: string;\n};\n\nexport type NavSection = {\n  title: string;\n  items: NavItem[];\n};\n\nexport const APP_NAV_SECTIONS: NavSection[] = [\n  {\n    title: \"Control Center\",\n    items: [\n      {\n        title: \"Dashboard\",\n        href: \"/\",\n        icon: LayoutDashboard,\n        description: \"Executive operations overview\",\n      },\n      {\n        title: \"Bookings\",\n        icon: Waypoints,\n        badge: \"128\",\n        disabled: true,\n        description: \"Trip lifecycle monitoring\",\n      },\n      {\n        title: \"Dispatch\",\n        icon: RadioTower,\n        badge: \"9\",\n        disabled: true,\n        description: \"Live fleet coordination\",\n      },\n      {\n        title: \"Fleet\",\n        icon: CarFront,\n        disabled: true,\n        description: \"Drivers and vehicle health\",\n      },\n    ],\n  },\n  {\n    title: \"Foundation\",\n    items: [\n      {\n        title: \"Style Guide\",\n        href: \"/style-guide\",\n        icon: ShieldCheck,\n        description: \"Visual QA and component review\",\n      },\n      {\n        title: \"Coverage Map\",\n        icon: MapPinned,\n        disabled: true,\n        description: \"Zones and service footprint\",\n      },\n      {\n        title: \"Billing\",\n        icon: CreditCard,\n        disabled: true,\n        description: \"Revenue and settlements\",\n      },\n      {\n        title: \"Settings\",\n        icon: Settings2,\n        disabled: true,\n        description: \"Platform and tenant configuration\",\n      },\n    ],\n  },\n  {\n    title: \"Patterns\",\n    items: [\n      {\n        title: \"Resource List\",\n        href: \"/patterns/resource-list\",\n        icon: Blocks,\n        description: \"API collection page pattern\",\n      },\n      {\n        title: \"Resource Detail\",\n        href: \"/patterns/resource-detail\",\n        icon: FileSearch2,\n        description: \"Single record detail layout\",\n      },\n      {\n        title: \"Resource Form\",\n        href: \"/patterns/resource-form\",\n        icon: FilePenLine,\n        description: \"Create and edit workflow pattern\",\n      },\n      {\n        title: \"KPI Overview\",\n        href: \"/patterns/kpi-overview\",\n        icon: ChartColumnBig,\n        description: \"Management summary reporting\",\n      },\n      {\n        title: \"Row Detail Table\",\n        href: \"/patterns/row-detail\",\n        icon: PanelsTopLeft,\n        description: \"Expandable grid with inline drilldown panels\",\n      },\n    ],\n  },\n];\n\nexport const PAGE_META: Record<\n  string,\n  { title: string; subtitle: string; eyebrow: string }\n> = {\n  \"/\": {\n    title: \"Operations Dashboard\",\n    subtitle:\n      \"Keep dispatch, bookings, and fleet performance aligned from one transport control surface.\",\n    eyebrow: \"Live overview\",\n  },\n  \"/style-guide\": {\n    title: \"Style Guide\",\n    subtitle:\n      \"QA surface for the Red Taxi admin design system, wrappers, and interaction states.\",\n    eyebrow: \"Design system\",\n  },\n  \"/patterns/resource-list\": {\n    title: \"Resource List Pattern\",\n    subtitle:\n      \"Reusable Red Taxi collection view for vehicles, drivers, bookings, and other API-backed resources.\",\n    eyebrow: \"Reusable block\",\n  },\n  \"/patterns/resource-detail\": {\n    title: \"Resource Detail Pattern\",\n    subtitle:\n      \"Single-record detail layout with tabs, metadata rail, alerts, and related history.\",\n    eyebrow: \"Reusable block\",\n  },\n  \"/patterns/resource-form\": {\n    title: \"Resource Form Pattern\",\n    subtitle:\n      \"Create and edit workflow layout with dense form sections, release checks, and operational defaults.\",\n    eyebrow: \"Reusable block\",\n  },\n  \"/patterns/kpi-overview\": {\n    title: \"KPI Overview Pattern\",\n    subtitle:\n      \"Management reporting layout for operational metrics, incidents, and route performance.\",\n    eyebrow: \"Reusable block\",\n  },\n  \"/patterns/row-detail\": {\n    title: \"Row Detail Table Pattern\",\n    subtitle:\n      \"Expandable grid pattern for inline operational context, checklists, and quick actions.\",\n    eyebrow: \"Reusable block\",\n  },\n};\n\nexport function getRouteMeta(pathname: string) {\n  return (\n    PAGE_META[pathname] ?? {\n      title: \"Red Taxi Admin\",\n      subtitle: \"Premium transport operations workspace.\",\n      eyebrow: \"Workspace\",\n    }\n  );\n}\n",
+      "type": "registry:file",
+      "target": "src/lib/navigation.ts"
+    },
+    {
+      "path": "src/lib/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\"\nimport { twMerge } from \"tailwind-merge\"\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
+      "type": "registry:file",
+      "target": "src/lib/utils.ts"
+    },
+    {
+      "path": "src/components/admin/sidebar-nav-item.tsx",
+      "content": "\"use client\";\n\nimport Link from \"next/link\";\nimport { usePathname } from \"next/navigation\";\nimport type { NavItem } from \"@/lib/navigation\";\nimport {\n  SidebarMenuBadge,\n  SidebarMenuButton,\n  SidebarMenuItem,\n} from \"@/components/ui/sidebar\";\nimport { cn } from \"@/lib/utils\";\n\ntype SidebarNavItemProps = {\n  item: NavItem;\n};\n\nexport function SidebarNavItem({ item }: SidebarNavItemProps) {\n  const pathname = usePathname();\n  const isActive = item.href ? pathname === item.href : false;\n  const Icon = item.icon;\n\n  return (\n    <SidebarMenuItem>\n      <SidebarMenuButton\n        asChild={!item.disabled && Boolean(item.href)}\n        isActive={isActive}\n        tooltip={item.title}\n        className={cn(\n          \"h-11 rounded-2xl px-3 text-[0.95rem] font-medium text-sidebar-foreground/80 transition-all duration-150 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground data-active:bg-sidebar-active-background data-active:text-sidebar-active-foreground data-active:shadow-soft\",\n          item.disabled && \"cursor-not-allowed opacity-45 hover:bg-transparent\",\n        )}\n      >\n        {!item.disabled && item.href ? (\n          <Link href={item.href}>\n            <Icon className=\"size-[18px]\" />\n            <span>{item.title}</span>\n          </Link>\n        ) : (\n          <>\n            <Icon className=\"size-[18px]\" />\n            <span>{item.title}</span>\n          </>\n        )}\n      </SidebarMenuButton>\n      {item.badge ? (\n        <SidebarMenuBadge className=\"right-3 rounded-full border border-border/60 bg-surface-2 px-1.5 text-[0.62rem] font-semibold text-muted-foreground\">\n          {item.badge}\n        </SidebarMenuBadge>\n      ) : null}\n    </SidebarMenuItem>\n  );\n}\n",
+      "type": "registry:file",
+      "target": "src/components/admin/sidebar-nav-item.tsx"
+    }
+  ],
+  "meta": {
+    "brand": "redtaxi",
+    "scope": "standalone-admin"
+  },
+  "docs": "Install this item when you need the Sidebar Nav Item component without pulling in the full Red Taxi admin bundle.",
+  "categories": [
+    "admin",
+    "standalone",
+    "component"
+  ],
+  "type": "registry:block"
+}

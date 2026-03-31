@@ -1,0 +1,34 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "redtaxi-theme-toggle",
+  "title": "Red Taxi Theme Toggle",
+  "author": "Red Banana Studios",
+  "description": "Standalone Red Taxi theme toggle theme helper.",
+  "dependencies": [
+    "lucide-react",
+    "next-themes"
+  ],
+  "registryDependencies": [
+    "@redtaxi/redtaxi-button",
+    "@redtaxi/redtaxi-dropdown-menu"
+  ],
+  "files": [
+    {
+      "path": "src/components/theme/theme-toggle.tsx",
+      "content": "\"use client\";\n\nimport { Laptop, MoonStar, SunMedium } from \"lucide-react\";\nimport { useTheme } from \"next-themes\";\nimport { Button } from \"@/components/ui/button\";\nimport {\n  DropdownMenu,\n  DropdownMenuContent,\n  DropdownMenuItem,\n  DropdownMenuLabel,\n  DropdownMenuSeparator,\n  DropdownMenuTrigger,\n} from \"@/components/ui/dropdown-menu\";\n\nconst THEME_OPTIONS = [\n  {\n    icon: SunMedium,\n    label: \"Light\",\n    value: \"light\" as const,\n  },\n  {\n    icon: MoonStar,\n    label: \"Dark\",\n    value: \"dark\" as const,\n  },\n  {\n    icon: Laptop,\n    label: \"System\",\n    value: \"system\" as const,\n  },\n];\n\nexport function ThemeToggle() {\n  const { setTheme } = useTheme();\n\n  return (\n    <DropdownMenu>\n      <DropdownMenuTrigger asChild>\n        <Button\n          variant=\"ghost\"\n          size=\"icon\"\n          className=\"relative rounded-full border border-border/70 bg-surface-2 text-muted-foreground shadow-soft hover:bg-surface-3 hover:text-foreground\"\n          aria-label=\"Toggle theme\"\n        >\n          <SunMedium className=\"size-4 transition-all dark:scale-0 dark:-rotate-90\" />\n          <MoonStar className=\"absolute size-4 scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0\" />\n        </Button>\n      </DropdownMenuTrigger>\n      <DropdownMenuContent className=\"w-40\" align=\"end\">\n        <DropdownMenuLabel>Appearance</DropdownMenuLabel>\n        <DropdownMenuSeparator />\n        {THEME_OPTIONS.map((option) => {\n          const Icon = option.icon;\n\n          return (\n            <DropdownMenuItem\n              key={option.value}\n              onClick={() => setTheme(option.value)}\n              className=\"gap-2\"\n            >\n              <Icon className=\"size-4\" />\n              {option.label}\n            </DropdownMenuItem>\n          );\n        })}\n      </DropdownMenuContent>\n    </DropdownMenu>\n  );\n}\n",
+      "type": "registry:file",
+      "target": "src/components/theme/theme-toggle.tsx"
+    }
+  ],
+  "meta": {
+    "brand": "redtaxi",
+    "scope": "standalone-theme"
+  },
+  "docs": "Install this item when you need the Theme Toggle theme helper without pulling in the full Red Taxi theme bundle.",
+  "categories": [
+    "theme",
+    "standalone",
+    "admin"
+  ],
+  "type": "registry:block"
+}

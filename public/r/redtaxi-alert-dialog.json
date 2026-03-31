@@ -1,0 +1,39 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "redtaxi-alert-dialog",
+  "title": "Red Taxi Alert Dialog",
+  "author": "Red Banana Studios",
+  "description": "Standalone Red Taxi alert dialog primitive.",
+  "dependencies": [
+    "lucide-react",
+    "radix-ui"
+  ],
+  "registryDependencies": [
+    "@redtaxi/redtaxi-button"
+  ],
+  "files": [
+    {
+      "path": "src/lib/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\"\nimport { twMerge } from \"tailwind-merge\"\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
+      "type": "registry:file",
+      "target": "src/lib/utils.ts"
+    },
+    {
+      "path": "src/components/ui/alert-dialog.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { AlertDialog as AlertDialogPrimitive } from \"radix-ui\"\nimport { AlertTriangleIcon } from \"lucide-react\"\nimport { Button } from \"@/components/ui/button\"\nimport { cn } from \"@/lib/utils\"\n\nfunction AlertDialog(\n  props: React.ComponentProps<typeof AlertDialogPrimitive.Root>,\n) {\n  return <AlertDialogPrimitive.Root data-slot=\"alert-dialog\" {...props} />\n}\n\nfunction AlertDialogTrigger(\n  props: React.ComponentProps<typeof AlertDialogPrimitive.Trigger>,\n) {\n  return (\n    <AlertDialogPrimitive.Trigger data-slot=\"alert-dialog-trigger\" {...props} />\n  )\n}\n\nfunction AlertDialogPortal(\n  props: React.ComponentProps<typeof AlertDialogPrimitive.Portal>,\n) {\n  return <AlertDialogPrimitive.Portal data-slot=\"alert-dialog-portal\" {...props} />\n}\n\nfunction AlertDialogOverlay({\n  className,\n  ...props\n}: React.ComponentProps<typeof AlertDialogPrimitive.Overlay>) {\n  return (\n    <AlertDialogPrimitive.Overlay\n      data-slot=\"alert-dialog-overlay\"\n      className={cn(\n        \"fixed inset-0 isolate z-50 bg-[hsl(221_43%_4%/.58)] duration-150 supports-backdrop-filter:backdrop-blur-sm data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0\",\n        className,\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction AlertDialogContent({\n  className,\n  children,\n  ...props\n}: React.ComponentProps<typeof AlertDialogPrimitive.Content>) {\n  return (\n    <AlertDialogPortal>\n      <AlertDialogOverlay />\n      <AlertDialogPrimitive.Content\n        data-slot=\"alert-dialog-content\"\n        className={cn(\n          \"fixed top-1/2 left-1/2 z-50 grid w-full max-w-[calc(100%-2rem)] -translate-x-1/2 -translate-y-1/2 gap-5 rounded-[calc(var(--radius)*1.05)] border border-border/70 bg-popover/98 p-5 text-sm text-popover-foreground shadow-panel backdrop-blur-xl duration-150 outline-none sm:max-w-lg data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95\",\n          className,\n        )}\n        {...props}\n      >\n        {children}\n      </AlertDialogPrimitive.Content>\n    </AlertDialogPortal>\n  )\n}\n\nfunction AlertDialogHeader({\n  className,\n  ...props\n}: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"alert-dialog-header\"\n      className={cn(\"flex flex-col gap-3\", className)}\n      {...props}\n    />\n  )\n}\n\nfunction AlertDialogBody({\n  className,\n  ...props\n}: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"alert-dialog-body\"\n      className={cn(\n        \"flex items-start gap-3 rounded-[calc(var(--radius)*0.92)] border border-destructive/14 bg-destructive/8 px-4 py-3 text-destructive\",\n        className,\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction AlertDialogFooter({\n  className,\n  ...props\n}: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"alert-dialog-footer\"\n      className={cn(\n        \"-mx-5 -mb-5 flex flex-col-reverse gap-3 rounded-b-[calc(var(--radius)*1.05)] border-t border-border/60 bg-panel-muted/80 p-5 sm:flex-row sm:justify-end\",\n        className,\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction AlertDialogTitle({\n  className,\n  ...props\n}: React.ComponentProps<typeof AlertDialogPrimitive.Title>) {\n  return (\n    <AlertDialogPrimitive.Title\n      data-slot=\"alert-dialog-title\"\n      className={cn(\n        \"font-heading text-lg leading-none font-semibold tracking-[-0.03em]\",\n        className,\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction AlertDialogDescription({\n  className,\n  ...props\n}: React.ComponentProps<typeof AlertDialogPrimitive.Description>) {\n  return (\n    <AlertDialogPrimitive.Description\n      data-slot=\"alert-dialog-description\"\n      className={cn(\"text-sm leading-6 text-muted-foreground\", className)}\n      {...props}\n    />\n  )\n}\n\nfunction AlertDialogAction({\n  className,\n  ...props\n}: React.ComponentProps<typeof AlertDialogPrimitive.Action>) {\n  return (\n    <AlertDialogPrimitive.Action data-slot=\"alert-dialog-action\" asChild>\n      <Button variant=\"destructive\" className={className} {...props} />\n    </AlertDialogPrimitive.Action>\n  )\n}\n\nfunction AlertDialogCancel({\n  className,\n  ...props\n}: React.ComponentProps<typeof AlertDialogPrimitive.Cancel>) {\n  return (\n    <AlertDialogPrimitive.Cancel data-slot=\"alert-dialog-cancel\" asChild>\n      <Button variant=\"outline\" className={className} {...props} />\n    </AlertDialogPrimitive.Cancel>\n  )\n}\n\nfunction AlertDialogWarning({\n  title = \"High-impact action\",\n  description = \"This change cannot be undone without rebuilding the original record state.\",\n  className,\n}: {\n  title?: string\n  description?: string\n  className?: string\n}) {\n  return (\n    <AlertDialogBody className={className}>\n      <AlertTriangleIcon className=\"mt-0.5 size-4 shrink-0\" />\n      <div className=\"space-y-1\">\n        <p className=\"text-sm font-semibold text-foreground\">{title}</p>\n        <p className=\"text-sm leading-6 text-muted-foreground\">{description}</p>\n      </div>\n    </AlertDialogBody>\n  )\n}\n\nexport {\n  AlertDialog,\n  AlertDialogAction,\n  AlertDialogBody,\n  AlertDialogCancel,\n  AlertDialogContent,\n  AlertDialogDescription,\n  AlertDialogFooter,\n  AlertDialogHeader,\n  AlertDialogOverlay,\n  AlertDialogPortal,\n  AlertDialogTitle,\n  AlertDialogTrigger,\n  AlertDialogWarning,\n}\n",
+      "type": "registry:file",
+      "target": "src/components/ui/alert-dialog.tsx"
+    }
+  ],
+  "meta": {
+    "brand": "redtaxi",
+    "scope": "standalone-ui"
+  },
+  "docs": "Install this item when you need the Alert Dialog primitive without pulling in the full Red Taxi UI bundle.",
+  "categories": [
+    "ui",
+    "standalone",
+    "admin"
+  ],
+  "type": "registry:ui"
+}

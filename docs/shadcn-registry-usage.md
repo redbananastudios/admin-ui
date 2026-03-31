@@ -44,6 +44,30 @@ That URL works with:
 
 `@redtaxi/redtaxi-ui` now includes real chart support through shadcn charts and `recharts`, plus a themed calendar/date-picker layer through `react-day-picker`.
 
+Every reusable component is also available as a standalone registry item, so consumer apps can install or refresh one control at a time.
+
+Examples:
+
+```bash
+npx shadcn@latest add @redtaxi/redtaxi-button -y -o
+npx shadcn@latest add @redtaxi/redtaxi-table-pagination @redtaxi/redtaxi-sortable-table-head -y -o
+npx shadcn@latest add @redtaxi/redtaxi-stat-card --overwrite
+```
+
+Useful standalone items include:
+
+- `@redtaxi/redtaxi-label`
+- `@redtaxi/redtaxi-collapsible`
+- `@redtaxi/redtaxi-button`
+- `@redtaxi/redtaxi-select`
+- `@redtaxi/redtaxi-shimmer`
+- `@redtaxi/redtaxi-confirm-dialog`
+- `@redtaxi/redtaxi-diff-badge`
+- `@redtaxi/redtaxi-sortable-table-head`
+- `@redtaxi/redtaxi-table-pagination`
+- `@redtaxi/redtaxi-stat-card`
+- `@redtaxi/redtaxi-theme-toggle`
+
 ## Install Into A New App
 
 1. Create a new Next.js app

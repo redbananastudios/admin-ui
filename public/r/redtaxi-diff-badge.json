@@ -1,0 +1,38 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "redtaxi-diff-badge",
+  "title": "Red Taxi Diff Badge",
+  "author": "Red Banana Studios",
+  "description": "Standalone Red Taxi diff badge admin component.",
+  "dependencies": [
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "@redtaxi/redtaxi-badge"
+  ],
+  "files": [
+    {
+      "path": "src/lib/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\"\nimport { twMerge } from \"tailwind-merge\"\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
+      "type": "registry:file",
+      "target": "src/lib/utils.ts"
+    },
+    {
+      "path": "src/components/admin/diff-badge.tsx",
+      "content": "import type { ReactNode } from \"react\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\nimport { Badge } from \"@/components/ui/badge\";\nimport { cn } from \"@/lib/utils\";\n\nconst diffBadgeVariants = cva(\n  \"rounded-full border px-2.5 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.16em]\",\n  {\n    variants: {\n      tone: {\n        added:\n          \"border-success/25 bg-success/12 text-success dark:border-success/30 dark:bg-success/18\",\n        removed:\n          \"border-destructive/22 bg-destructive/12 text-destructive dark:border-destructive/30 dark:bg-destructive/18\",\n      },\n    },\n    defaultVariants: {\n      tone: \"added\",\n    },\n  },\n);\n\ntype DiffBadgeProps = VariantProps<typeof diffBadgeVariants> & {\n  className?: string;\n  children?: ReactNode;\n};\n\nexport function DiffBadge({\n  tone = \"added\",\n  children,\n  className,\n}: DiffBadgeProps) {\n  return (\n    <Badge\n      variant=\"outline\"\n      className={cn(diffBadgeVariants({ tone }), className)}\n    >\n      <span aria-hidden>{tone === \"added\" ? \"+\" : \"-\"}</span>\n      {children ?? (tone === \"added\" ? \"Added\" : \"Removed\")}\n    </Badge>\n  );\n}\n",
+      "type": "registry:file",
+      "target": "src/components/admin/diff-badge.tsx"
+    }
+  ],
+  "meta": {
+    "brand": "redtaxi",
+    "scope": "standalone-admin"
+  },
+  "docs": "Install this item when you need the Diff Badge component without pulling in the full Red Taxi admin bundle.",
+  "categories": [
+    "admin",
+    "standalone",
+    "component"
+  ],
+  "type": "registry:block"
+}

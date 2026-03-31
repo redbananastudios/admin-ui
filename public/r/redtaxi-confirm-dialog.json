@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "redtaxi-confirm-dialog",
+  "title": "Red Taxi Confirm Dialog",
+  "author": "Red Banana Studios",
+  "description": "Standalone Red Taxi confirm dialog admin component.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@redtaxi/redtaxi-alert-dialog",
+    "@redtaxi/redtaxi-button"
+  ],
+  "files": [
+    {
+      "path": "src/components/admin/confirm-dialog.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { LoaderCircle } from \"lucide-react\";\nimport {\n  AlertDialog,\n  AlertDialogCancel,\n  AlertDialogContent,\n  AlertDialogDescription,\n  AlertDialogFooter,\n  AlertDialogHeader,\n  AlertDialogTitle,\n  AlertDialogTrigger,\n  AlertDialogWarning,\n} from \"@/components/ui/alert-dialog\";\nimport { Button } from \"@/components/ui/button\";\n\ntype ConfirmDialogProps = {\n  title: string;\n  description: string;\n  trigger?: React.ReactNode;\n  confirmLabel?: string;\n  cancelLabel?: string;\n  loadingLabel?: string;\n  confirmVariant?: \"default\" | \"destructive\";\n  warningTitle?: string;\n  warningDescription?: string;\n  children?: React.ReactNode;\n  onConfirm?: () => void | Promise<void>;\n  open?: boolean;\n  onOpenChange?: (open: boolean) => void;\n};\n\nexport function ConfirmDialog({\n  title,\n  description,\n  trigger,\n  confirmLabel = \"Confirm\",\n  cancelLabel = \"Cancel\",\n  loadingLabel = \"Working...\",\n  confirmVariant = \"destructive\",\n  warningTitle,\n  warningDescription,\n  children,\n  onConfirm,\n  open,\n  onOpenChange,\n}: ConfirmDialogProps) {\n  const [internalOpen, setInternalOpen] = React.useState(false);\n  const [isPending, setIsPending] = React.useState(false);\n\n  const resolvedOpen = open === undefined ? internalOpen : open;\n\n  function updateOpen(nextOpen: boolean) {\n    if (isPending) {\n      return;\n    }\n\n    if (open === undefined) {\n      setInternalOpen(nextOpen);\n    }\n\n    onOpenChange?.(nextOpen);\n  }\n\n  async function handleConfirm() {\n    try {\n      setIsPending(true);\n      await Promise.resolve(onConfirm?.());\n      updateOpen(false);\n    } catch (error) {\n      console.error(error);\n    } finally {\n      setIsPending(false);\n    }\n  }\n\n  return (\n    <AlertDialog open={resolvedOpen} onOpenChange={updateOpen}>\n      {trigger ? <AlertDialogTrigger asChild>{trigger}</AlertDialogTrigger> : null}\n      <AlertDialogContent>\n        <AlertDialogHeader>\n          <AlertDialogTitle>{title}</AlertDialogTitle>\n          <AlertDialogDescription>{description}</AlertDialogDescription>\n        </AlertDialogHeader>\n\n        {confirmVariant === \"destructive\" ? (\n          <AlertDialogWarning\n            title={warningTitle}\n            description={warningDescription}\n          />\n        ) : null}\n\n        {children}\n\n        <AlertDialogFooter>\n          <AlertDialogCancel disabled={isPending}>{cancelLabel}</AlertDialogCancel>\n          <Button\n            type=\"button\"\n            variant={confirmVariant}\n            disabled={isPending}\n            onClick={handleConfirm}\n          >\n            {isPending ? (\n              <>\n                <LoaderCircle className=\"size-4 animate-spin\" />\n                {loadingLabel}\n              </>\n            ) : (\n              confirmLabel\n            )}\n          </Button>\n        </AlertDialogFooter>\n      </AlertDialogContent>\n    </AlertDialog>\n  );\n}\n",
+      "type": "registry:file",
+      "target": "src/components/admin/confirm-dialog.tsx"
+    }
+  ],
+  "meta": {
+    "brand": "redtaxi",
+    "scope": "standalone-admin"
+  },
+  "docs": "Install this item when you need the Confirm Dialog component without pulling in the full Red Taxi admin bundle.",
+  "categories": [
+    "admin",
+    "standalone",
+    "component"
+  ],
+  "type": "registry:block"
+}

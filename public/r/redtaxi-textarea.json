@@ -1,0 +1,32 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "redtaxi-textarea",
+  "title": "Red Taxi Textarea",
+  "author": "Red Banana Studios",
+  "description": "Standalone Red Taxi textarea primitive.",
+  "files": [
+    {
+      "path": "src/lib/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\"\nimport { twMerge } from \"tailwind-merge\"\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
+      "type": "registry:file",
+      "target": "src/lib/utils.ts"
+    },
+    {
+      "path": "src/components/ui/textarea.tsx",
+      "content": "import * as React from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\nfunction Textarea({ className, ...props }: React.ComponentProps<\"textarea\">) {\n  return (\n    <textarea\n      data-slot=\"textarea\"\n      className={cn(\n        \"flex field-sizing-content min-h-28 w-full rounded-[calc(var(--radius)*0.95)] border border-input/90 bg-surface-2 px-4 py-3 text-sm text-foreground shadow-soft transition-[border-color,box-shadow,background-color] outline-none placeholder:text-muted-foreground/85 focus-visible:border-ring focus-visible:bg-background focus-visible:ring-4 focus-visible:ring-ring/15 disabled:cursor-not-allowed disabled:bg-surface-3 disabled:opacity-60 aria-invalid:border-destructive aria-invalid:ring-4 aria-invalid:ring-destructive/15\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nexport { Textarea }\n",
+      "type": "registry:file",
+      "target": "src/components/ui/textarea.tsx"
+    }
+  ],
+  "meta": {
+    "brand": "redtaxi",
+    "scope": "standalone-ui"
+  },
+  "docs": "Install this item when you need the Textarea primitive without pulling in the full Red Taxi UI bundle.",
+  "categories": [
+    "ui",
+    "standalone",
+    "admin"
+  ],
+  "type": "registry:ui"
+}

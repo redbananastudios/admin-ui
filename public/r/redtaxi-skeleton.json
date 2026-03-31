@@ -1,0 +1,32 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "redtaxi-skeleton",
+  "title": "Red Taxi Skeleton",
+  "author": "Red Banana Studios",
+  "description": "Standalone Red Taxi skeleton primitive.",
+  "files": [
+    {
+      "path": "src/lib/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\"\nimport { twMerge } from \"tailwind-merge\"\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
+      "type": "registry:file",
+      "target": "src/lib/utils.ts"
+    },
+    {
+      "path": "src/components/ui/skeleton.tsx",
+      "content": "import { cn } from \"@/lib/utils\"\n\nfunction Skeleton({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"skeleton\"\n      className={cn(\n        \"animate-pulse rounded-[calc(var(--radius)*0.7)] bg-linear-to-r from-surface-3 via-accent/65 to-surface-3\",\n        className,\n      )}\n      {...props}\n    />\n  )\n}\n\nexport { Skeleton }\n",
+      "type": "registry:file",
+      "target": "src/components/ui/skeleton.tsx"
+    }
+  ],
+  "meta": {
+    "brand": "redtaxi",
+    "scope": "standalone-ui"
+  },
+  "docs": "Install this item when you need the Skeleton primitive without pulling in the full Red Taxi UI bundle.",
+  "categories": [
+    "ui",
+    "standalone",
+    "admin"
+  ],
+  "type": "registry:ui"
+}

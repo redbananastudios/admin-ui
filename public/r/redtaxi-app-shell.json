@@ -1,0 +1,31 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "redtaxi-app-shell",
+  "title": "Red Taxi App Shell",
+  "author": "Red Banana Studios",
+  "description": "Standalone Red Taxi app shell admin component.",
+  "registryDependencies": [
+    "@redtaxi/redtaxi-app-header",
+    "@redtaxi/redtaxi-app-sidebar",
+    "@redtaxi/redtaxi-sidebar"
+  ],
+  "files": [
+    {
+      "path": "src/components/admin/app-shell.tsx",
+      "content": "\"use client\";\n\nimport type { PropsWithChildren } from \"react\";\nimport { AppHeader } from \"@/components/admin/app-header\";\nimport { AppSidebar } from \"@/components/admin/app-sidebar\";\nimport { SidebarInset, SidebarProvider } from \"@/components/ui/sidebar\";\n\ntype AppShellProps = PropsWithChildren;\n\nexport function AppShell({ children }: AppShellProps) {\n  return (\n    <SidebarProvider defaultOpen>\n      <div className=\"surface-grid relative flex min-h-screen w-full bg-transparent\">\n        <div className=\"pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,hsl(var(--primary)/0.08),transparent_28%),radial-gradient(circle_at_top_right,hsl(var(--info)/0.06),transparent_22%)]\" />\n        <AppSidebar />\n        <SidebarInset className=\"relative min-h-screen bg-transparent\">\n          <AppHeader />\n          {children}\n        </SidebarInset>\n      </div>\n    </SidebarProvider>\n  );\n}\n",
+      "type": "registry:file",
+      "target": "src/components/admin/app-shell.tsx"
+    }
+  ],
+  "meta": {
+    "brand": "redtaxi",
+    "scope": "standalone-admin"
+  },
+  "docs": "Install this item when you need the App Shell component without pulling in the full Red Taxi admin bundle.",
+  "categories": [
+    "admin",
+    "standalone",
+    "component"
+  ],
+  "type": "registry:block"
+}

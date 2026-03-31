@@ -1,0 +1,38 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "redtaxi-stat-card",
+  "title": "Red Taxi Stat Card",
+  "author": "Red Banana Studios",
+  "description": "Standalone Red Taxi stat card admin component.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@redtaxi/redtaxi-app-card"
+  ],
+  "files": [
+    {
+      "path": "src/lib/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\"\nimport { twMerge } from \"tailwind-merge\"\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
+      "type": "registry:file",
+      "target": "src/lib/utils.ts"
+    },
+    {
+      "path": "src/components/admin/stat-card.tsx",
+      "content": "import type { LucideIcon } from \"lucide-react\";\nimport { ArrowDownRight, ArrowRight, ArrowUpRight } from \"lucide-react\";\nimport { AppCard } from \"@/components/admin/app-card\";\nimport { cn } from \"@/lib/utils\";\n\ntype StatCardProps = {\n  label: string;\n  value: string;\n  delta: string;\n  trend: \"up\" | \"down\" | \"stable\";\n  description: string;\n  icon: LucideIcon;\n};\n\nconst trendStyles = {\n  up: \"text-success\",\n  down: \"text-destructive\",\n  stable: \"text-muted-foreground\",\n};\n\nconst trendIcons = {\n  up: ArrowUpRight,\n  down: ArrowDownRight,\n  stable: ArrowRight,\n};\n\nexport function StatCard({\n  label,\n  value,\n  delta,\n  trend,\n  description,\n  icon: Icon,\n}: StatCardProps) {\n  const TrendIcon = trendIcons[trend];\n\n  return (\n    <AppCard className=\"gap-4 bg-linear-to-br from-panel-background via-panel-background to-surface-3/80\">\n      <div className=\"flex items-start justify-between gap-4\">\n        <div className=\"space-y-2\">\n          <p className=\"text-sm font-medium text-muted-foreground\">{label}</p>\n          <div className=\"flex items-end gap-3\">\n            <p className=\"text-3xl font-semibold tracking-[-0.05em] text-foreground\">\n              {value}\n            </p>\n            <span\n              className={cn(\n                \"inline-flex items-center gap-1 rounded-full border border-current/12 px-2 py-1 text-xs font-semibold\",\n                trendStyles[trend],\n              )}\n            >\n              <TrendIcon className=\"size-3.5\" />\n              {delta}\n            </span>\n          </div>\n        </div>\n        <div className=\"rounded-2xl border border-primary/20 bg-primary/12 p-3 text-primary shadow-soft\">\n          <Icon className=\"size-5\" />\n        </div>\n      </div>\n      <p className=\"text-sm leading-6 text-muted-foreground\">{description}</p>\n    </AppCard>\n  );\n}\n",
+      "type": "registry:file",
+      "target": "src/components/admin/stat-card.tsx"
+    }
+  ],
+  "meta": {
+    "brand": "redtaxi",
+    "scope": "standalone-admin"
+  },
+  "docs": "Install this item when you need the Stat Card component without pulling in the full Red Taxi admin bundle.",
+  "categories": [
+    "admin",
+    "standalone",
+    "component"
+  ],
+  "type": "registry:block"
+}

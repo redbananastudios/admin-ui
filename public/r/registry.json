@@ -668,6 +668,1661 @@
         "brand": "redtaxi",
         "scope": "quality"
       }
+    },
+    {
+      "name": "redtaxi-alert-dialog",
+      "type": "registry:ui",
+      "title": "Red Taxi Alert Dialog",
+      "description": "Standalone Red Taxi alert dialog primitive.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:file",
+          "target": "src/lib/utils.ts"
+        },
+        {
+          "path": "src/components/ui/alert-dialog.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/alert-dialog.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the Alert Dialog primitive without pulling in the full Red Taxi UI bundle.",
+      "categories": [
+        "ui",
+        "standalone",
+        "admin"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-ui"
+      },
+      "registryDependencies": [
+        "@redtaxi/redtaxi-button"
+      ],
+      "dependencies": [
+        "lucide-react",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "redtaxi-avatar",
+      "type": "registry:ui",
+      "title": "Red Taxi Avatar",
+      "description": "Standalone Red Taxi avatar primitive.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:file",
+          "target": "src/lib/utils.ts"
+        },
+        {
+          "path": "src/components/ui/avatar.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/avatar.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the Avatar primitive without pulling in the full Red Taxi UI bundle.",
+      "categories": [
+        "ui",
+        "standalone",
+        "admin"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-ui"
+      },
+      "dependencies": [
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "redtaxi-badge",
+      "type": "registry:ui",
+      "title": "Red Taxi Badge",
+      "description": "Standalone Red Taxi badge primitive.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:file",
+          "target": "src/lib/utils.ts"
+        },
+        {
+          "path": "src/components/ui/badge.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/badge.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the Badge primitive without pulling in the full Red Taxi UI bundle.",
+      "categories": [
+        "ui",
+        "standalone",
+        "admin"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-ui"
+      },
+      "dependencies": [
+        "class-variance-authority",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "redtaxi-button",
+      "type": "registry:ui",
+      "title": "Red Taxi Button",
+      "description": "Standalone Red Taxi button primitive.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:file",
+          "target": "src/lib/utils.ts"
+        },
+        {
+          "path": "src/components/ui/button.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/button.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the Button primitive without pulling in the full Red Taxi UI bundle.",
+      "categories": [
+        "ui",
+        "standalone",
+        "admin"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-ui"
+      },
+      "dependencies": [
+        "class-variance-authority",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "redtaxi-calendar",
+      "type": "registry:ui",
+      "title": "Red Taxi Calendar",
+      "description": "Standalone Red Taxi calendar primitive.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:file",
+          "target": "src/lib/utils.ts"
+        },
+        {
+          "path": "src/components/ui/calendar.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/calendar.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the Calendar primitive without pulling in the full Red Taxi UI bundle.",
+      "categories": [
+        "ui",
+        "standalone",
+        "admin"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-ui"
+      },
+      "registryDependencies": [
+        "@redtaxi/redtaxi-button"
+      ],
+      "dependencies": [
+        "lucide-react",
+        "react-day-picker"
+      ]
+    },
+    {
+      "name": "redtaxi-card",
+      "type": "registry:ui",
+      "title": "Red Taxi Card",
+      "description": "Standalone Red Taxi card primitive.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:file",
+          "target": "src/lib/utils.ts"
+        },
+        {
+          "path": "src/components/ui/card.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/card.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the Card primitive without pulling in the full Red Taxi UI bundle.",
+      "categories": [
+        "ui",
+        "standalone",
+        "admin"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-ui"
+      }
+    },
+    {
+      "name": "redtaxi-chart",
+      "type": "registry:ui",
+      "title": "Red Taxi Chart",
+      "description": "Standalone Red Taxi chart primitive.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:file",
+          "target": "src/lib/utils.ts"
+        },
+        {
+          "path": "src/components/ui/chart.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/chart.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the Chart primitive without pulling in the full Red Taxi UI bundle.",
+      "categories": [
+        "ui",
+        "standalone",
+        "admin"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-ui"
+      },
+      "dependencies": [
+        "recharts"
+      ]
+    },
+    {
+      "name": "redtaxi-checkbox",
+      "type": "registry:ui",
+      "title": "Red Taxi Checkbox",
+      "description": "Standalone Red Taxi checkbox primitive.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:file",
+          "target": "src/lib/utils.ts"
+        },
+        {
+          "path": "src/components/ui/checkbox.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/checkbox.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the Checkbox primitive without pulling in the full Red Taxi UI bundle.",
+      "categories": [
+        "ui",
+        "standalone",
+        "admin"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-ui"
+      },
+      "dependencies": [
+        "lucide-react",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "redtaxi-collapsible",
+      "type": "registry:ui",
+      "title": "Red Taxi Collapsible",
+      "description": "Standalone Red Taxi collapsible primitive.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:file",
+          "target": "src/lib/utils.ts"
+        },
+        {
+          "path": "src/components/ui/collapsible.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/collapsible.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the Collapsible primitive without pulling in the full Red Taxi UI bundle.",
+      "categories": [
+        "ui",
+        "standalone",
+        "admin"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-ui"
+      },
+      "dependencies": [
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "redtaxi-date-picker",
+      "type": "registry:ui",
+      "title": "Red Taxi Date Picker",
+      "description": "Standalone Red Taxi date picker primitive.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:file",
+          "target": "src/lib/utils.ts"
+        },
+        {
+          "path": "src/components/ui/date-picker.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/date-picker.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the Date Picker primitive without pulling in the full Red Taxi UI bundle.",
+      "categories": [
+        "ui",
+        "standalone",
+        "admin"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-ui"
+      },
+      "registryDependencies": [
+        "@redtaxi/redtaxi-button",
+        "@redtaxi/redtaxi-calendar",
+        "@redtaxi/redtaxi-popover"
+      ],
+      "dependencies": [
+        "date-fns",
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "redtaxi-date-range-picker",
+      "type": "registry:ui",
+      "title": "Red Taxi Date Range Picker",
+      "description": "Standalone Red Taxi date range picker primitive.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:file",
+          "target": "src/lib/utils.ts"
+        },
+        {
+          "path": "src/components/ui/date-range-picker.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/date-range-picker.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the Date Range Picker primitive without pulling in the full Red Taxi UI bundle.",
+      "categories": [
+        "ui",
+        "standalone",
+        "admin"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-ui"
+      },
+      "registryDependencies": [
+        "@redtaxi/redtaxi-button",
+        "@redtaxi/redtaxi-calendar",
+        "@redtaxi/redtaxi-popover"
+      ],
+      "dependencies": [
+        "date-fns",
+        "lucide-react",
+        "react-day-picker"
+      ]
+    },
+    {
+      "name": "redtaxi-dialog",
+      "type": "registry:ui",
+      "title": "Red Taxi Dialog",
+      "description": "Standalone Red Taxi dialog primitive.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:file",
+          "target": "src/lib/utils.ts"
+        },
+        {
+          "path": "src/components/ui/dialog.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/dialog.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the Dialog primitive without pulling in the full Red Taxi UI bundle.",
+      "categories": [
+        "ui",
+        "standalone",
+        "admin"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-ui"
+      },
+      "registryDependencies": [
+        "@redtaxi/redtaxi-button"
+      ],
+      "dependencies": [
+        "lucide-react",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "redtaxi-dropdown-menu",
+      "type": "registry:ui",
+      "title": "Red Taxi Dropdown Menu",
+      "description": "Standalone Red Taxi dropdown menu primitive.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:file",
+          "target": "src/lib/utils.ts"
+        },
+        {
+          "path": "src/components/ui/dropdown-menu.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/dropdown-menu.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the Dropdown Menu primitive without pulling in the full Red Taxi UI bundle.",
+      "categories": [
+        "ui",
+        "standalone",
+        "admin"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-ui"
+      },
+      "dependencies": [
+        "lucide-react",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "redtaxi-input",
+      "type": "registry:ui",
+      "title": "Red Taxi Input",
+      "description": "Standalone Red Taxi input primitive.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:file",
+          "target": "src/lib/utils.ts"
+        },
+        {
+          "path": "src/components/ui/input.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/input.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the Input primitive without pulling in the full Red Taxi UI bundle.",
+      "categories": [
+        "ui",
+        "standalone",
+        "admin"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-ui"
+      }
+    },
+    {
+      "name": "redtaxi-label",
+      "type": "registry:ui",
+      "title": "Red Taxi Label",
+      "description": "Standalone Red Taxi label primitive.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:file",
+          "target": "src/lib/utils.ts"
+        },
+        {
+          "path": "src/components/ui/label.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/label.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the Label primitive without pulling in the full Red Taxi UI bundle.",
+      "categories": [
+        "ui",
+        "standalone",
+        "admin"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-ui"
+      },
+      "dependencies": [
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "redtaxi-popover",
+      "type": "registry:ui",
+      "title": "Red Taxi Popover",
+      "description": "Standalone Red Taxi popover primitive.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:file",
+          "target": "src/lib/utils.ts"
+        },
+        {
+          "path": "src/components/ui/popover.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/popover.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the Popover primitive without pulling in the full Red Taxi UI bundle.",
+      "categories": [
+        "ui",
+        "standalone",
+        "admin"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-ui"
+      },
+      "dependencies": [
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "redtaxi-select",
+      "type": "registry:ui",
+      "title": "Red Taxi Select",
+      "description": "Standalone Red Taxi select primitive.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:file",
+          "target": "src/lib/utils.ts"
+        },
+        {
+          "path": "src/components/ui/select.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/select.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the Select primitive without pulling in the full Red Taxi UI bundle.",
+      "categories": [
+        "ui",
+        "standalone",
+        "admin"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-ui"
+      },
+      "dependencies": [
+        "lucide-react",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "redtaxi-separator",
+      "type": "registry:ui",
+      "title": "Red Taxi Separator",
+      "description": "Standalone Red Taxi separator primitive.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:file",
+          "target": "src/lib/utils.ts"
+        },
+        {
+          "path": "src/components/ui/separator.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/separator.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the Separator primitive without pulling in the full Red Taxi UI bundle.",
+      "categories": [
+        "ui",
+        "standalone",
+        "admin"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-ui"
+      },
+      "dependencies": [
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "redtaxi-sheet",
+      "type": "registry:ui",
+      "title": "Red Taxi Sheet",
+      "description": "Standalone Red Taxi sheet primitive.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:file",
+          "target": "src/lib/utils.ts"
+        },
+        {
+          "path": "src/components/ui/sheet.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/sheet.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the Sheet primitive without pulling in the full Red Taxi UI bundle.",
+      "categories": [
+        "ui",
+        "standalone",
+        "admin"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-ui"
+      },
+      "registryDependencies": [
+        "@redtaxi/redtaxi-button"
+      ],
+      "dependencies": [
+        "lucide-react",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "redtaxi-shimmer",
+      "type": "registry:ui",
+      "title": "Red Taxi Shimmer",
+      "description": "Standalone Red Taxi shimmer primitive.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:file",
+          "target": "src/lib/utils.ts"
+        },
+        {
+          "path": "src/components/ui/shimmer.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/shimmer.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the Shimmer primitive without pulling in the full Red Taxi UI bundle.",
+      "categories": [
+        "ui",
+        "standalone",
+        "admin"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-ui"
+      }
+    },
+    {
+      "name": "redtaxi-sidebar",
+      "type": "registry:ui",
+      "title": "Red Taxi Sidebar",
+      "description": "Standalone Red Taxi sidebar primitive.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/hooks/use-mobile.ts",
+          "type": "registry:file",
+          "target": "src/hooks/use-mobile.ts"
+        },
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:file",
+          "target": "src/lib/utils.ts"
+        },
+        {
+          "path": "src/components/ui/sidebar.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/sidebar.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the Sidebar primitive without pulling in the full Red Taxi UI bundle.",
+      "categories": [
+        "ui",
+        "standalone",
+        "admin"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-ui"
+      },
+      "registryDependencies": [
+        "@redtaxi/redtaxi-button",
+        "@redtaxi/redtaxi-input",
+        "@redtaxi/redtaxi-separator",
+        "@redtaxi/redtaxi-sheet",
+        "@redtaxi/redtaxi-skeleton",
+        "@redtaxi/redtaxi-tooltip"
+      ],
+      "dependencies": [
+        "class-variance-authority",
+        "lucide-react",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "redtaxi-skeleton",
+      "type": "registry:ui",
+      "title": "Red Taxi Skeleton",
+      "description": "Standalone Red Taxi skeleton primitive.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:file",
+          "target": "src/lib/utils.ts"
+        },
+        {
+          "path": "src/components/ui/skeleton.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/skeleton.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the Skeleton primitive without pulling in the full Red Taxi UI bundle.",
+      "categories": [
+        "ui",
+        "standalone",
+        "admin"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-ui"
+      }
+    },
+    {
+      "name": "redtaxi-switch",
+      "type": "registry:ui",
+      "title": "Red Taxi Switch",
+      "description": "Standalone Red Taxi switch primitive.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:file",
+          "target": "src/lib/utils.ts"
+        },
+        {
+          "path": "src/components/ui/switch.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/switch.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the Switch primitive without pulling in the full Red Taxi UI bundle.",
+      "categories": [
+        "ui",
+        "standalone",
+        "admin"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-ui"
+      },
+      "dependencies": [
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "redtaxi-table",
+      "type": "registry:ui",
+      "title": "Red Taxi Table",
+      "description": "Standalone Red Taxi table primitive.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:file",
+          "target": "src/lib/utils.ts"
+        },
+        {
+          "path": "src/components/ui/table.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/table.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the Table primitive without pulling in the full Red Taxi UI bundle.",
+      "categories": [
+        "ui",
+        "standalone",
+        "admin"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-ui"
+      }
+    },
+    {
+      "name": "redtaxi-tabs",
+      "type": "registry:ui",
+      "title": "Red Taxi Tabs",
+      "description": "Standalone Red Taxi tabs primitive.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:file",
+          "target": "src/lib/utils.ts"
+        },
+        {
+          "path": "src/components/ui/tabs.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/tabs.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the Tabs primitive without pulling in the full Red Taxi UI bundle.",
+      "categories": [
+        "ui",
+        "standalone",
+        "admin"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-ui"
+      },
+      "dependencies": [
+        "class-variance-authority",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "redtaxi-textarea",
+      "type": "registry:ui",
+      "title": "Red Taxi Textarea",
+      "description": "Standalone Red Taxi textarea primitive.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:file",
+          "target": "src/lib/utils.ts"
+        },
+        {
+          "path": "src/components/ui/textarea.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/textarea.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the Textarea primitive without pulling in the full Red Taxi UI bundle.",
+      "categories": [
+        "ui",
+        "standalone",
+        "admin"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-ui"
+      }
+    },
+    {
+      "name": "redtaxi-tooltip",
+      "type": "registry:ui",
+      "title": "Red Taxi Tooltip",
+      "description": "Standalone Red Taxi tooltip primitive.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:file",
+          "target": "src/lib/utils.ts"
+        },
+        {
+          "path": "src/components/ui/tooltip.tsx",
+          "type": "registry:file",
+          "target": "src/components/ui/tooltip.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the Tooltip primitive without pulling in the full Red Taxi UI bundle.",
+      "categories": [
+        "ui",
+        "standalone",
+        "admin"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-ui"
+      },
+      "dependencies": [
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "redtaxi-app-card",
+      "type": "registry:block",
+      "title": "Red Taxi App Card",
+      "description": "Standalone Red Taxi app card admin component.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:file",
+          "target": "src/lib/utils.ts"
+        },
+        {
+          "path": "src/components/admin/app-card.tsx",
+          "type": "registry:file",
+          "target": "src/components/admin/app-card.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the App Card component without pulling in the full Red Taxi admin bundle.",
+      "categories": [
+        "admin",
+        "standalone",
+        "component"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-admin"
+      }
+    },
+    {
+      "name": "redtaxi-app-header",
+      "type": "registry:block",
+      "title": "Red Taxi App Header",
+      "description": "Standalone Red Taxi app header admin component.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/lib/navigation.ts",
+          "type": "registry:file",
+          "target": "src/lib/navigation.ts"
+        },
+        {
+          "path": "src/components/admin/app-header.tsx",
+          "type": "registry:file",
+          "target": "src/components/admin/app-header.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the App Header component without pulling in the full Red Taxi admin bundle.",
+      "categories": [
+        "admin",
+        "standalone",
+        "component"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-admin"
+      },
+      "registryDependencies": [
+        "@redtaxi/redtaxi-avatar",
+        "@redtaxi/redtaxi-button",
+        "@redtaxi/redtaxi-dropdown-menu",
+        "@redtaxi/redtaxi-sidebar",
+        "@redtaxi/redtaxi-theme-toggle"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "redtaxi-app-shell",
+      "type": "registry:block",
+      "title": "Red Taxi App Shell",
+      "description": "Standalone Red Taxi app shell admin component.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/components/admin/app-shell.tsx",
+          "type": "registry:file",
+          "target": "src/components/admin/app-shell.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the App Shell component without pulling in the full Red Taxi admin bundle.",
+      "categories": [
+        "admin",
+        "standalone",
+        "component"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-admin"
+      },
+      "registryDependencies": [
+        "@redtaxi/redtaxi-app-header",
+        "@redtaxi/redtaxi-app-sidebar",
+        "@redtaxi/redtaxi-sidebar"
+      ]
+    },
+    {
+      "name": "redtaxi-app-sidebar",
+      "type": "registry:block",
+      "title": "Red Taxi App Sidebar",
+      "description": "Standalone Red Taxi app sidebar admin component.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/lib/navigation.ts",
+          "type": "registry:file",
+          "target": "src/lib/navigation.ts"
+        },
+        {
+          "path": "src/components/admin/app-sidebar.tsx",
+          "type": "registry:file",
+          "target": "src/components/admin/app-sidebar.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the App Sidebar component without pulling in the full Red Taxi admin bundle.",
+      "categories": [
+        "admin",
+        "standalone",
+        "component"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-admin"
+      },
+      "registryDependencies": [
+        "@redtaxi/redtaxi-button",
+        "@redtaxi/redtaxi-sidebar",
+        "@redtaxi/redtaxi-sidebar-nav-item"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "redtaxi-confirm-dialog",
+      "type": "registry:block",
+      "title": "Red Taxi Confirm Dialog",
+      "description": "Standalone Red Taxi confirm dialog admin component.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/components/admin/confirm-dialog.tsx",
+          "type": "registry:file",
+          "target": "src/components/admin/confirm-dialog.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the Confirm Dialog component without pulling in the full Red Taxi admin bundle.",
+      "categories": [
+        "admin",
+        "standalone",
+        "component"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-admin"
+      },
+      "registryDependencies": [
+        "@redtaxi/redtaxi-alert-dialog",
+        "@redtaxi/redtaxi-button"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "redtaxi-dashboard-overview",
+      "type": "registry:block",
+      "title": "Red Taxi Dashboard Overview",
+      "description": "Standalone Red Taxi dashboard overview admin component.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/lib/mock-dashboard.ts",
+          "type": "registry:file",
+          "target": "src/lib/mock-dashboard.ts"
+        },
+        {
+          "path": "src/components/admin/dashboard-overview.tsx",
+          "type": "registry:file",
+          "target": "src/components/admin/dashboard-overview.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the Dashboard Overview component without pulling in the full Red Taxi admin bundle.",
+      "categories": [
+        "admin",
+        "standalone",
+        "component"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-admin"
+      },
+      "registryDependencies": [
+        "@redtaxi/redtaxi-button",
+        "@redtaxi/redtaxi-chart",
+        "@redtaxi/redtaxi-data-table-shell",
+        "@redtaxi/redtaxi-page-header",
+        "@redtaxi/redtaxi-section-card",
+        "@redtaxi/redtaxi-stat-card",
+        "@redtaxi/redtaxi-status-badge",
+        "@redtaxi/redtaxi-table"
+      ],
+      "dependencies": [
+        "lucide-react",
+        "recharts"
+      ]
+    },
+    {
+      "name": "redtaxi-data-table-shell",
+      "type": "registry:block",
+      "title": "Red Taxi Data Table Shell",
+      "description": "Standalone Red Taxi data table shell admin component.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:file",
+          "target": "src/lib/utils.ts"
+        },
+        {
+          "path": "src/components/admin/data-table-shell.tsx",
+          "type": "registry:file",
+          "target": "src/components/admin/data-table-shell.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the Data Table Shell component without pulling in the full Red Taxi admin bundle.",
+      "categories": [
+        "admin",
+        "standalone",
+        "component"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-admin"
+      }
+    },
+    {
+      "name": "redtaxi-diff-badge",
+      "type": "registry:block",
+      "title": "Red Taxi Diff Badge",
+      "description": "Standalone Red Taxi diff badge admin component.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:file",
+          "target": "src/lib/utils.ts"
+        },
+        {
+          "path": "src/components/admin/diff-badge.tsx",
+          "type": "registry:file",
+          "target": "src/components/admin/diff-badge.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the Diff Badge component without pulling in the full Red Taxi admin bundle.",
+      "categories": [
+        "admin",
+        "standalone",
+        "component"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-admin"
+      },
+      "registryDependencies": [
+        "@redtaxi/redtaxi-badge"
+      ],
+      "dependencies": [
+        "class-variance-authority"
+      ]
+    },
+    {
+      "name": "redtaxi-empty-state",
+      "type": "registry:block",
+      "title": "Red Taxi Empty State",
+      "description": "Standalone Red Taxi empty state admin component.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/components/admin/empty-state.tsx",
+          "type": "registry:file",
+          "target": "src/components/admin/empty-state.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the Empty State component without pulling in the full Red Taxi admin bundle.",
+      "categories": [
+        "admin",
+        "standalone",
+        "component"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-admin"
+      },
+      "registryDependencies": [
+        "@redtaxi/redtaxi-app-card"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "redtaxi-filter-bar",
+      "type": "registry:block",
+      "title": "Red Taxi Filter Bar",
+      "description": "Standalone Red Taxi filter bar admin component.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:file",
+          "target": "src/lib/utils.ts"
+        },
+        {
+          "path": "src/components/admin/filter-bar.tsx",
+          "type": "registry:file",
+          "target": "src/components/admin/filter-bar.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the Filter Bar component without pulling in the full Red Taxi admin bundle.",
+      "categories": [
+        "admin",
+        "standalone",
+        "component"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-admin"
+      }
+    },
+    {
+      "name": "redtaxi-page-container",
+      "type": "registry:block",
+      "title": "Red Taxi Page Container",
+      "description": "Standalone Red Taxi page container admin component.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:file",
+          "target": "src/lib/utils.ts"
+        },
+        {
+          "path": "src/components/admin/page-container.tsx",
+          "type": "registry:file",
+          "target": "src/components/admin/page-container.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the Page Container component without pulling in the full Red Taxi admin bundle.",
+      "categories": [
+        "admin",
+        "standalone",
+        "component"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-admin"
+      }
+    },
+    {
+      "name": "redtaxi-page-header",
+      "type": "registry:block",
+      "title": "Red Taxi Page Header",
+      "description": "Standalone Red Taxi page header admin component.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:file",
+          "target": "src/lib/utils.ts"
+        },
+        {
+          "path": "src/components/admin/page-header.tsx",
+          "type": "registry:file",
+          "target": "src/components/admin/page-header.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the Page Header component without pulling in the full Red Taxi admin bundle.",
+      "categories": [
+        "admin",
+        "standalone",
+        "component"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-admin"
+      }
+    },
+    {
+      "name": "redtaxi-section-card",
+      "type": "registry:block",
+      "title": "Red Taxi Section Card",
+      "description": "Standalone Red Taxi section card admin component.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:file",
+          "target": "src/lib/utils.ts"
+        },
+        {
+          "path": "src/components/admin/section-card.tsx",
+          "type": "registry:file",
+          "target": "src/components/admin/section-card.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the Section Card component without pulling in the full Red Taxi admin bundle.",
+      "categories": [
+        "admin",
+        "standalone",
+        "component"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-admin"
+      },
+      "registryDependencies": [
+        "@redtaxi/redtaxi-card"
+      ],
+      "dependencies": [
+        "class-variance-authority"
+      ]
+    },
+    {
+      "name": "redtaxi-sidebar-nav-item",
+      "type": "registry:block",
+      "title": "Red Taxi Sidebar Nav Item",
+      "description": "Standalone Red Taxi sidebar nav item admin component.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/lib/navigation.ts",
+          "type": "registry:file",
+          "target": "src/lib/navigation.ts"
+        },
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:file",
+          "target": "src/lib/utils.ts"
+        },
+        {
+          "path": "src/components/admin/sidebar-nav-item.tsx",
+          "type": "registry:file",
+          "target": "src/components/admin/sidebar-nav-item.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the Sidebar Nav Item component without pulling in the full Red Taxi admin bundle.",
+      "categories": [
+        "admin",
+        "standalone",
+        "component"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-admin"
+      },
+      "registryDependencies": [
+        "@redtaxi/redtaxi-sidebar"
+      ]
+    },
+    {
+      "name": "redtaxi-sortable-table-head",
+      "type": "registry:block",
+      "title": "Red Taxi Sortable Table Head",
+      "description": "Standalone Red Taxi sortable table head admin component.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:file",
+          "target": "src/lib/utils.ts"
+        },
+        {
+          "path": "src/components/admin/sortable-table-head.tsx",
+          "type": "registry:file",
+          "target": "src/components/admin/sortable-table-head.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the Sortable Table Head component without pulling in the full Red Taxi admin bundle.",
+      "categories": [
+        "admin",
+        "standalone",
+        "component"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-admin"
+      },
+      "registryDependencies": [
+        "@redtaxi/redtaxi-button",
+        "@redtaxi/redtaxi-table"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "redtaxi-stat-card",
+      "type": "registry:block",
+      "title": "Red Taxi Stat Card",
+      "description": "Standalone Red Taxi stat card admin component.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:file",
+          "target": "src/lib/utils.ts"
+        },
+        {
+          "path": "src/components/admin/stat-card.tsx",
+          "type": "registry:file",
+          "target": "src/components/admin/stat-card.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the Stat Card component without pulling in the full Red Taxi admin bundle.",
+      "categories": [
+        "admin",
+        "standalone",
+        "component"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-admin"
+      },
+      "registryDependencies": [
+        "@redtaxi/redtaxi-app-card"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "redtaxi-status-badge",
+      "type": "registry:block",
+      "title": "Red Taxi Status Badge",
+      "description": "Standalone Red Taxi status badge admin component.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:file",
+          "target": "src/lib/utils.ts"
+        },
+        {
+          "path": "src/components/admin/status-badge.tsx",
+          "type": "registry:file",
+          "target": "src/components/admin/status-badge.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the Status Badge component without pulling in the full Red Taxi admin bundle.",
+      "categories": [
+        "admin",
+        "standalone",
+        "component"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-admin"
+      },
+      "registryDependencies": [
+        "@redtaxi/redtaxi-badge"
+      ],
+      "dependencies": [
+        "class-variance-authority"
+      ]
+    },
+    {
+      "name": "redtaxi-style-guide-showcase",
+      "type": "registry:block",
+      "title": "Red Taxi Style Guide Showcase",
+      "description": "Standalone Red Taxi style guide showcase admin component.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/lib/mock-row-detail-table.ts",
+          "type": "registry:file",
+          "target": "src/lib/mock-row-detail-table.ts"
+        },
+        {
+          "path": "src/components/admin/style-guide-showcase.tsx",
+          "type": "registry:file",
+          "target": "src/components/admin/style-guide-showcase.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the Style Guide Showcase component without pulling in the full Red Taxi admin bundle.",
+      "categories": [
+        "admin",
+        "standalone",
+        "component"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-admin"
+      },
+      "registryDependencies": [
+        "@redtaxi/redtaxi-alert-dialog",
+        "@redtaxi/redtaxi-button",
+        "@redtaxi/redtaxi-chart",
+        "@redtaxi/redtaxi-checkbox",
+        "@redtaxi/redtaxi-collapsible",
+        "@redtaxi/redtaxi-confirm-dialog",
+        "@redtaxi/redtaxi-data-table-shell",
+        "@redtaxi/redtaxi-date-picker",
+        "@redtaxi/redtaxi-date-range-picker",
+        "@redtaxi/redtaxi-dialog",
+        "@redtaxi/redtaxi-diff-badge",
+        "@redtaxi/redtaxi-empty-state",
+        "@redtaxi/redtaxi-filter-bar",
+        "@redtaxi/redtaxi-input",
+        "@redtaxi/redtaxi-label",
+        "@redtaxi/redtaxi-page-header",
+        "@redtaxi/redtaxi-popover",
+        "@redtaxi/redtaxi-row-detail-table",
+        "@redtaxi/redtaxi-section-card",
+        "@redtaxi/redtaxi-select",
+        "@redtaxi/redtaxi-sheet",
+        "@redtaxi/redtaxi-shimmer",
+        "@redtaxi/redtaxi-skeleton",
+        "@redtaxi/redtaxi-sortable-table-head",
+        "@redtaxi/redtaxi-stat-card",
+        "@redtaxi/redtaxi-status-badge",
+        "@redtaxi/redtaxi-switch",
+        "@redtaxi/redtaxi-table",
+        "@redtaxi/redtaxi-table-pagination",
+        "@redtaxi/redtaxi-tabs",
+        "@redtaxi/redtaxi-textarea",
+        "@redtaxi/redtaxi-theme-toggle"
+      ],
+      "dependencies": [
+        "lucide-react",
+        "recharts",
+        "sonner"
+      ]
+    },
+    {
+      "name": "redtaxi-table-pagination",
+      "type": "registry:block",
+      "title": "Red Taxi Table Pagination",
+      "description": "Standalone Red Taxi table pagination admin component.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:file",
+          "target": "src/lib/utils.ts"
+        },
+        {
+          "path": "src/components/admin/table-pagination.tsx",
+          "type": "registry:file",
+          "target": "src/components/admin/table-pagination.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the Table Pagination component without pulling in the full Red Taxi admin bundle.",
+      "categories": [
+        "admin",
+        "standalone",
+        "component"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-admin"
+      },
+      "registryDependencies": [
+        "@redtaxi/redtaxi-button",
+        "@redtaxi/redtaxi-label",
+        "@redtaxi/redtaxi-select"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "redtaxi-app-toaster",
+      "type": "registry:block",
+      "title": "Red Taxi App Toaster",
+      "description": "Standalone Red Taxi app toaster theme helper.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/components/theme/app-toaster.tsx",
+          "type": "registry:file",
+          "target": "src/components/theme/app-toaster.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the App Toaster theme helper without pulling in the full Red Taxi theme bundle.",
+      "categories": [
+        "theme",
+        "standalone",
+        "admin"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-theme"
+      },
+      "dependencies": [
+        "next-themes",
+        "sonner"
+      ]
+    },
+    {
+      "name": "redtaxi-theme-provider",
+      "type": "registry:block",
+      "title": "Red Taxi Theme Provider",
+      "description": "Standalone Red Taxi theme provider theme helper.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/components/theme/theme-provider.tsx",
+          "type": "registry:file",
+          "target": "src/components/theme/theme-provider.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the Theme Provider theme helper without pulling in the full Red Taxi theme bundle.",
+      "categories": [
+        "theme",
+        "standalone",
+        "admin"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-theme"
+      },
+      "dependencies": [
+        "next-themes"
+      ]
+    },
+    {
+      "name": "redtaxi-theme-toggle",
+      "type": "registry:block",
+      "title": "Red Taxi Theme Toggle",
+      "description": "Standalone Red Taxi theme toggle theme helper.",
+      "author": "Red Banana Studios",
+      "files": [
+        {
+          "path": "src/components/theme/theme-toggle.tsx",
+          "type": "registry:file",
+          "target": "src/components/theme/theme-toggle.tsx"
+        }
+      ],
+      "docs": "Install this item when you need the Theme Toggle theme helper without pulling in the full Red Taxi theme bundle.",
+      "categories": [
+        "theme",
+        "standalone",
+        "admin"
+      ],
+      "meta": {
+        "brand": "redtaxi",
+        "scope": "standalone-theme"
+      },
+      "registryDependencies": [
+        "@redtaxi/redtaxi-button",
+        "@redtaxi/redtaxi-dropdown-menu"
+      ],
+      "dependencies": [
+        "lucide-react",
+        "next-themes"
+      ]
     }
   ]
 }

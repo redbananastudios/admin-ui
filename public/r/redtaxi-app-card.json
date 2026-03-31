@@ -1,0 +1,32 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "redtaxi-app-card",
+  "title": "Red Taxi App Card",
+  "author": "Red Banana Studios",
+  "description": "Standalone Red Taxi app card admin component.",
+  "files": [
+    {
+      "path": "src/lib/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\"\nimport { twMerge } from \"tailwind-merge\"\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
+      "type": "registry:file",
+      "target": "src/lib/utils.ts"
+    },
+    {
+      "path": "src/components/admin/app-card.tsx",
+      "content": "import type { ComponentProps } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\ntype AppCardProps = ComponentProps<\"section\">;\n\nexport function AppCard({ className, ...props }: AppCardProps) {\n  return (\n    <section\n      className={cn(\n        \"flex flex-col rounded-[calc(var(--radius)*1.05)] border border-border/70 bg-panel-background/95 p-5 text-panel-foreground shadow-panel\",\n        className,\n      )}\n      {...props}\n    />\n  );\n}\n",
+      "type": "registry:file",
+      "target": "src/components/admin/app-card.tsx"
+    }
+  ],
+  "meta": {
+    "brand": "redtaxi",
+    "scope": "standalone-admin"
+  },
+  "docs": "Install this item when you need the App Card component without pulling in the full Red Taxi admin bundle.",
+  "categories": [
+    "admin",
+    "standalone",
+    "component"
+  ],
+  "type": "registry:block"
+}

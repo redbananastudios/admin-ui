@@ -1,0 +1,32 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "redtaxi-data-table-shell",
+  "title": "Red Taxi Data Table Shell",
+  "author": "Red Banana Studios",
+  "description": "Standalone Red Taxi data table shell admin component.",
+  "files": [
+    {
+      "path": "src/lib/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\"\nimport { twMerge } from \"tailwind-merge\"\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
+      "type": "registry:file",
+      "target": "src/lib/utils.ts"
+    },
+    {
+      "path": "src/components/admin/data-table-shell.tsx",
+      "content": "import type { ReactNode } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\ntype DataTableShellProps = {\n  title: string;\n  description?: string;\n  actions?: ReactNode;\n  children: ReactNode;\n  className?: string;\n};\n\nexport function DataTableShell({\n  title,\n  description,\n  actions,\n  children,\n  className,\n}: DataTableShellProps) {\n  return (\n    <section\n      className={cn(\n        \"overflow-hidden rounded-[calc(var(--radius)*1.08)] border border-border/70 bg-panel-background/95 shadow-panel\",\n        className,\n      )}\n    >\n      <div className=\"flex flex-col gap-4 border-b border-border/60 px-5 py-4 sm:flex-row sm:items-start sm:justify-between\">\n        <div className=\"space-y-1\">\n          <h2 className=\"text-base font-semibold text-panel-foreground\">{title}</h2>\n          {description ? (\n            <p className=\"text-sm text-muted-foreground\">{description}</p>\n          ) : null}\n        </div>\n        {actions ? <div className=\"flex items-center gap-2\">{actions}</div> : null}\n      </div>\n      <div className=\"px-3 pb-3 pt-1 sm:px-4\">{children}</div>\n    </section>\n  );\n}\n",
+      "type": "registry:file",
+      "target": "src/components/admin/data-table-shell.tsx"
+    }
+  ],
+  "meta": {
+    "brand": "redtaxi",
+    "scope": "standalone-admin"
+  },
+  "docs": "Install this item when you need the Data Table Shell component without pulling in the full Red Taxi admin bundle.",
+  "categories": [
+    "admin",
+    "standalone",
+    "component"
+  ],
+  "type": "registry:block"
+}

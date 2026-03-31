@@ -86,6 +86,13 @@ https://raw.githubusercontent.com/redbananastudios/admin-ui/main/public/r/redtax
 
 See `docs/shadcn-registry-usage.md` for install commands and MCP setup.
 
+Standalone component installs are also supported, for example:
+
+```bash
+npx shadcn@latest add @redtaxi/redtaxi-button -y -o
+npx shadcn@latest add @redtaxi/redtaxi-table-pagination @redtaxi/redtaxi-sortable-table-head -y -o
+```
+
 Available higher-level registry blocks:
 
 - `@redtaxi/redtaxi-filter-toolbar-presets`

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "redtaxi-shimmer",
+  "title": "Red Taxi Shimmer",
+  "author": "Red Banana Studios",
+  "description": "Standalone Red Taxi shimmer primitive.",
+  "files": [
+    {
+      "path": "src/lib/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\"\nimport { twMerge } from \"tailwind-merge\"\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
+      "type": "registry:file",
+      "target": "src/lib/utils.ts"
+    },
+    {
+      "path": "src/components/ui/shimmer.tsx",
+      "content": "import * as React from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nfunction ShimmerBlock({\n  className,\n  ...props\n}: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"shimmer-block\"\n      className={cn(\n        \"relative overflow-hidden rounded-[calc(var(--radius)*0.78)] border border-border/40 bg-surface-3/85\",\n        \"before:absolute before:inset-0 before:-translate-x-full before:bg-linear-to-r before:from-transparent before:via-foreground/10 before:to-transparent before:animate-[shimmer_2.1s_infinite]\",\n        className,\n      )}\n      {...props}\n    />\n  );\n}\n\nfunction ShimmerCircle({\n  className,\n  ...props\n}: React.ComponentProps<\"div\">) {\n  return (\n    <ShimmerBlock\n      className={cn(\"size-11 rounded-full border-border/35\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction ShimmerLines({\n  className,\n  lines = 3,\n}: {\n  className?: string;\n  lines?: number;\n}) {\n  return (\n    <div className={cn(\"space-y-2.5\", className)}>\n      {Array.from({ length: lines }, (_, index) => (\n        <ShimmerBlock\n          key={index}\n          className={cn(\n            \"h-4\",\n            index === lines - 1 ? \"w-2/3\" : \"w-full\",\n          )}\n        />\n      ))}\n    </div>\n  );\n}\n\nexport { ShimmerBlock, ShimmerCircle, ShimmerLines };\n",
+      "type": "registry:file",
+      "target": "src/components/ui/shimmer.tsx"
+    }
+  ],
+  "meta": {
+    "brand": "redtaxi",
+    "scope": "standalone-ui"
+  },
+  "docs": "Install this item when you need the Shimmer primitive without pulling in the full Red Taxi UI bundle.",
+  "categories": [
+    "ui",
+    "standalone",
+    "admin"
+  ],
+  "type": "registry:ui"
+}

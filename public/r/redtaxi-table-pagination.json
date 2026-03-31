@@ -1,0 +1,40 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "redtaxi-table-pagination",
+  "title": "Red Taxi Table Pagination",
+  "author": "Red Banana Studios",
+  "description": "Standalone Red Taxi table pagination admin component.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@redtaxi/redtaxi-button",
+    "@redtaxi/redtaxi-label",
+    "@redtaxi/redtaxi-select"
+  ],
+  "files": [
+    {
+      "path": "src/lib/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\"\nimport { twMerge } from \"tailwind-merge\"\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
+      "type": "registry:file",
+      "target": "src/lib/utils.ts"
+    },
+    {
+      "path": "src/components/admin/table-pagination.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { startTransition } from \"react\";\nimport {\n  ChevronLeft,\n  ChevronRight,\n  ChevronsLeft,\n  ChevronsRight,\n} from \"lucide-react\";\nimport { Label } from \"@/components/ui/label\";\nimport {\n  Select,\n  SelectContent,\n  SelectItem,\n  SelectTrigger,\n  SelectValue,\n} from \"@/components/ui/select\";\nimport { Button } from \"@/components/ui/button\";\nimport { cn } from \"@/lib/utils\";\n\ntype TablePaginationProps = {\n  totalItems: number;\n  page?: number;\n  defaultPage?: number;\n  pageSize?: number;\n  defaultPageSize?: number;\n  pageSizeOptions?: number[];\n  onPageChange?: (page: number) => void;\n  onPageSizeChange?: (pageSize: number) => void;\n  itemLabel?: string;\n  className?: string;\n};\n\nexport function TablePagination({\n  totalItems,\n  page,\n  defaultPage = 1,\n  pageSize,\n  defaultPageSize = 5,\n  pageSizeOptions = [5, 10, 20, 50],\n  onPageChange,\n  onPageSizeChange,\n  itemLabel = \"rows\",\n  className,\n}: TablePaginationProps) {\n  const [internalPage, setInternalPage] = React.useState(defaultPage);\n  const [internalPageSize, setInternalPageSize] =\n    React.useState(defaultPageSize);\n\n  const resolvedPageSize =\n    pageSize === undefined ? internalPageSize : pageSize;\n  const totalPages = Math.max(1, Math.ceil(totalItems / resolvedPageSize));\n  const resolvedPage = Math.min(\n    page === undefined ? internalPage : page,\n    totalPages,\n  );\n\n  const rangeStart = totalItems ? (resolvedPage - 1) * resolvedPageSize + 1 : 0;\n  const rangeEnd = Math.min(resolvedPage * resolvedPageSize, totalItems);\n\n  function updatePage(nextPage: number) {\n    const safePage = Math.min(Math.max(nextPage, 1), totalPages);\n\n    if (page === undefined) {\n      startTransition(() => {\n        setInternalPage(safePage);\n      });\n    }\n\n    onPageChange?.(safePage);\n  }\n\n  function updatePageSize(nextPageSize: number) {\n    if (pageSize === undefined) {\n      startTransition(() => {\n        setInternalPageSize(nextPageSize);\n      });\n    }\n\n    onPageSizeChange?.(nextPageSize);\n    updatePage(1);\n  }\n\n  return (\n    <div\n      className={cn(\n        \"flex flex-col gap-3 rounded-[calc(var(--radius)*1.02)] border border-border/60 bg-surface-2/90 px-3 py-3 shadow-soft sm:flex-row sm:items-center sm:justify-between\",\n        className,\n      )}\n    >\n      <div className=\"flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4\">\n        <div className=\"flex items-center gap-2\">\n          <Label htmlFor=\"table-pagination-size\" className=\"text-xs uppercase tracking-[0.16em] text-muted-foreground\">\n            Rows per page\n          </Label>\n          <Select\n            value={String(resolvedPageSize)}\n            onValueChange={(value) => updatePageSize(Number(value))}\n          >\n            <SelectTrigger\n              id=\"table-pagination-size\"\n              size=\"sm\"\n              className=\"w-[92px]\"\n            >\n              <SelectValue />\n            </SelectTrigger>\n            <SelectContent>\n              {pageSizeOptions.map((option) => (\n                <SelectItem key={option} value={String(option)}>\n                  {option}\n                </SelectItem>\n              ))}\n            </SelectContent>\n          </Select>\n        </div>\n\n        <p className=\"text-sm text-muted-foreground\">\n          {rangeStart}-{rangeEnd} of {totalItems} {itemLabel}\n        </p>\n      </div>\n\n      <div className=\"flex items-center gap-2\">\n        <p className=\"mr-1 text-sm text-muted-foreground\">\n          Page {resolvedPage} of {totalPages}\n        </p>\n        <Button\n          type=\"button\"\n          variant=\"outline\"\n          size=\"icon-sm\"\n          aria-label=\"First page\"\n          disabled={resolvedPage <= 1}\n          onClick={() => updatePage(1)}\n        >\n          <ChevronsLeft className=\"size-3.5\" />\n        </Button>\n        <Button\n          type=\"button\"\n          variant=\"outline\"\n          size=\"icon-sm\"\n          aria-label=\"Previous page\"\n          disabled={resolvedPage <= 1}\n          onClick={() => updatePage(resolvedPage - 1)}\n        >\n          <ChevronLeft className=\"size-3.5\" />\n        </Button>\n        <Button\n          type=\"button\"\n          variant=\"outline\"\n          size=\"icon-sm\"\n          aria-label=\"Next page\"\n          disabled={resolvedPage >= totalPages}\n          onClick={() => updatePage(resolvedPage + 1)}\n        >\n          <ChevronRight className=\"size-3.5\" />\n        </Button>\n        <Button\n          type=\"button\"\n          variant=\"outline\"\n          size=\"icon-sm\"\n          aria-label=\"Last page\"\n          disabled={resolvedPage >= totalPages}\n          onClick={() => updatePage(totalPages)}\n        >\n          <ChevronsRight className=\"size-3.5\" />\n        </Button>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:file",
+      "target": "src/components/admin/table-pagination.tsx"
+    }
+  ],
+  "meta": {
+    "brand": "redtaxi",
+    "scope": "standalone-admin"
+  },
+  "docs": "Install this item when you need the Table Pagination component without pulling in the full Red Taxi admin bundle.",
+  "categories": [
+    "admin",
+    "standalone",
+    "component"
+  ],
+  "type": "registry:block"
+}

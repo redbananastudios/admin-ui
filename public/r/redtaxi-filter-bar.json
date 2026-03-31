@@ -1,0 +1,32 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "redtaxi-filter-bar",
+  "title": "Red Taxi Filter Bar",
+  "author": "Red Banana Studios",
+  "description": "Standalone Red Taxi filter bar admin component.",
+  "files": [
+    {
+      "path": "src/lib/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\"\nimport { twMerge } from \"tailwind-merge\"\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
+      "type": "registry:file",
+      "target": "src/lib/utils.ts"
+    },
+    {
+      "path": "src/components/admin/filter-bar.tsx",
+      "content": "import type { ReactNode } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\ntype FilterBarProps = {\n  children: ReactNode;\n  className?: string;\n};\n\nexport function FilterBar({ children, className }: FilterBarProps) {\n  return (\n    <div\n      className={cn(\n        \"flex flex-col gap-3 rounded-[calc(var(--radius)*1.02)] border border-border/60 bg-surface-2/90 p-3 shadow-soft sm:flex-row sm:flex-wrap sm:items-center\",\n        className,\n      )}\n    >\n      {children}\n    </div>\n  );\n}\n",
+      "type": "registry:file",
+      "target": "src/components/admin/filter-bar.tsx"
+    }
+  ],
+  "meta": {
+    "brand": "redtaxi",
+    "scope": "standalone-admin"
+  },
+  "docs": "Install this item when you need the Filter Bar component without pulling in the full Red Taxi admin bundle.",
+  "categories": [
+    "admin",
+    "standalone",
+    "component"
+  ],
+  "type": "registry:block"
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "redtaxi-app-toaster",
+  "title": "Red Taxi App Toaster",
+  "author": "Red Banana Studios",
+  "description": "Standalone Red Taxi app toaster theme helper.",
+  "dependencies": [
+    "next-themes",
+    "sonner"
+  ],
+  "files": [
+    {
+      "path": "src/components/theme/app-toaster.tsx",
+      "content": "\"use client\"\n\nimport { useTheme } from \"next-themes\"\nimport { Toaster } from \"sonner\"\n\nexport function AppToaster() {\n  const { resolvedTheme } = useTheme()\n\n  return (\n    <Toaster\n      position=\"top-right\"\n      closeButton\n      theme={resolvedTheme === \"dark\" ? \"dark\" : \"light\"}\n      toastOptions={{\n        classNames: {\n          toast:\n            \"group rounded-[calc(var(--radius)*0.95)] border border-border/70 bg-popover/98 px-4 py-3 text-popover-foreground shadow-panel backdrop-blur-xl\",\n          title: \"text-sm font-semibold tracking-[-0.02em] text-foreground\",\n          description: \"text-sm leading-6 text-muted-foreground\",\n          actionButton:\n            \"!h-8 !rounded-[calc(var(--radius)*0.72)] !bg-primary !px-3 !text-xs !font-semibold !text-primary-foreground\",\n          cancelButton:\n            \"!h-8 !rounded-[calc(var(--radius)*0.72)] !border !border-border/70 !bg-surface-2 !px-3 !text-xs !font-semibold !text-foreground\",\n          closeButton:\n            \"!border-border/60 !bg-surface-2 !text-muted-foreground hover:!bg-surface-3 hover:!text-foreground\",\n          success: \"!border-success/24 !bg-success/10\",\n          error: \"!border-destructive/24 !bg-destructive/10\",\n          warning: \"!border-warning/24 !bg-warning/10\",\n          info: \"!border-info/24 !bg-info/10\",\n        },\n      }}\n    />\n  )\n}\n",
+      "type": "registry:file",
+      "target": "src/components/theme/app-toaster.tsx"
+    }
+  ],
+  "meta": {
+    "brand": "redtaxi",
+    "scope": "standalone-theme"
+  },
+  "docs": "Install this item when you need the App Toaster theme helper without pulling in the full Red Taxi theme bundle.",
+  "categories": [
+    "theme",
+    "standalone",
+    "admin"
+  ],
+  "type": "registry:block"
+}
