@@ -6,8 +6,10 @@
   "description": "Standalone Red Taxi sidebar primitive.",
   "dependencies": [
     "class-variance-authority",
+    "clsx",
     "lucide-react",
-    "radix-ui"
+    "radix-ui",
+    "tailwind-merge"
   ],
   "registryDependencies": [
     "@redtaxi/redtaxi-button",

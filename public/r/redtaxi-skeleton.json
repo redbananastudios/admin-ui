@@ -4,6 +4,10 @@
   "title": "Red Taxi Skeleton",
   "author": "Red Banana Studios",
   "description": "Standalone Red Taxi skeleton primitive.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
   "files": [
     {
       "path": "src/lib/utils.ts",

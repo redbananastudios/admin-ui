@@ -5,8 +5,10 @@
   "author": "Red Banana Studios",
   "description": "Standalone Red Taxi calendar primitive.",
   "dependencies": [
+    "clsx",
     "lucide-react",
-    "react-day-picker"
+    "react-day-picker",
+    "tailwind-merge"
   ],
   "registryDependencies": [
     "@redtaxi/redtaxi-button"

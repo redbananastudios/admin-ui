@@ -5,7 +5,9 @@
   "author": "Red Banana Studios",
   "description": "Standalone Red Taxi label primitive.",
   "dependencies": [
-    "radix-ui"
+    "clsx",
+    "radix-ui",
+    "tailwind-merge"
   ],
   "files": [
     {

@@ -6,7 +6,9 @@
   "description": "Standalone Red Taxi badge primitive.",
   "dependencies": [
     "class-variance-authority",
-    "radix-ui"
+    "clsx",
+    "radix-ui",
+    "tailwind-merge"
   ],
   "files": [
     {

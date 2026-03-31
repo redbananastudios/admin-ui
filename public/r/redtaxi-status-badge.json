@@ -5,7 +5,9 @@
   "author": "Red Banana Studios",
   "description": "Standalone Red Taxi status badge admin component.",
   "dependencies": [
-    "class-variance-authority"
+    "class-variance-authority",
+    "clsx",
+    "tailwind-merge"
   ],
   "registryDependencies": [
     "@redtaxi/redtaxi-badge"

@@ -5,8 +5,10 @@
   "author": "Red Banana Studios",
   "description": "Standalone Red Taxi date picker primitive.",
   "dependencies": [
+    "clsx",
     "date-fns",
-    "lucide-react"
+    "lucide-react",
+    "tailwind-merge"
   ],
   "registryDependencies": [
     "@redtaxi/redtaxi-button",

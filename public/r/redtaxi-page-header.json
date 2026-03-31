@@ -4,6 +4,10 @@
   "title": "Red Taxi Page Header",
   "author": "Red Banana Studios",
   "description": "Standalone Red Taxi page header admin component.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
   "files": [
     {
       "path": "src/lib/utils.ts",

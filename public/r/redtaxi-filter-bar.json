@@ -4,6 +4,10 @@
   "title": "Red Taxi Filter Bar",
   "author": "Red Banana Studios",
   "description": "Standalone Red Taxi filter bar admin component.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
   "files": [
     {
       "path": "src/lib/utils.ts",

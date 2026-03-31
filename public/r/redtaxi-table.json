@@ -4,6 +4,10 @@
   "title": "Red Taxi Table",
   "author": "Red Banana Studios",
   "description": "Standalone Red Taxi table primitive.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
   "files": [
     {
       "path": "src/lib/utils.ts",

@@ -5,8 +5,10 @@
   "author": "Red Banana Studios",
   "description": "Standalone Red Taxi alert dialog primitive.",
   "dependencies": [
+    "clsx",
     "lucide-react",
-    "radix-ui"
+    "radix-ui",
+    "tailwind-merge"
   ],
   "registryDependencies": [
     "@redtaxi/redtaxi-button"

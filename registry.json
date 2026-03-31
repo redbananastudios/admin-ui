@@ -640,9 +640,6 @@
         "@redtaxi/redtaxi-admin-shell"
       ],
       "dependencies": [
-        "lucide-react"
-      ],
-      "dependencies": [
         "lucide-react",
         "sonner"
       ],
@@ -701,8 +698,10 @@
         "@redtaxi/redtaxi-button"
       ],
       "dependencies": [
+        "clsx",
         "lucide-react",
-        "radix-ui"
+        "radix-ui",
+        "tailwind-merge"
       ]
     },
     {
@@ -734,7 +733,9 @@
         "scope": "standalone-ui"
       },
       "dependencies": [
-        "radix-ui"
+        "clsx",
+        "radix-ui",
+        "tailwind-merge"
       ]
     },
     {
@@ -767,7 +768,9 @@
       },
       "dependencies": [
         "class-variance-authority",
-        "radix-ui"
+        "clsx",
+        "radix-ui",
+        "tailwind-merge"
       ]
     },
     {
@@ -800,7 +803,9 @@
       },
       "dependencies": [
         "class-variance-authority",
-        "radix-ui"
+        "clsx",
+        "radix-ui",
+        "tailwind-merge"
       ]
     },
     {
@@ -835,8 +840,10 @@
         "@redtaxi/redtaxi-button"
       ],
       "dependencies": [
+        "clsx",
         "lucide-react",
-        "react-day-picker"
+        "react-day-picker",
+        "tailwind-merge"
       ]
     },
     {
@@ -866,7 +873,11 @@
       "meta": {
         "brand": "redtaxi",
         "scope": "standalone-ui"
-      }
+      },
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ]
     },
     {
       "name": "redtaxi-chart",
@@ -897,7 +908,9 @@
         "scope": "standalone-ui"
       },
       "dependencies": [
-        "recharts"
+        "clsx",
+        "recharts",
+        "tailwind-merge"
       ]
     },
     {
@@ -929,8 +942,10 @@
         "scope": "standalone-ui"
       },
       "dependencies": [
+        "clsx",
         "lucide-react",
-        "radix-ui"
+        "radix-ui",
+        "tailwind-merge"
       ]
     },
     {
@@ -962,7 +977,9 @@
         "scope": "standalone-ui"
       },
       "dependencies": [
-        "radix-ui"
+        "clsx",
+        "radix-ui",
+        "tailwind-merge"
       ]
     },
     {
@@ -999,8 +1016,10 @@
         "@redtaxi/redtaxi-popover"
       ],
       "dependencies": [
+        "clsx",
         "date-fns",
-        "lucide-react"
+        "lucide-react",
+        "tailwind-merge"
       ]
     },
     {
@@ -1037,9 +1056,11 @@
         "@redtaxi/redtaxi-popover"
       ],
       "dependencies": [
+        "clsx",
         "date-fns",
         "lucide-react",
-        "react-day-picker"
+        "react-day-picker",
+        "tailwind-merge"
       ]
     },
     {
@@ -1074,8 +1095,10 @@
         "@redtaxi/redtaxi-button"
       ],
       "dependencies": [
+        "clsx",
         "lucide-react",
-        "radix-ui"
+        "radix-ui",
+        "tailwind-merge"
       ]
     },
     {
@@ -1107,8 +1130,10 @@
         "scope": "standalone-ui"
       },
       "dependencies": [
+        "clsx",
         "lucide-react",
-        "radix-ui"
+        "radix-ui",
+        "tailwind-merge"
       ]
     },
     {
@@ -1138,7 +1163,11 @@
       "meta": {
         "brand": "redtaxi",
         "scope": "standalone-ui"
-      }
+      },
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ]
     },
     {
       "name": "redtaxi-label",
@@ -1169,7 +1198,9 @@
         "scope": "standalone-ui"
       },
       "dependencies": [
-        "radix-ui"
+        "clsx",
+        "radix-ui",
+        "tailwind-merge"
       ]
     },
     {
@@ -1201,7 +1232,9 @@
         "scope": "standalone-ui"
       },
       "dependencies": [
-        "radix-ui"
+        "clsx",
+        "radix-ui",
+        "tailwind-merge"
       ]
     },
     {
@@ -1233,8 +1266,10 @@
         "scope": "standalone-ui"
       },
       "dependencies": [
+        "clsx",
         "lucide-react",
-        "radix-ui"
+        "radix-ui",
+        "tailwind-merge"
       ]
     },
     {
@@ -1266,7 +1301,9 @@
         "scope": "standalone-ui"
       },
       "dependencies": [
-        "radix-ui"
+        "clsx",
+        "radix-ui",
+        "tailwind-merge"
       ]
     },
     {
@@ -1301,8 +1338,10 @@
         "@redtaxi/redtaxi-button"
       ],
       "dependencies": [
+        "clsx",
         "lucide-react",
-        "radix-ui"
+        "radix-ui",
+        "tailwind-merge"
       ]
     },
     {
@@ -1332,7 +1371,11 @@
       "meta": {
         "brand": "redtaxi",
         "scope": "standalone-ui"
-      }
+      },
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ]
     },
     {
       "name": "redtaxi-sidebar",
@@ -1377,8 +1420,10 @@
       ],
       "dependencies": [
         "class-variance-authority",
+        "clsx",
         "lucide-react",
-        "radix-ui"
+        "radix-ui",
+        "tailwind-merge"
       ]
     },
     {
@@ -1408,7 +1453,11 @@
       "meta": {
         "brand": "redtaxi",
         "scope": "standalone-ui"
-      }
+      },
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ]
     },
     {
       "name": "redtaxi-switch",
@@ -1439,7 +1488,9 @@
         "scope": "standalone-ui"
       },
       "dependencies": [
-        "radix-ui"
+        "clsx",
+        "radix-ui",
+        "tailwind-merge"
       ]
     },
     {
@@ -1469,7 +1520,11 @@
       "meta": {
         "brand": "redtaxi",
         "scope": "standalone-ui"
-      }
+      },
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ]
     },
     {
       "name": "redtaxi-tabs",
@@ -1501,7 +1556,9 @@
       },
       "dependencies": [
         "class-variance-authority",
-        "radix-ui"
+        "clsx",
+        "radix-ui",
+        "tailwind-merge"
       ]
     },
     {
@@ -1531,7 +1588,11 @@
       "meta": {
         "brand": "redtaxi",
         "scope": "standalone-ui"
-      }
+      },
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ]
     },
     {
       "name": "redtaxi-tooltip",
@@ -1562,7 +1623,9 @@
         "scope": "standalone-ui"
       },
       "dependencies": [
-        "radix-ui"
+        "clsx",
+        "radix-ui",
+        "tailwind-merge"
       ]
     },
     {
@@ -1592,7 +1655,11 @@
       "meta": {
         "brand": "redtaxi",
         "scope": "standalone-admin"
-      }
+      },
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ]
     },
     {
       "name": "redtaxi-app-header",
@@ -1800,7 +1867,11 @@
       "meta": {
         "brand": "redtaxi",
         "scope": "standalone-admin"
-      }
+      },
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ]
     },
     {
       "name": "redtaxi-diff-badge",
@@ -1834,7 +1905,9 @@
         "@redtaxi/redtaxi-badge"
       ],
       "dependencies": [
-        "class-variance-authority"
+        "class-variance-authority",
+        "clsx",
+        "tailwind-merge"
       ]
     },
     {
@@ -1894,7 +1967,11 @@
       "meta": {
         "brand": "redtaxi",
         "scope": "standalone-admin"
-      }
+      },
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ]
     },
     {
       "name": "redtaxi-page-container",
@@ -1923,7 +2000,11 @@
       "meta": {
         "brand": "redtaxi",
         "scope": "standalone-admin"
-      }
+      },
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ]
     },
     {
       "name": "redtaxi-page-header",
@@ -1952,7 +2033,11 @@
       "meta": {
         "brand": "redtaxi",
         "scope": "standalone-admin"
-      }
+      },
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ]
     },
     {
       "name": "redtaxi-section-card",
@@ -1986,7 +2071,9 @@
         "@redtaxi/redtaxi-card"
       ],
       "dependencies": [
-        "class-variance-authority"
+        "class-variance-authority",
+        "clsx",
+        "tailwind-merge"
       ]
     },
     {
@@ -2024,6 +2111,10 @@
       },
       "registryDependencies": [
         "@redtaxi/redtaxi-sidebar"
+      ],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
       ]
     },
     {
@@ -2059,7 +2150,9 @@
         "@redtaxi/redtaxi-table"
       ],
       "dependencies": [
-        "lucide-react"
+        "clsx",
+        "lucide-react",
+        "tailwind-merge"
       ]
     },
     {
@@ -2094,7 +2187,9 @@
         "@redtaxi/redtaxi-app-card"
       ],
       "dependencies": [
-        "lucide-react"
+        "clsx",
+        "lucide-react",
+        "tailwind-merge"
       ]
     },
     {
@@ -2129,7 +2224,9 @@
         "@redtaxi/redtaxi-badge"
       ],
       "dependencies": [
-        "class-variance-authority"
+        "class-variance-authority",
+        "clsx",
+        "tailwind-merge"
       ]
     },
     {
@@ -2234,7 +2331,9 @@
         "@redtaxi/redtaxi-select"
       ],
       "dependencies": [
-        "lucide-react"
+        "clsx",
+        "lucide-react",
+        "tailwind-merge"
       ]
     },
     {

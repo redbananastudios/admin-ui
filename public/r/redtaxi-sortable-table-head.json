@@ -5,7 +5,9 @@
   "author": "Red Banana Studios",
   "description": "Standalone Red Taxi sortable table head admin component.",
   "dependencies": [
-    "lucide-react"
+    "clsx",
+    "lucide-react",
+    "tailwind-merge"
   ],
   "registryDependencies": [
     "@redtaxi/redtaxi-button",

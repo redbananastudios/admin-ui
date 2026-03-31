@@ -5,8 +5,10 @@
   "author": "Red Banana Studios",
   "description": "Standalone Red Taxi dropdown menu primitive.",
   "dependencies": [
+    "clsx",
     "lucide-react",
-    "radix-ui"
+    "radix-ui",
+    "tailwind-merge"
   ],
   "files": [
     {

@@ -4,6 +4,10 @@
   "title": "Red Taxi Page Container",
   "author": "Red Banana Studios",
   "description": "Standalone Red Taxi page container admin component.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
   "files": [
     {
       "path": "src/lib/utils.ts",

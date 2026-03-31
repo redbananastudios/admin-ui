@@ -4,6 +4,10 @@
   "title": "Red Taxi Card",
   "author": "Red Banana Studios",
   "description": "Standalone Red Taxi card primitive.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
   "files": [
     {
       "path": "src/lib/utils.ts",
