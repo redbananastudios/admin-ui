@@ -79,17 +79,24 @@ export function DateRangePicker({
   const label = formatRangeLabel(selectedRange)
 
   function handleSelect(range?: DateRange) {
+    const wasAwaitingEndDate = Boolean(
+      selectedRange?.from &&
+        (!selectedRange?.to || isSingleDayRange(selectedRange)),
+    )
+
+    const completedDistinctRange = Boolean(
+      range?.from &&
+        range?.to &&
+        range.from.getTime() !== range.to.getTime(),
+    )
+
     if (!isControlled) {
       setInternalRange(range)
     }
 
     onChange?.(range)
 
-    if (
-      range?.from &&
-      range?.to &&
-      range.from.getTime() !== range.to.getTime()
-    ) {
+    if (wasAwaitingEndDate && completedDistinctRange) {
       setOpen(false)
     }
   }
