@@ -78,23 +78,35 @@ export function DateRangePicker({
   const selectedRange = isControlled ? value : internalRange
   const label = formatRangeLabel(selectedRange)
 
-  function handleSelect(range?: DateRange) {
+  function handleSelect(range?: DateRange, triggerDate?: Date) {
     const wasAwaitingEndDate = Boolean(
       selectedRange?.from &&
         (!selectedRange?.to || isSingleDayRange(selectedRange)),
     )
 
+    const shouldResetExistingRange = Boolean(
+      triggerDate &&
+        selectedRange?.from &&
+        selectedRange?.to &&
+        !isSingleDayRange(selectedRange),
+    )
+
+    const resolvedRange =
+      shouldResetExistingRange && triggerDate
+        ? { from: triggerDate, to: triggerDate }
+        : range
+
     const completedDistinctRange = Boolean(
-      range?.from &&
-        range?.to &&
-        range.from.getTime() !== range.to.getTime(),
+      resolvedRange?.from &&
+        resolvedRange?.to &&
+        resolvedRange.from.getTime() !== resolvedRange.to.getTime(),
     )
 
     if (!isControlled) {
-      setInternalRange(range)
+      setInternalRange(resolvedRange)
     }
 
-    onChange?.(range)
+    onChange?.(resolvedRange)
 
     if (wasAwaitingEndDate && completedDistinctRange) {
       setOpen(false)
