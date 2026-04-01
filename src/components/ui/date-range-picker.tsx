@@ -9,12 +9,20 @@ import { Calendar } from "@/components/ui/calendar"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { cn } from "@/lib/utils"
 
+function isSingleDayRange(range?: DateRange) {
+  return Boolean(
+    range?.from &&
+      range?.to &&
+      range.from.getTime() === range.to.getTime(),
+  )
+}
+
 function formatRangeLabel(range?: DateRange) {
   if (!range?.from) {
     return null
   }
 
-  if (!range.to) {
+  if (!range.to || isSingleDayRange(range)) {
     return format(range.from, "dd MMM yyyy")
   }
 
@@ -58,6 +66,7 @@ export function DateRangePicker({
   nameFrom,
   nameTo,
   numberOfMonths = 2,
+  showOutsideDays = false,
   ...props
 }: DateRangePickerProps) {
   const [open, setOpen] = React.useState(false)
@@ -76,7 +85,11 @@ export function DateRangePicker({
 
     onChange?.(range)
 
-    if (range?.from && range?.to) {
+    if (
+      range?.from &&
+      range?.to &&
+      range.from.getTime() !== range.to.getTime()
+    ) {
       setOpen(false)
     }
   }
@@ -105,6 +118,7 @@ export function DateRangePicker({
           onSelect={handleSelect}
           defaultMonth={selectedRange?.from}
           numberOfMonths={numberOfMonths}
+          showOutsideDays={showOutsideDays}
           className="bg-popover/98"
           initialFocus
           {...props}
