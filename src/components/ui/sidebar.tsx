@@ -34,7 +34,16 @@ const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7
 const SIDEBAR_WIDTH = "18rem"
 const SIDEBAR_WIDTH_MOBILE = "18rem"
 const SIDEBAR_WIDTH_ICON = "3.5rem"
+const SIDEBAR_MOBILE_BREAKPOINT = 768
+const SIDEBAR_DESKTOP_BREAKPOINT = 1024
 const SIDEBAR_KEYBOARD_SHORTCUT = "b"
+
+function getStoredSidebarState() {
+  return document.cookie
+    .split("; ")
+    .find((cookie) => cookie.startsWith(`${SIDEBAR_COOKIE_NAME}=`))
+    ?.split("=")[1]
+}
 
 type SidebarContextProps = {
   state: "expanded" | "collapsed"
@@ -83,17 +92,33 @@ function SidebarProvider({
       return
     }
 
-    const storedState = document.cookie
-      .split("; ")
-      .find((cookie) => cookie.startsWith(`${SIDEBAR_COOKIE_NAME}=`))
-      ?.split("=")[1]
+    const syncResponsiveOpenState = () => {
+      const viewportWidth = window.innerWidth
 
-    if (storedState === undefined) {
-      return
+      if (viewportWidth < SIDEBAR_MOBILE_BREAKPOINT) {
+        return
+      }
+
+      if (viewportWidth < SIDEBAR_DESKTOP_BREAKPOINT) {
+        _setOpen(false)
+        return
+      }
+
+      const storedState = getStoredSidebarState()
+
+      if (storedState === undefined) {
+        _setOpen(defaultOpen)
+        return
+      }
+
+      _setOpen(storedState === "true")
     }
 
-    _setOpen(storedState === "true")
-  }, [openProp])
+    syncResponsiveOpenState()
+    window.addEventListener("resize", syncResponsiveOpenState)
+
+    return () => window.removeEventListener("resize", syncResponsiveOpenState)
+  }, [defaultOpen, openProp])
 
   const setOpen = React.useCallback(
     (value: boolean | ((value: boolean) => boolean)) => {
